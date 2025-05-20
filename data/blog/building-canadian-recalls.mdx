@@ -1,0 +1,93 @@
+---
+author: Kien
+date: 2025-05-19
+title: 🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel’s Free Tier)
+description: 'Project built on NextJS'
+tags: ['webdev']
+---
+
+For years, I’d catch recall announcements almost by accident—usually while CP24 played quietly in the background. Whether it was a dangerous toy or yet another salmonella outbreak, that’s how I stayed informed.
+
+But like many of us, I’ve shifted away from traditional news. I don’t sit through daily broadcasts, and I certainly don’t go hunting for recall updates. Unfortunately, that also means I’ve been missing out on critical health and safety alerts. And if I’m missing these, how many others are too?
+
+I know they have an email subscription you can use, I could have just signed up for whats important to me, but whats the fun in that? I want to build something to solve my own problem which I'll be outlining below :)
+
+I know Canada has their own recalls tracking website, but I could never remember the URL, recalls-raqquels.canada.ca? what was it again?
+
+_proceeds to google health canada recalls_, oh yes ofcourse! recalls-rappels.canada.ca, sorry my Quebec friends, my french is terribinacle.
+
+As you open the website, you'll notice a giant list of recalls with 10 items per page in what seems to be a never ending pagination.
+
+This caused me to ask a few questions... which ones usually get notified on the news? Why are people selling fake Viagra? How do I know which ones are important at a glance when looking at it, what am I supposed to do with the product and why do I need to click on it to find out?
+
+Then I noticed more things:
+
+- The search is incredibly slow, and I found out later that its because it tries to query over 37000 results with data dating back to 1991 🤯
+- Advanced search is also incredibly slow for the reason above
+- UI feels a little outdated, and not a lot of information at a glance to see what is critical
+
+That’s where the idea for the Canadian recalls project came from. I wanted to build a modern and accessible platform where anyone could quickly check the latest recalls—without wading through cluttered government websites or waiting for a news segment.
+
+🎯 <strong>The Goals Were Clear</strong>
+
+✅ Deliver critical recall information faster and easier.
+
+✅ Optimize bandwidth and costs to stay within Vercel’s free hobby tier.
+
+✅ Keep companies more accountable by exposing patterns in recurring issues—like frequent salmonella outbreaks—and empower consumers to find safer alternative brands (_future plans_).
+
+✅ Lastly, build the entire thing in a weekend. (with the help of v0 to scaffold the front-end and ChatGPT as my rubber duck)
+
+# 🏗️ Engineering the Solution
+
+## 💾 Data Handling and Bandwidth Optimization
+
+Health Canada’s datasets are large and constantly changing—but downloading all of that data every time someone visits the site wasn’t an option. Vercel charges for API calls and function invocations, so to stay within the free hobby tier, I had to be strategic.
+
+The site is statically generated and uses a single, automated GitHub Actions cron job that runs daily. Rather than blindly downloading the entire dataset, it checks the Last-Modified header first—only fetching new data if it’s been updated.
+
+To further reduce the payload, the app focuses exclusively on 2025 data, rather than loading historical recalls dating all the way back to 1991. This ensures the data remains fresh and relevant while significantly improving search performance and keeping the initial download size small.
+
+The result? A fast, responsive app that doesn’t rack up unnecessary hosting costs—while still giving users instant access to the most important and recent recall information.
+
+## 🌍 Data Normalization
+
+Handling two languages meant more than just translating UI text. The Health Canada datasets themselves were inconsistent—different field names, category values, and even risk classifications between the English and French files.
+
+I built a data normalization layer to standardize everything under a common schema. Even when the app is running in French, category filtering is internally standardized to English, ensuring consistent behavior no matter the language selected.
+
+## 🔎 Fast Search and Filtering (Without a Backend)
+
+I integrated FlexSearch for high-performance, client-side searching. Searches are scoped to just the critical fields like Title and NID, keeping queries lightning-fast even on large datasets.
+
+Filtering works seamlessly by category and risk severity, and thanks to the normalization layer, filters behave correctly in both languages.
+
+## 📅 Automated Data Pipeline
+
+All data updates are fully automated via GitHub Actions. The pipeline downloads, verifies, and splits the raw data daily—then commits only if changes are detected. This keeps the repository lean and reduces unnecessary versioning churn.
+
+☘️ <strong> The Result </strong>
+
+<video width="100%" controls>
+  <source src="/static/canadian-recalls.mp4" type="video/mp4" />
+</video>
+
+<li> Fully functional bilingual recall tracker. </li>
+<li> Blazing-fast search and filtering powered by FlexSearch. </li>
+<li> Clean, accessible design that feels like it belongs in 2025, not 2005. </li>
+<li> Runs entirely within Vercel's free hobby tier—thanks to careful optimizations. </li>
+<li> Plans to open-source the project and invite community contributions. </li>
+
+## 🛡️ Why This Matters
+
+Beyond just staying informed, this tool empowers Canadians to make better decisions. I want to help consumers spot patterns—companies repeatedly responsible for the same product issues—and hold them accountable.
+
+If a brand has a history of salmonella outbreaks or product recalls, you should know. And ideally, you should have safer, better alternatives presented right alongside that information.
+
+# ✨ What’s Next?
+
+I plan to keep improving the platform with more insights and features to help Canadians find safer alternatives and demand better quality from the products they trust.
+
+If you’d like to check out the app you can find it here @ <a href="https://canadianrecalls.ca" target="__blank">canadianrecalls.ca</a>
+
+If you'd like to support me, feel free to <a href="https://buymeacoffee.com/kiendang" target="__blank">buy me a coffee!</a>☕
