@@ -54,8 +54,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       {author.avatar && (
                         <Image
                           src="/static/images/avatar.png"
-                          width="38px"
-                          height="38px"
+                          width={38}
+                          height={38}
                           alt="avatar"
                           className="h-10 w-10 rounded-full"
                         />

@@ -48,7 +48,7 @@ export default function Profile() {
   const BookCover = ({ title, author, imageUrl, url }) => {
     return (
       <Link href={`https://www.goodreads.com${url}`} target="__blank">
-        <Image alt={`${title} - ${author}`} height="140px" width="90px" src={imageUrl} />
+        <Image alt={`${title} - ${author}`} height={140} width={90} src={imageUrl} />
       </Link>
     )
   }
@@ -92,8 +92,8 @@ export default function Profile() {
           <Image
             src="/static/images/avatar.jpg"
             alt="avatar"
-            width="150px"
-            height="150px"
+            width={150}
+            height={150}
             className="h-48 w-48 rounded-full object-cover"
           />
           <div className="flex flex-col justify-center text-gray-500  dark:text-gray-400">

@@ -47,8 +47,8 @@ const Tag = ({ text }) => {
   }
 
   return (
-    <Link href={`/tags/${kebabCase(text)}`}>
-      <a className={tagClassName}>{text.split(' ').join('-')}</a>
+    <Link href={`/tags/${kebabCase(text)}`} className={tagClassName}>
+      {text.split(' ').join('-')}
     </Link>
   )
 }
