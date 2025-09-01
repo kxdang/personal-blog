@@ -33,22 +33,39 @@ export default function Profile() {
     }
   }, [data])
 
-  const BookTitleAndAuthor = ({ title, author, url }) => (
-    <Link
-      className="text-center text-gray-500 hover:underline dark:text-gray-400"
-      href={`https://www.goodreads.com${url}`}
-      target="__blank"
-    >
-      <p>
-        {title} - {author}
-      </p>
-    </Link>
-  )
-
-  const BookCover = ({ title, author, imageUrl, url }) => {
+  const BookCard = ({ title, author, imageUrl, url }) => {
     return (
-      <Link href={`https://www.goodreads.com${url}`} target="__blank">
-        <Image alt={`${title} - ${author}`} height={140} width={90} src={imageUrl} />
+      <Link
+        href={`https://www.goodreads.com${url}`}
+        target="__blank"
+        className="group flex gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+      >
+        <div className="flex-shrink-0">
+          <Image
+            alt={`${title} - ${author}`}
+            height={120}
+            width={80}
+            src={imageUrl}
+            className="rounded shadow-md transition-shadow duration-300 group-hover:shadow-xl"
+          />
+        </div>
+        <div className="flex flex-col justify-center min-w-0">
+          <h4 className="font-medium text-gray-900 dark:text-gray-100 text-sm mb-1 truncate group-hover:text-primary-500 transition-colors">
+            {title}
+          </h4>
+          <p className="text-xs text-gray-500 dark:text-gray-400 truncate">by {author}</p>
+          <div className="mt-2 flex items-center gap-1 text-xs text-gray-400">
+            <span>Reading now</span>
+            <svg
+              className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
       </Link>
     )
   }
@@ -127,23 +144,21 @@ export default function Profile() {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center gap-2 pb-2">
+        <div className="space-y-2">
           {isFetching ? (
-            <div className="flex h-[147px] w-[90px] animate-pulse items-center justify-center rounded bg-gray-300 dark:bg-gray-700">
-              <svg
-                className="h-10 w-10 text-gray-200 dark:text-gray-600"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 18"
-              >
-                <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
-              </svg>
+            <div className="space-y-3">
+              <div className="flex gap-4 p-4 animate-pulse">
+                <div className="h-[120px] w-[80px] bg-gray-300 dark:bg-gray-700 rounded"></div>
+                <div className="flex-1 space-y-2 py-4">
+                  <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                  <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded w-1/2"></div>
+                </div>
+              </div>
             </div>
           ) : (
-            <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {bookData.currentlyReading.map((book, idx) => (
-                <BookCover
+                <BookCard
                   key={idx}
                   title={book.title}
                   author={book.author}
@@ -151,24 +166,9 @@ export default function Profile() {
                   url={book.url}
                 />
               ))}
-            </>
+            </div>
           )}
         </div>
-
-        {isFetching ? (
-          <LoadingSkeletonBooks row={2} />
-        ) : (
-          <div className="mx-auto w-full p-4">
-            {bookData.currentlyReading.map((book, idx) => (
-              <BookTitleAndAuthor
-                key={idx}
-                title={book.title}
-                author={book.author}
-                url={book.url}
-              />
-            ))}{' '}
-          </div>
-        )}
       </div>
     </div>
   )
