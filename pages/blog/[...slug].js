@@ -2,16 +2,16 @@ import fs from 'fs'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
+import { allBlogs, allAuthors } from 'contentlayer/generated'
+import { sortedBlogPost } from '@/lib/contentlayer'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
-  const posts = getFiles('blog')
   return {
-    paths: posts.map((p) => ({
+    paths: allBlogs.map((post) => ({
       params: {
-        slug: formatSlug(p).split('/'),
+        slug: post.slug.split('/'),
       },
     })),
     fallback: false,
@@ -19,17 +19,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
+  const slug = params.slug.join('/')
+  const allPosts = sortedBlogPost()
+  const postIndex = allPosts.findIndex((post) => post.slug === slug)
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug('blog', params.slug.join('/'))
-  const authorList = post.frontMatter.authors || ['default']
-  const authorPromise = authorList.map(async (author) => {
-    const authorResults = await getFileBySlug('authors', [author])
-    return authorResults.frontMatter
+  const post = allBlogs.find((p) => p.slug === slug)
+
+  const authorList = post.author ? [post.author] : ['default']
+  const authorDetails = authorList.map((author) => {
+    const authorData = allAuthors.find((a) => a.name === author)
+    return authorData || { name: author }
   })
-  const authorDetails = await Promise.all(authorPromise)
 
   // rss
   if (allPosts.length > 0) {
@@ -37,19 +38,26 @@ export async function getStaticProps({ params }) {
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
-  return { props: { post, authorDetails, prev, next } }
+  return {
+    props: {
+      post,
+      authorDetails,
+      prev: prev ? { slug: prev.slug, title: prev.title } : null,
+      next: next ? { slug: next.slug, title: next.title } : null,
+    },
+  }
 }
 
 export default function Blog({ post, authorDetails, prev, next }) {
-  const { mdxSource, toc, frontMatter } = post
+  const { body, ...frontMatter } = post
 
   return (
     <>
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
-          toc={toc}
-          mdxSource={mdxSource}
+          mdxSource={body.code}
+          toc={[]}
           frontMatter={frontMatter}
           authorDetails={authorDetails}
           prev={prev}

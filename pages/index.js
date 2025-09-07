@@ -3,15 +3,16 @@ import { PageSEO } from '@/components/SEO'
 import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
 import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { sortedBlogPost, allCoreContent } from '@/lib/contentlayer'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts = sortedBlogPost()
+  const simplifiedPosts = allCoreContent(posts)
 
-  return { props: { posts } }
+  return { props: { posts: simplifiedPosts } }
 }
 
 const queryClient = new QueryClient()

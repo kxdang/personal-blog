@@ -18,7 +18,14 @@ public/sitemap.xml
 /build
 *.xml
 # rss feed
-/public/feed.xml 
+/public/feed.xml
+
+# contentlayer
+.contentlayer
+
+# private notes and learnings
+private-notes/
+CONTENTLAYER_MIGRATION.md 
 
 # misc
 .DS_Store

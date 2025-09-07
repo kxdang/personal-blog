@@ -12,7 +12,7 @@ const LayoutWrapper = ({ children }) => {
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
-            <Link href="https://kien.dev" aria-label={siteMetadata.headerTitle}>
+            <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="hidden items-center justify-between sm:block">
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="h-6 text-2xl font-semibold sm:block">
