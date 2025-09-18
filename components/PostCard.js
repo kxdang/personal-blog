@@ -3,12 +3,11 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import formatDate from '@/lib/utils/formatDate'
 
-export default function PostCard({ posts }) {
-  const MAX_DISPLAY = 3
+export default function PostCard({ posts, maxDisplay = 3 }) {
   return (
     <>
       {!posts.length && 'No posts found.'}
-      {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+      {posts.slice(0, maxDisplay).map((frontMatter) => {
         const { slug, date, title, summary, tags, readingTime } = frontMatter
         return (
           <div

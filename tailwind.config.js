@@ -38,12 +38,17 @@ module.exports = {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       backgroundSize: {
         '300%': '300%',
       },
       animation: {
         gradient: 'animatedgradient 6s ease infinite alternate',
+        fadeIn: 'fadeIn 0.3s ease-out forwards',
       },
       spacing: {
         '9/16': '56.25%',

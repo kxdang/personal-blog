@@ -6,6 +6,7 @@ import SocialIcon from '@/components/social-icons'
 import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import { FlagIcon } from 'react-flag-kit'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 
 import { KienPronunciation } from './KienPronunciation'
 import TextGradient from '@/components/TextGradient'
@@ -19,6 +20,8 @@ const fetchBookData = async () => {
 
 export default function Profile() {
   const [bookData, setBookData] = useState(undefined)
+  const [showAllFrontend, setShowAllFrontend] = useState(false)
+  const [showAllPlatform, setShowAllPlatform] = useState(false)
 
   const { data, isLoading } = useQuery('bookData', fetchBookData)
 
@@ -97,43 +100,84 @@ export default function Profile() {
                   Building responsive, accessible, and performant user interfaces
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 hover:scale-105 transition-transform">
-                    TypeScript
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300 hover:scale-105 transition-transform">
-                    React
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-700/40 dark:text-slate-200 hover:scale-105 transition-transform">
-                    Next.js
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 hover:scale-105 transition-transform">
-                    JavaScript
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 hover:scale-105 transition-transform">
-                    Node.js
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 hover:scale-105 transition-transform">
-                    Redux
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 hover:scale-105 transition-transform">
-                    Zustand
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 hover:scale-105 transition-transform">
-                    GraphQL
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 hover:scale-105 transition-transform">
-                    Tailwind
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300 hover:scale-105 transition-transform">
-                    Apollo
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 hover:scale-105 transition-transform">
-                    Figma
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 hover:scale-105 transition-transform">
-                    Photoshop
-                  </span>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                      TypeScript
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300">
+                      React
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-700/40 dark:text-slate-200">
+                      Next.js
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300">
+                      GraphQL
+                    </span>
+                    {showAllFrontend && (
+                      <>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300 animate-fadeIn">
+                          Apollo
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 animate-fadeIn"
+                          style={{ animationDelay: '50ms' }}
+                        >
+                          Redux
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 animate-fadeIn"
+                          style={{ animationDelay: '100ms' }}
+                        >
+                          Tailwind
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 animate-fadeIn"
+                          style={{ animationDelay: '150ms' }}
+                        >
+                          Zustand
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 animate-fadeIn"
+                          style={{ animationDelay: '200ms' }}
+                        >
+                          JavaScript
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 animate-fadeIn"
+                          style={{ animationDelay: '250ms' }}
+                        >
+                          Node.js
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 animate-fadeIn"
+                          style={{ animationDelay: '300ms' }}
+                        >
+                          Figma
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 animate-fadeIn"
+                          style={{ animationDelay: '350ms' }}
+                        >
+                          Photoshop
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => setShowAllFrontend(!showAllFrontend)}
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 flex items-center gap-1 transition-colors"
+                  >
+                    {showAllFrontend ? (
+                      <>
+                        Show less <ChevronUpIcon className="h-3 w-3" />
+                      </>
+                    ) : (
+                      <>
+                        Show 8 more <ChevronDownIcon className="h-3 w-3" />
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
 
@@ -146,40 +190,78 @@ export default function Profile() {
                   Building tools, improving DX, and ensuring system reliability
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 hover:scale-105 transition-transform">
-                    CircleCI
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 hover:scale-105 transition-transform">
-                    Webpack
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 hover:scale-105 transition-transform">
-                    Vite
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 hover:scale-105 transition-transform">
-                    Datadog
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 hover:scale-105 transition-transform">
-                    Bugsnag
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 hover:scale-105 transition-transform">
-                    PostHog
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 hover:scale-105 transition-transform">
-                    RTL
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 hover:scale-105 transition-transform">
-                    Playwright
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 hover:scale-105 transition-transform">
-                    Happo
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 hover:scale-105 transition-transform">
-                    Git
-                  </span>
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-700/40 dark:text-zinc-200 hover:scale-105 transition-transform">
-                    GitHub
-                  </span>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
+                      Datadog
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                      CircleCI
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
+                      PostHog
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                      Playwright
+                    </span>
+                    {showAllPlatform && (
+                      <>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 animate-fadeIn">
+                          Bugsnag
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 animate-fadeIn"
+                          style={{ animationDelay: '50ms' }}
+                        >
+                          Git
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-700/40 dark:text-zinc-200 animate-fadeIn"
+                          style={{ animationDelay: '100ms' }}
+                        >
+                          GitHub
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 animate-fadeIn"
+                          style={{ animationDelay: '150ms' }}
+                        >
+                          Webpack
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 animate-fadeIn"
+                          style={{ animationDelay: '200ms' }}
+                        >
+                          Vite
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 animate-fadeIn"
+                          style={{ animationDelay: '250ms' }}
+                        >
+                          RTL
+                        </span>
+                        <span
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 animate-fadeIn"
+                          style={{ animationDelay: '300ms' }}
+                        >
+                          Happo
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => setShowAllPlatform(!showAllPlatform)}
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 flex items-center gap-1 transition-colors"
+                  >
+                    {showAllPlatform ? (
+                      <>
+                        Show less <ChevronUpIcon className="h-3 w-3" />
+                      </>
+                    ) : (
+                      <>
+                        Show 7 more <ChevronDownIcon className="h-3 w-3" />
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
@@ -200,7 +282,6 @@ export default function Profile() {
               <FlagIcon className="ml-2" code="CA" size={24} />
             </div>
             <div className="flex justify-center space-x-3 pt-4">
-              <SocialIcon kind="mail" href={`mailto:hello@kien.dev`} size="6" />
               <SocialIcon kind="linkedin" href="https://www.linkedin.com/in/kien-dang/" size="6" />
               <SocialIcon kind="github" href="https://github.com/kxdang" size="6" />
             </div>
