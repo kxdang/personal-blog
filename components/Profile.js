@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
-import LoadingSkeletonBooks from '@/components/LoadingSkeletonBooks'
 import { HiLocationMarker } from 'react-icons/hi'
 import SocialIcon from '@/components/social-icons'
 import { useEffect, useState } from 'react'
@@ -12,7 +11,8 @@ import { KienPronunciation } from './KienPronunciation'
 import TextGradient from '@/components/TextGradient'
 
 const fetchBookData = async () => {
-  const response = await fetch('/api/goodReads')
+  // Using Hardcover API exclusively
+  const response = await fetch('/api/hardcover')
   const data = await response.json()
   return data
 }
@@ -36,7 +36,7 @@ export default function Profile() {
   const BookCard = ({ title, author, imageUrl, url }) => {
     return (
       <Link
-        href={`https://www.goodreads.com${url}`}
+        href={url}
         target="__blank"
         className="group flex gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800/50"
       >
@@ -134,10 +134,7 @@ export default function Profile() {
           <hr className="mx-3 mt-6 flex-grow border-gray-300 pb-2 dark:border-gray-700 sm:mt-6 md:mt-8" />
 
           <div className="flex items-end pb-1 text-sm text-gray-500 dark:text-gray-400 sm:pb-1 md:pb-4">
-            <Link
-              href="https://www.goodreads.com/review/list/63733680-kien-dang?shelf=read"
-              target="_blank"
-            >
+            <Link href="https://hardcover.app/@kien/books/read" target="_blank">
               <p className="hover:underline">
                 {isFetching ? ' Read ( - books)' : `Read (${bookData.numOfReadBooks} books)`}
               </p>
