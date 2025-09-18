@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         numOfReadBooks: '(0)',
         currentlyReading: [],
         source: 'hardcover',
-        error: 'No API token configured',
+        message: 'API token not configured',
       })
     }
 
