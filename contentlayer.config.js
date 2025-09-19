@@ -17,6 +17,10 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath.replace(/^blog\//, ''),
   },
+  fileName: {
+    type: 'string',
+    resolve: (doc) => doc._raw.sourceFileName,
+  },
   structuredData: {
     type: 'json',
     resolve: (doc) => ({
