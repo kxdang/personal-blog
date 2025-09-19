@@ -7,7 +7,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://kiendang.me',
-  siteRepo: 'https://github.com/kxdang/kiendang',
+  siteRepo: 'https://github.com/kxdang/personal-blog',
   // siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.jpg',
   socialBanner: '/static/images/twitter-card.png',
