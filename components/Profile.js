@@ -294,7 +294,7 @@ export default function Profile() {
           <h1 className="block xs:hidden">Reading</h1>
           <hr className="mx-3 mt-6 flex-grow border-gray-300 pb-2 dark:border-gray-700 sm:mt-6 md:mt-8" />
 
-          <div className="flex items-end pb-1 text-sm text-gray-500 dark:text-gray-400 sm:pb-1 md:pb-4">
+          <div className="flex items-end pb-1 text-sm text-gray-500 dark:text-gray-400 sm:pb-1 md:pb-2">
             <Link href="https://hardcover.app/@kien/books/read" target="_blank">
               <p className="hover:underline">
                 {isFetching ? ' Read ( - books)' : `Read (${bookData.numOfReadBooks} books)`}

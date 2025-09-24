@@ -59,9 +59,9 @@ export default function Home({ posts }) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <Link href={`/blog/${post.slug}`}>
-                      <h3 className="text-base font-medium text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors line-clamp-1">
+                      <h1 className="text-base font-bold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors line-clamp-1">
                         {post.title}
-                      </h3>
+                      </h1>
                     </Link>
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                       {post.summary}
@@ -103,7 +103,12 @@ export default function Home({ posts }) {
                             <Link
                               key={tag}
                               href={`/tags/${tag}`}
-                              className={`inline-flex items-center px-2 py-0.5 rounded-full transition-colors text-xs font-medium ${colorClasses[colorIndex]}`}
+                              className={`homepage-tag-badge inline-flex items-center px-1.5 py-0.5 rounded-full transition-colors text-xs font-medium ${colorClasses[colorIndex]}`}
+                              style={{
+                                fontFamily: 'InterVariable, -apple-system, sans-serif',
+                                fontSize: '0.715rem',
+                                fontWeight: 500,
+                              }}
                             >
                               {tag}
                             </Link>

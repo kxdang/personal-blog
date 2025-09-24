@@ -29,6 +29,282 @@ h6,
 .prose-lg h3,
 .prose-lg h4,
 .prose-lg h5,
-.prose-lg h6 {
+.prose-lg h6,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  font-family: 'Crimson Pro', Georgia, serif;
+}
+
+/* Increase base font sizes for better readability */
+body {
+  font-size: 1.155rem; /* 1.05 * 1.10 */
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+}
+
+/* Adjust specific text sizes for better hierarchy */
+.text-xs {
+  font-size: 0.963rem; /* 0.875 * 1.10 */
+}
+
+.text-sm {
+  font-size: 1.018rem; /* 0.925 * 1.10 */
+}
+
+.text-base {
+  font-size: 1.155rem; /* 1.05 * 1.10 */
+}
+
+.text-lg {
+  font-size: 1.265rem; /* 1.15 * 1.10 */
+}
+
+.text-xl {
+  font-size: 1.485rem; /* 1.35 * 1.10 */
+}
+
+/* Restore and increase heading sizes */
+.text-2xl {
+  font-size: 1.925rem; /* 1.75 * 1.10 */
+}
+
+.text-3xl {
+  font-size: 2.475rem; /* 2.25 * 1.10 */
+}
+
+.text-4xl {
+  font-size: 3.3rem; /* 3 * 1.10 */
+}
+
+.text-5xl {
+  font-size: 3.85rem; /* 3.5 * 1.10 */
+}
+
+.text-6xl {
+  font-size: 4.95rem; /* 4.5 * 1.10 */
+}
+
+h1 {
+  font-size: 2.75rem; /* 2.5 * 1.10 */
+}
+
+h2 {
+  font-size: 2.2rem; /* 2 * 1.10 */
+}
+
+h3 {
+  font-size: 1.925rem; /* 1.75 * 1.10 */
+}
+
+/* Specific adjustment for the hello gradient */
+.animate-gradient {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 115%;
+  font-weight: 800;
+}
+
+/* Increase prose content sizes */
+.prose {
+  font-size: 1.21rem; /* 1.1 * 1.10 */
+}
+
+.prose p {
+  font-size: 1.21rem; /* 1.1 * 1.10 */
+  line-height: 1.75;
+}
+
+/* Homepage specific adjustments */
+main p {
+  font-size: 1.155rem; /* 1.05 * 1.10 */
+}
+
+/* Fix Previous/Next article links and tags */
+.text-xs {
+  font-size: 0.963rem; /* 0.875 * 1.10 */
+}
+
+/* Ensure Previous/Next article links and tags use proper fonts */
+a .text-xs,
+a .text-base,
+a[href*='/tags/'] {
+  letter-spacing: normal;
+}
+
+/* Previous/Next article titles should use body font */
+.prose-lg a h2,
+article a h2,
+div[class*='divide'] a {
+  font-family: 'Gentium Plus', Georgia, serif;
+  font-size: 1.21rem; /* 1.1 * 1.10 */
+  font-weight: 500;
+}
+
+/* Tag links should use Inter and be smaller */
+a[href*='/tags/'] {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.963rem; /* 0.875 * 1.10 */
+  font-weight: 400;
+}
+
+/* Tag styling on tag page */
+a[href*='/tags/'].text-sm {
+  font-size: 0.963rem; /* 0.875 * 1.10 */
+}
+
+/* Tag count styling */
+.text-xs.text-gray-600,
+.text-xs.text-gray-400,
+a[href*='/tags/'] .text-xs {
+  font-size: 0.825rem; /* 0.75 * 1.10 */
+}
+
+/* Badge/pill styling - use Inter and standard sizes */
+span.rounded-full {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.825rem; /* 0.75 * 1.10 */
+}
+
+/* Tag page specific badge styling and blog post tags */
+a[href*='/tags/'] span,
+.text-xs.uppercase {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.715rem; /* 0.65 * 1.10 */
+  font-weight: 500;
+}
+
+/* Blog post tag badges - make them smaller */
+.text-primary-500,
+a.text-primary-500,
+.mr-3.text-sm,
+a.mr-3.text-sm,
+a[href*='/tags/'].mr-3 {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88rem; /* 0.8 * 1.10 */
+}
+
+/* Blog post tag links */
+.text-sm.font-medium a,
+a.text-primary-500.hover\:text-primary-600 {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88rem; /* 0.8 * 1.10 */
+}
+
+/* Homepage tag badges - target the colored badges specifically */
+a[href*='/tags/'].rounded-full,
+a[href*='/tags/'].text-xs.font-medium,
+.inline-flex.items-center.px-2.py-0\.5.rounded-full {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.715rem !important; /* 0.65 * 1.10 */
+  padding: 0.138rem 0.413rem !important; /* scaled padding */
+  font-weight: 500 !important;
+}
+
+/* Fix blog post hierarchy with stronger distinction */
+/* Blog post titles should be prominent */
+article h2 a,
+.prose h2 a,
+main h2.text-2xl,
+h2.text-2xl {
+  font-size: 2.2rem; /* 2 * 1.10 */
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: 'Crimson Pro', Georgia, serif;
+}
+
+/* Blog post excerpts should be clearly smaller and lighter */
+.prose-gray-500,
+.text-gray-500.prose,
+article .text-gray-500,
+main article .text-gray-500,
+main .text-gray-500.dark\:text-gray-400 {
+  font-size: 1.045rem; /* 0.95 * 1.10 */
+  line-height: 1.65;
+  color: rgb(107 114 128);
+  font-weight: 400;
+}
+
+/* Blog metadata (dates, reading time) */
+.text-gray-400,
+time {
+  font-size: 0.963rem; /* 0.875 * 1.10 */
+}
+
+/* Improve readability of body text */
+p {
+  letter-spacing: 0.01em;
+}
+
+/* Make sure blog titles stand out */
+h2.text-2xl a {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 2.2rem; /* 2 * 1.10 */
+}
+
+/* Ensure proper blog post card spacing and hierarchy */
+article li,
+main article {
+  margin-bottom: 1.5rem;
+}
+
+/* Blog post link titles need to be bigger */
+a .text-2xl,
+article a h2 {
+  font-size: 1.925rem; /* 1.75 * 1.10 */
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Make excerpts visually distinct from titles */
+.prose.text-gray-500 {
+  font-size: 1.045rem; /* 0.95 * 1.10 */
+  margin-top: 0.5rem;
+}
+
+/* Target all tag links with rounded-full class */
+.rounded-full.transition-colors {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.65rem !important;
+  padding: 0.125rem 0.5rem !important;
+}
+
+/* Homepage tag badges specifically */
+.homepage-tag-badge {
+  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.688rem !important; /* 0.625 * 1.10 */
+  padding: 0.083rem 0.413rem !important; /* scaled padding */
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+/* Ensure ALL headers in body content use Crimson Pro */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+#__next h1,
+#__next h2,
+#__next h3,
+#__next h4,
+#__next h5,
+#__next h6 {
   font-family: 'Crimson Pro', Georgia, serif !important;
 }
