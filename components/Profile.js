@@ -79,13 +79,13 @@ export default function Profile() {
       <h1 className="text-center text-3xl font-bold sm:hidden">Kien Dang</h1>
       <div className="flex flex-col-reverse pt-8 pb-2 md:flex-row">
         <div className="mr-auto">
-          <h2 className=" pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <p className=" pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             👋 <TextGradient text="Hello" />
-          </h2>
+          </p>
 
-          <h2 className="sm:text-md flex pb-1 text-gray-500 dark:text-gray-400">
+          <p className="sm:text-md flex pb-1 text-gray-500 dark:text-gray-400">
             Welcome to my blog, my name is <KienPronunciation />
-          </h2>
+          </p>
           <p className="sm:text-md text-gray-500 dark:text-gray-400">
             I am a lifelong learner with a passion for solving problems via code.
           </p>

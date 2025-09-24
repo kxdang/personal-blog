@@ -60,7 +60,8 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['Gentium Plus', ...defaultTheme.fontFamily.serif],
+        serif: ['Crimson Pro', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: colors.sky,
@@ -81,18 +82,22 @@ module.exports = {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.900'),
+              fontFamily: theme('fontFamily.serif'),
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.900'),
+              fontFamily: theme('fontFamily.serif'),
             },
             h3: {
               fontWeight: '600',
               color: theme('colors.gray.900'),
+              fontFamily: theme('fontFamily.serif'),
             },
             'h4,h5,h6': {
               color: theme('colors.gray.900'),
+              fontFamily: theme('fontFamily.serif'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
@@ -149,18 +154,22 @@ module.exports = {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.100'),
+              fontFamily: theme('fontFamily.serif'),
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.100'),
+              fontFamily: theme('fontFamily.serif'),
             },
             h3: {
               fontWeight: '600',
               color: theme('colors.gray.100'),
+              fontFamily: theme('fontFamily.serif'),
             },
             'h4,h5,h6': {
               color: theme('colors.gray.100'),
+              fontFamily: theme('fontFamily.serif'),
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),

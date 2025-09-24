@@ -16,7 +16,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/crimson-pro": "5.2.8",
+    "@fontsource/gentium-plus": "5.2.7",
     "@fontsource/inter": "4.5.2",
+    "@fontsource/playfair-display": "5.2.8",
     "@heroicons/react": "2.2.0",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@next/bundle-analyzer": "^12.1.4",

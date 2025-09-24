@@ -8,9 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/crimson-pro':
+        specifier: 5.2.8
+        version: 5.2.8
+      '@fontsource/gentium-plus':
+        specifier: 5.2.7
+        version: 5.2.7
       '@fontsource/inter':
         specifier: 4.5.2
         version: 4.5.2
+      '@fontsource/playfair-display':
+        specifier: 5.2.8
+        version: 5.2.8
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@18.3.1)
@@ -1033,8 +1042,17 @@ packages:
   '@fal-works/esbuild-plugin-global-externals@2.1.2':
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
 
+  '@fontsource/crimson-pro@5.2.8':
+    resolution: {integrity: sha512-t+cAoAswUKEReDPqDNWWSyAp7baZkKrtF6Ry0KrDZQHJCldS9pIbRH0n2hm1u4+SbIUI7c+nUS9yfK6rEhycTw==}
+
+  '@fontsource/gentium-plus@5.2.7':
+    resolution: {integrity: sha512-qgkMjwE4t3XOv6bEAlddTqIC8OUfUWKphfZswkqi9+Qn5FcQu2bXi1uIqHg46xMhIrXQ3WJZkv9HZZfCdAxmhQ==}
+
   '@fontsource/inter@4.5.2':
     resolution: {integrity: sha512-4LLfZYr5dRsobtC9JNkATL5OwOqrxs2tF29eNljjogxWXm4tlHxRo4dgOFTlWxQOxcj5Zv7dM8IMiSoOqMGy3g==}
+
+  '@fontsource/playfair-display@5.2.8':
+    resolution: {integrity: sha512-fUEhib70SszNhQVsGbUMSsWJhr7Je0rdeuZdtGpDNu0GKF1xJM8QhpI/y0pckU25GcChXm9TLOmeZupkvvZo2g==}
 
   '@grpc/grpc-js@1.13.4':
     resolution: {integrity: sha512-GsFaMXCkMqkKIvwCQjCrwH+GHbPKBjhwo/8ZuUkWHqbI73Kky9I+pQltrlT0+MWpedCoosda53lgjYfyEPgxBg==}
@@ -6367,7 +6385,13 @@ snapshots:
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2': {}
 
+  '@fontsource/crimson-pro@5.2.8': {}
+
+  '@fontsource/gentium-plus@5.2.7': {}
+
   '@fontsource/inter@4.5.2': {}
+
+  '@fontsource/playfair-display@5.2.8': {}
 
   '@grpc/grpc-js@1.13.4':
     dependencies:

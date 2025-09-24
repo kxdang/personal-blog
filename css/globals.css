@@ -5,3 +5,30 @@
 .dark {
   background-color: #141414;
 }
+
+/* Apply Crimson Pro to all headings and heading-like elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose-lg h1,
+.prose-lg h2,
+.prose-lg h3,
+.prose-lg h4,
+.prose-lg h5,
+.prose-lg h6 {
+  font-family: 'Crimson Pro', Georgia, serif !important;
+}
