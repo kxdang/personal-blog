@@ -1,11 +1,9 @@
 import React from 'react'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
-import { HiLocationMarker } from 'react-icons/hi'
 import SocialIcon from '@/components/social-icons'
 import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
-import { FlagIcon } from 'react-flag-kit'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 
 import { KienPronunciation } from './KienPronunciation'
@@ -264,10 +262,38 @@ export default function Profile() {
                   </button>
                 </div>
               </div>
+
+              {/* Data Engineering */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  Data Engineering
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
+                  Building data solutions in healthcare at CGMH. Leading projects and expanding into
+                  a new domain after 7 years in web development—follow my blog for the journey!
+                </p>
+
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
+                      Python
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200">
+                      SQL
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
+                      ETL
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200">
+                      Data Pipelines
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="pb-8 text-center md:pt-0">
+        <div className="pb-8 text-center md:pt-0 flex-shrink-0">
           <Image
             src="/static/images/avatar.jpg"
             alt="avatar"
@@ -276,14 +302,11 @@ export default function Profile() {
             className="mx-auto h-48 w-48 rounded-full object-cover"
           />
           <div className="flex flex-col justify-center text-gray-600  dark:text-gray-300">
-            <div className="flex items-center justify-center pt-3">
-              <HiLocationMarker className="h-18 w-18" />{' '}
-              <span className="pl-1">Toronto, Canada </span>{' '}
-              <FlagIcon className="ml-2" code="CA" size={24} />
-            </div>
+            <div className="flex items-center justify-center pt-3"></div>
             <div className="flex justify-center space-x-3 pt-4">
               <SocialIcon kind="linkedin" href="https://www.linkedin.com/in/kien-dang/" size="6" />
               <SocialIcon kind="github" href="https://github.com/kxdang" size="6" />
+              <SocialIcon kind="website" href="https://kien.dev" size="6" />
             </div>
           </div>
         </div>
@@ -294,7 +317,7 @@ export default function Profile() {
           <h1 className="block xs:hidden">Reading</h1>
           <hr className="mx-3 mt-6 flex-grow border-gray-300 pb-2 dark:border-gray-700 sm:mt-6 md:mt-8" />
 
-          <div className="flex items-end pb-1 text-sm text-gray-600 dark:text-gray-300 sm:pb-1 md:pb-2">
+          <div className="flex items-end pb-1 text-sm text-gray-600 dark:text-gray-300 sm:pb-1 md:pb-4">
             <Link href="https://hardcover.app/@kien/books/read" target="_blank">
               <p className="hover:underline">
                 {isFetching ? ' Read ( - books)' : `Read (${bookData.numOfReadBooks} books)`}
