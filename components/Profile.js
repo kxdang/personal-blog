@@ -56,8 +56,8 @@ export default function Profile() {
           <h4 className="font-medium text-gray-900 dark:text-gray-100 text-sm mb-1 truncate group-hover:text-primary-500 transition-colors">
             {title}
           </h4>
-          <p className="text-xs text-gray-500 dark:text-gray-400 truncate">by {author}</p>
-          <div className="mt-2 flex items-center gap-1 text-xs text-gray-400">
+          <p className="text-xs text-gray-600 dark:text-gray-300 truncate">by {author}</p>
+          <div className="mt-2 flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
             <span>Reading now</span>
             <svg
               className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -83,10 +83,10 @@ export default function Profile() {
             👋 <TextGradient text="Hello" />
           </p>
 
-          <p className="sm:text-md flex pb-1 text-gray-500 dark:text-gray-400">
+          <p className="sm:text-md flex pb-1 text-gray-600 dark:text-gray-300">
             Welcome to my blog, my name is <KienPronunciation />
           </p>
-          <p className="sm:text-md text-gray-500 dark:text-gray-400">
+          <p className="sm:text-md text-gray-600 dark:text-gray-300">
             I am a lifelong learner with a passion for solving problems via code.
           </p>
           <div className="pt-6 pb-4">
@@ -96,67 +96,67 @@ export default function Profile() {
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
                   Frontend Development
                 </h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
                   Building responsive, accessible, and performant user interfaces
                 </p>
 
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
                       TypeScript
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
                       React
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-700/40 dark:text-slate-200">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-900 dark:bg-slate-700/50 dark:text-slate-200">
                       Next.js
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-900 dark:bg-pink-900/40 dark:text-pink-200">
                       GraphQL
                     </span>
                     {showAllFrontend && (
                       <>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300 animate-fadeIn">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-900 dark:bg-rose-900/40 dark:text-rose-200 animate-fadeIn">
                           Apollo
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200 animate-fadeIn"
                           style={{ animationDelay: '50ms' }}
                         >
                           Redux
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-200 animate-fadeIn"
                           style={{ animationDelay: '100ms' }}
                         >
                           Tailwind
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200 animate-fadeIn"
                           style={{ animationDelay: '150ms' }}
                         >
                           Zustand
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900 dark:bg-yellow-900/40 dark:text-yellow-200 animate-fadeIn"
                           style={{ animationDelay: '200ms' }}
                         >
                           JavaScript
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200 animate-fadeIn"
                           style={{ animationDelay: '250ms' }}
                         >
                           Node.js
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200 animate-fadeIn"
                           style={{ animationDelay: '300ms' }}
                         >
                           Figma
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200 animate-fadeIn"
                           style={{ animationDelay: '350ms' }}
                         >
                           Photoshop
@@ -166,7 +166,7 @@ export default function Profile() {
                   </div>
                   <button
                     onClick={() => setShowAllFrontend(!showAllFrontend)}
-                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 flex items-center gap-1 transition-colors"
+                    className="text-xs text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 flex items-center gap-1 transition-colors font-medium"
                   >
                     {showAllFrontend ? (
                       <>
@@ -186,61 +186,61 @@ export default function Profile() {
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
                   Platform Engineering
                 </h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
                   Building tools, improving DX, and ensuring system reliability
                 </p>
 
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200">
                       Datadog
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200">
                       CircleCI
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200">
                       PostHog
                     </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200">
                       Playwright
                     </span>
                     {showAllPlatform && (
                       <>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300 animate-fadeIn">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-200 animate-fadeIn">
                           Bugsnag
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200 animate-fadeIn"
                           style={{ animationDelay: '50ms' }}
                         >
                           Git
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-700/40 dark:text-zinc-200 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-900 dark:bg-zinc-700/50 dark:text-zinc-200 animate-fadeIn"
                           style={{ animationDelay: '100ms' }}
                         >
                           GitHub
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-900 dark:bg-sky-900/40 dark:text-sky-200 animate-fadeIn"
                           style={{ animationDelay: '150ms' }}
                         >
                           Webpack
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200 animate-fadeIn"
                           style={{ animationDelay: '200ms' }}
                         >
                           Vite
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-900 dark:bg-red-900/40 dark:text-red-200 animate-fadeIn"
                           style={{ animationDelay: '250ms' }}
                         >
                           RTL
                         </span>
                         <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 animate-fadeIn"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200 animate-fadeIn"
                           style={{ animationDelay: '300ms' }}
                         >
                           Happo
@@ -250,7 +250,7 @@ export default function Profile() {
                   </div>
                   <button
                     onClick={() => setShowAllPlatform(!showAllPlatform)}
-                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 flex items-center gap-1 transition-colors"
+                    className="text-xs text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 flex items-center gap-1 transition-colors font-medium"
                   >
                     {showAllPlatform ? (
                       <>
@@ -275,7 +275,7 @@ export default function Profile() {
             height={150}
             className="mx-auto h-48 w-48 rounded-full object-cover"
           />
-          <div className="flex flex-col justify-center text-gray-500  dark:text-gray-400">
+          <div className="flex flex-col justify-center text-gray-600  dark:text-gray-300">
             <div className="flex items-center justify-center pt-3">
               <HiLocationMarker className="h-18 w-18" />{' '}
               <span className="pl-1">Toronto, Canada </span>{' '}
@@ -294,7 +294,7 @@ export default function Profile() {
           <h1 className="block xs:hidden">Reading</h1>
           <hr className="mx-3 mt-6 flex-grow border-gray-300 pb-2 dark:border-gray-700 sm:mt-6 md:mt-8" />
 
-          <div className="flex items-end pb-1 text-sm text-gray-500 dark:text-gray-400 sm:pb-1 md:pb-2">
+          <div className="flex items-end pb-1 text-sm text-gray-600 dark:text-gray-300 sm:pb-1 md:pb-2">
             <Link href="https://hardcover.app/@kien/books/read" target="_blank">
               <p className="hover:underline">
                 {isFetching ? ' Read ( - books)' : `Read (${bookData.numOfReadBooks} books)`}
