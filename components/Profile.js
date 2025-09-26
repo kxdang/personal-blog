@@ -87,6 +87,10 @@ export default function Profile() {
           <p className="sm:text-md text-gray-600 dark:text-gray-300">
             I am a lifelong learner with a passion for solving problems via code.
           </p>
+          <p className="sm:text-md text-gray-600 dark:text-gray-300">
+            Here is where I write my technical thoughts, document my learning journey and
+            introspection with my career growth.
+          </p>
           <div className="pt-6 pb-4">
             <div className="space-y-4">
               {/* Frontend Development */}

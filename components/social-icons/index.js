@@ -3,7 +3,7 @@ import Github from './github.svg'
 import Facebook from './facebook.svg'
 import Youtube from './youtube.svg'
 import Linkedin from './linkedin.svg'
-import Website from './website.svg'
+import { IdentificationIcon } from '@heroicons/react/24/solid'
 
 // Icons taken from: https://simpleicons.org/
 
@@ -13,7 +13,7 @@ const components = {
   facebook: Facebook,
   youtube: Youtube,
   linkedin: Linkedin,
-  website: Website,
+  website: IdentificationIcon,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {
@@ -21,6 +21,7 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
     return null
 
   const SocialSvg = components[kind]
+  const isHeroicon = kind === 'website'
 
   return (
     <a
@@ -31,7 +32,9 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 h-${size} w-${size}`}
+        className={`${
+          isHeroicon ? '' : 'fill-current'
+        } text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 h-${size} w-${size}`}
       />
     </a>
   )
