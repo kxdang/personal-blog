@@ -174,9 +174,8 @@ a[href*='/tags/'] .text-xs {
   font-size: 0.825rem; /* 0.75 * 1.10 */
 }
 
-/* Badge/pill styling - use Inter and standard sizes */
+/* Badge/pill styling - standard sizes */
 span.rounded-full {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 0.825rem; /* 0.75 * 1.10 */
 }
 
@@ -279,14 +278,12 @@ article a h2 {
 
 /* Target all tag links with rounded-full class */
 .rounded-full.transition-colors {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   font-size: 0.65rem !important;
   padding: 0.125rem 0.5rem !important;
 }
 
 /* Homepage tag badges specifically */
 .homepage-tag-badge {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   font-size: 0.688rem !important; /* 0.625 * 1.10 */
   padding: 0.083rem 0.413rem !important; /* scaled padding */
   font-weight: 500 !important;

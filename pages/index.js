@@ -104,11 +104,6 @@ export default function Home({ posts }) {
                               key={tag}
                               href={`/tags/${tag}`}
                               className={`homepage-tag-badge inline-flex items-center px-1.5 py-0.5 rounded-full transition-colors text-xs font-medium ${colorClasses[colorIndex]}`}
-                              style={{
-                                fontFamily: 'InterVariable, -apple-system, sans-serif',
-                                fontSize: '0.715rem',
-                                fontWeight: 500,
-                              }}
                             >
                               {tag}
                             </Link>
