@@ -1,0 +1,46 @@
+---
+id: restaurant-id-here
+name: Restaurant Name
+cuisine: Cuisine Type
+location: City, State
+rating: 4.5
+ratings:
+  food: 5
+  service: 4.5
+  atmosphere: 4.5
+  value: 4
+priceRange: $$$
+visitDate: 2025-01-20
+vibe: Describe the vibe
+mustTry:
+  - Signature Dish 1
+  - Signature Dish 2
+  - Signature Cocktail
+photos: auto  # or use a number like 15 for numbered photos
+wouldReturn: true
+tags:
+  - tag1
+  - tag2
+  - tag3
+excerpt: A one-line summary for the restaurant card
+---
+
+## Atmosphere
+
+Describe the ambiance, decor, music, crowd, energy level. What makes this place special? How did it make you feel when you walked in?
+
+## The Food
+
+Talk about the dishes you tried. What stood out? How were the flavors, presentation, portion sizes? Any surprises or disappointments?
+
+## Service
+
+How was the service? Were the staff knowledgeable? Did they make good recommendations? Was the pacing good?
+
+## Favorite Memory
+
+"Share a special moment or memorable experience from your visit. Could be a dish, an interaction, or just a perfect moment."
+
+## Final Thoughts
+
+Sum up your experience. Who would you recommend this to? What occasion is it perfect for? Would you return?

@@ -70,7 +70,13 @@ module.exports = withContentlayer(
       ]
     },
     images: {
-      domains: ['i.gr-assets.com', 'covers.openlibrary.org', 'assets.hardcover.app'],
+      domains: [
+        'i.gr-assets.com',
+        'covers.openlibrary.org',
+        'assets.hardcover.app',
+        'via.placeholder.com',
+        'res.cloudinary.com',
+      ],
     },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({

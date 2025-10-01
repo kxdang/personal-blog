@@ -21,11 +21,11 @@ export default function PostCard({ posts, maxDisplay = 3 }) {
                     {title}
                   </h5>
                 </Link>
-                <div className=" mb-3 text-sm text-gray-700 dark:text-gray-400">
+                <div className=" mb-3 text-sm text-gray-700 dark:text-gray-300">
                   {' '}
                   <time dateTime={date}>{formatDate(date)}</time> • <span>{readingTime.text}</span>
                 </div>
-                <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-400">
+                <p className="mb-3 text-sm font-normal text-gray-700 dark:text-gray-300">
                   {summary}
                 </p>
               </div>
