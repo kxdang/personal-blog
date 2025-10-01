@@ -52,11 +52,20 @@ const RestaurantCard = ({ restaurant }) => {
               </div>
             </div>
 
-            {mainPhoto && (
+            {mainPhoto ? (
               <div className="relative h-64 w-full overflow-hidden rounded-lg">
                 <Image src={mainPhoto.url} alt={mainPhoto.alt} fill className="object-cover" />
               </div>
-            )}
+            ) : restaurant.comingSoon ? (
+              <div className="relative h-64 w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
+                <div className="text-center">
+                  <span className="text-6xl mb-3 block">📸</span>
+                  <span className="text-lg font-medium text-gray-600 dark:text-gray-400">
+                    Photos Coming Soon
+                  </span>
+                </div>
+              </div>
+            ) : null}
 
             {restaurant.review?.overall && (
               <div className="prose max-w-none text-gray-600 dark:text-gray-300">

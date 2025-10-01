@@ -137,6 +137,8 @@ export const Authors = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog, Authors],
+  disableImportAliasWarning: true,
+  contentDirExclude: ['restaurants'], // Exclude restaurants folder from Contentlayer
   mdx: {
     esbuildOptions(options) {
       options.loader = {

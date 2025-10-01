@@ -74,7 +74,41 @@ export default function RestaurantReview({ restaurant, content }) {
         title={`${restaurant.name} - Restaurant Review - ${siteMetadata.author}`}
         description={description}
       />
-      {content ? (
+      {restaurant.comingSoon ? (
+        <div className="divide-y divide-gray-200 dark:divide-gray-700 min-h-screen">
+          <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              {restaurant.name}
+            </h1>
+            <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400">
+              <span className="flex items-center">
+                <span className="text-yellow-500 mr-1">★</span>
+                {restaurant.rating}/5
+              </span>
+              <span>•</span>
+              <span>{restaurant.cuisine}</span>
+              <span>•</span>
+              <span>{restaurant.location}</span>
+              <span>•</span>
+              <span>{restaurant.priceRange}</span>
+            </div>
+          </div>
+          <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0 pt-8">
+            <div className="xl:col-span-3">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg p-12 text-center">
+                <span className="text-8xl mb-6 block">🍽️</span>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                  Review Coming Soon
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  {restaurant.excerpt ||
+                    `I'm still working on the full review for ${restaurant.name}. Check back soon for detailed thoughts, photos, and recommendations!`}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : content ? (
         <RestaurantMDXLayout restaurant={restaurant} content={content} />
       ) : (
         <RestaurantReviewLayout restaurant={restaurant} />

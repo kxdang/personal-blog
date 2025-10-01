@@ -2,9 +2,13 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
+import RestaurantSection from '@/components/RestaurantSection'
 import siteMetadata from '@/data/siteMetadata'
 import { sortedBlogPost, allCoreContent } from '@/lib/contentlayer'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { getAllRestaurants } from '@/lib/restaurants'
+import { generateNumberedPhotos } from '@/lib/cloudinary'
+import { fetchCloudinaryFolder } from '@/lib/cloudinary-server'
 
 const MAX_DISPLAY = 6
 
@@ -12,12 +16,48 @@ export async function getStaticProps() {
   const posts = sortedBlogPost()
   const simplifiedPosts = allCoreContent(posts)
 
-  return { props: { posts: simplifiedPosts } }
+  // Get restaurants for the homepage
+  const allRestaurants = await getAllRestaurants()
+
+  // Process restaurant images
+  const restaurantsWithImages = await Promise.all(
+    allRestaurants.map(async (restaurant) => {
+      let photos = []
+
+      if (restaurant.photos === 'auto') {
+        photos = await fetchCloudinaryFolder(restaurant.id)
+      } else if (typeof restaurant.photos === 'number') {
+        photos = generateNumberedPhotos(restaurant.photos, {
+          folder: restaurant.id,
+          altPrefix: restaurant.name,
+        })
+      } else if (Array.isArray(restaurant.photos)) {
+        photos = restaurant.photos
+      }
+
+      return {
+        ...restaurant,
+        photos: photos.slice(0, 1), // Only need first image for homepage
+      }
+    })
+  )
+
+  // Sort by visit date (most recent first)
+  const sortedRestaurants = restaurantsWithImages.sort((a, b) => {
+    return new Date(b.visitDate) - new Date(a.visitDate)
+  })
+
+  return {
+    props: {
+      posts: simplifiedPosts,
+      restaurants: sortedRestaurants,
+    },
+  }
 }
 
 const queryClient = new QueryClient()
 
-export default function Home({ posts }) {
+export default function Home({ posts, restaurants }) {
   const selectedTitles = [
     '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel’s Free Tier)',
     '♠️ Five Years as an IC - A Blink and a Lifetime in Tech',
@@ -40,6 +80,10 @@ export default function Home({ posts }) {
           <PostCard posts={filteredPosts} />
         </div>
       </div>
+
+      {/* Restaurant Section */}
+      {restaurants && restaurants.length > 0 && <RestaurantSection restaurants={restaurants} />}
+
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-2">
           <h3 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
