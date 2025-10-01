@@ -20,7 +20,7 @@ export default function RestaurantLayout({ restaurants }) {
             <div className="text-6xl animate-bounce">🍴</div>
           </div>
           <p className="text-lg leading-7 text-gray-600 dark:text-gray-300">
-            My journey through different cuisines and dining experiences.
+            My journey through different cuisines and dining experiences 😋
           </p>
         </div>
         <div className="py-12">
