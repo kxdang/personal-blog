@@ -48,7 +48,7 @@ const restaurantsData = [
     name: 'Hexagon',
     cuisine: 'Contemporary Canadian',
     location: 'Oakville, ON',
-    rating: 4.45,
+    rating: 4.25,
     priceRange: '$$$$',
     visitDate: '2024-10-08',
     vibe: 'Coming Soon',
