@@ -16,7 +16,7 @@ const RestaurantSection = ({ restaurants }) => {
           <h3 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
             🍽️ Dining Adventures
           </h3>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
+          <p className="text-gray-500 dark:text-gray-200 text-sm">
             I really like to eat food and enjoy dining experiences.
           </p>
         </div>

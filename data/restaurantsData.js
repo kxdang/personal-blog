@@ -72,8 +72,8 @@ const restaurantsData = [
     comingSoon: true,
   },
   {
-    id: 'alloette',
-    name: 'Alloette Restaurant',
+    id: 'aloette',
+    name: 'Aloette Restaurant',
     cuisine: 'French Cuisine',
     location: 'Toronto, ON',
     rating: 4.25,
