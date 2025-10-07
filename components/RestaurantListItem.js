@@ -25,9 +25,6 @@ const RestaurantListItem = ({ restaurant }) => {
         </span>
       </td>
       <td className="px-3 py-3 text-sm text-gray-600 dark:text-gray-300">
-        {restaurant.priceRange}
-      </td>
-      <td className="px-3 py-3 text-sm text-gray-600 dark:text-gray-300">
         {formatDate(restaurant.visitDate)}
       </td>
     </tr>

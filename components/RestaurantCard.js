@@ -19,9 +19,6 @@ const RestaurantCard = ({ restaurant }) => {
             <div className="mt-1">
               <span className="text-sm">{restaurant.cuisine}</span>
             </div>
-            <div className="mt-1">
-              <span className="text-sm">{restaurant.priceRange}</span>
-            </div>
           </dd>
         </dl>
 

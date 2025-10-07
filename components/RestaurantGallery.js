@@ -119,9 +119,6 @@ const RestaurantGallery = ({ restaurants }) => {
                   Rating
                 </th>
                 <th className="px-3 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">
-                  Price
-                </th>
-                <th className="px-3 py-3 text-left text-sm font-medium text-gray-900 dark:text-gray-100">
                   Visited
                 </th>
               </tr>
@@ -129,7 +126,7 @@ const RestaurantGallery = ({ restaurants }) => {
             <tbody>
               {sortedRestaurants.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="py-12 text-center text-gray-500 dark:text-gray-300">
+                  <td colSpan="5" className="py-12 text-center text-gray-500 dark:text-gray-300">
                     No restaurants yet. Start adding your culinary adventures!
                   </td>
                 </tr>
