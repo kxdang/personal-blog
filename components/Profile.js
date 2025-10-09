@@ -39,7 +39,7 @@ export default function Profile() {
       <Link
         href={url}
         target="__blank"
-        className="group flex gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+        className="group flex gap-4 p-4 rounded-lg transition-all duration-300 hover:bg-[#f0ebe3] dark:hover:bg-gray-800/50"
       >
         <div className="flex-shrink-0">
           <Image
