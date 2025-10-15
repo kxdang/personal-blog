@@ -1,6 +1,7 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import readingTime from 'reading-time'
 import path from 'path'
+import { extractTocHeadings } from './lib/contentlayer.js'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import remarkFootnotes from 'remark-footnotes'
@@ -21,6 +22,7 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName,
   },
+  toc: { type: 'json', resolve: (doc) => extractTocHeadings(doc.body.raw) },
   structuredData: {
     type: 'json',
     resolve: (doc) => ({

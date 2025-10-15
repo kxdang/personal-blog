@@ -49,7 +49,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Blog({ post, authorDetails, prev, next }) {
-  const { body, ...frontMatter } = post
+  const { body, toc, ...frontMatter } = post
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           mdxSource={body.code}
-          toc={[]}
+          toc={toc}
           frontMatter={frontMatter}
           authorDetails={authorDetails}
           prev={prev}
