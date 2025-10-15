@@ -59,8 +59,8 @@ const queryClient = new QueryClient()
 
 export default function Home({ posts, restaurants }) {
   const selectedTitles = [
+    '🎒My Portfolio Career Era',
     '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel’s Free Tier)',
-    '♠️ Five Years as an IC - A Blink and a Lifetime in Tech',
     '📊My Year Journey in Becoming a Developer',
   ]
 
