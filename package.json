@@ -43,7 +43,7 @@
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.3.0",
     "postcss": "^8.4.5",
-    "posthog-js": "^1.266.0",
+    "posthog-js": "^1.298.1",
     "preact": "^10.19.0",
     "react": "^18.3.0",
     "react-chartjs-2": "^4.3.1",
