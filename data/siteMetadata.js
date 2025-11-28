@@ -11,7 +11,6 @@ const siteMetadata = {
   // siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.jpg',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'hello@kien.dev',
   github: 'https://github.com/kxdang',
   linkedin: 'https://www.linkedin.com/in/kien-dang',
   locale: 'en-US',
