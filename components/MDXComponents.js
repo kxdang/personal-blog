@@ -5,10 +5,12 @@ import Image from './Image'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
+import { CloudinaryCarousel } from './CloudinaryCarousel'
 
 export const MDXComponents = {
   Image,
   TOCInline,
+  CloudinaryCarousel,
   a: CustomLink,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
