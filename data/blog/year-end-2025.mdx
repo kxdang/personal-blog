@@ -24,11 +24,13 @@ style={{
           border: 'none',
           background: 'transparent',
           padding: 0,
+          paddingRight: '0.25em',
           display: 'inline',
           font: 'inherit',
         }}
 onMouseEnter={e => (e.currentTarget.style.color = '#0284c7')}
-onMouseLeave={e => (e.currentTarget.style.color = '#0ea5e9')} >
+onMouseLeave={e => (e.currentTarget.style.color = '#0ea5e9')}
+>
 10k steps
 </button>
 
@@ -37,20 +39,55 @@ onMouseLeave={e => (e.currentTarget.style.color = '#0ea5e9')} >
           onClick={() => setOpen(false)}
           style={{
             position: 'fixed',
-            inset: 0,
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
             background: 'rgba(0,0,0,0.75)',
             zIndex: 1000,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             animation: 'fadeIn 180ms ease',
+            overflow: 'auto',
           }}
         >
+          <button
+            onClick={() => setOpen(false)}
+            style={{
+              position: 'fixed',
+              top: '20px',
+              right: '20px',
+              background: 'rgba(255, 255, 255, 0.9)',
+              border: 'none',
+              borderRadius: '50%',
+              width: '40px',
+              height: '40px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '24px',
+              lineHeight: '1',
+              color: '#000',
+              zIndex: 1001,
+              transition: 'background 150ms ease',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 1)')}
+            onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)')}
+            aria-label="Close modal"
+          >
+            ×
+          </button>
           <div
             onClick={e => e.stopPropagation()}
             style={{
-              maxWidth: '95vw',
-              maxHeight: '95vh',
+              margin: 'auto',
+              maxWidth: 'calc(100vw - 40px)',
+              maxHeight: 'calc(100vh - 40px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               animation: 'scaleIn 180ms ease',
             }}
           >
@@ -58,9 +95,11 @@ onMouseLeave={e => (e.currentTarget.style.color = '#0ea5e9')} >
               src="/static/images/steps-2025.png"
               alt="Graph of my 2025 daily steps"
               style={{
-                width: '100%',
+                maxWidth: '100%',
+                maxHeight: 'calc(100vh - 40px)',
+                width: 'auto',
                 height: 'auto',
-                maxHeight: '95vh',
+                objectFit: 'contain',
                 display: 'block',
               }}
             />
@@ -99,7 +138,7 @@ It is December, and I guess it is time to write about my current highlights, goa
 - 💍 Got married - huge thanks to <a href="https://www.instagram.com/catherinegocephoto/" target="_blank">@catherinegocephoto</a> for capturing our day and getting us featured on <a href="https://www.instagram.com/p/DRPYBdpjIte/?img_index=3" target="_blank">@thewed</a>
 - 🚗 Bought a new car
 - 🏠 Bought a house
-- 👟 Walked <TenKSteps />
+- 👟 Walked <TenKSteps /> daily for the entire year
 - 📚 Read <a href="https://hardcover.app/@kien/goals/43143" target="_blank">28 books</a> this year
 - 🇨🇦 Built <a href="https://canadianrecalls.ca" target="_blank">CanadianRecalls.ca</a>
 - 🎤 Did my first <a href="https://civictech.ca/hacknights/515/" target="_blank">public speaking engagement</a> about my civic tech project
