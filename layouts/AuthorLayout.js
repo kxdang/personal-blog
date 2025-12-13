@@ -2,24 +2,38 @@ import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 import Timeline from '@/components/Timeline'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, linkedin, github } = frontMatter
 
-  const [expanded, setExpanded] = useState(false)
+  const [showTimeline, setShowTimeline] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const quoteRef = useRef(null)
+  const timelineRef = useRef(null)
 
-  const handleButtonClick = () => {
-    setExpanded(!expanded)
-  }
   useEffect(() => {
-    const isLocalStorageAvailable =
-      typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
+    const timelineObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowTimeline(true)
+          // Delay the animation slightly for a smoother effect
+          setTimeout(() => setIsVisible(true), 100)
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -200px 0px',
+      }
+    )
 
-    if (isLocalStorageAvailable) {
-      const storedExpanded = localStorage.getItem('expanded')
-      if (storedExpanded !== null) {
-        setExpanded(storedExpanded === 'true')
+    if (timelineRef.current) {
+      timelineObserver.observe(timelineRef.current)
+    }
+
+    return () => {
+      if (timelineRef.current) {
+        timelineObserver.unobserve(timelineRef.current)
       }
     }
   }, [])
@@ -52,21 +66,63 @@ export default function AuthorLayout({ children, frontMatter }) {
             </div>
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
-          <div className="pb-10 text-gray-700 dark:text-gray-300 xl:col-span-2 xl:col-start-2">
-            If you're interested in my journey into becoming a developer, click more
-            <div className="flex justify-center">
-              <button
-                className="group relative mt-10 mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-cyan-200 group-hover:from-cyan-500 group-hover:to-blue-500 dark:text-white dark:focus:ring-cyan-800"
-                onClick={handleButtonClick}
-              >
-                <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                  {expanded ? 'hide' : 'more'}
-                </span>
-              </button>
+
+          {/* Quote Section */}
+          <div className="xl:col-span-3 pt-16 pb-8 flex flex-col items-center justify-center">
+            <div className="relative max-w-4xl mx-auto px-4">
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -left-4 text-6xl text-primary-500/20 dark:text-primary-400/20 font-serif">
+                "
+              </div>
+              <div className="absolute -bottom-4 -right-4 text-6xl text-primary-500/20 dark:text-primary-400/20 font-serif transform rotate-180">
+                "
+              </div>
+
+              {/* Quote */}
+              <blockquote className="relative text-center py-8">
+                <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-relaxed">
+                  Journey before destination
+                </p>
+                <footer className="mt-6 text-sm md:text-base text-gray-500 dark:text-gray-400 italic">
+                  — IYKYK 📖
+                </footer>
+              </blockquote>
+
+              {/* Scroll indicator */}
+              {!showTimeline && (
+                <div className="flex flex-col items-center mt-8 animate-bounce">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    Scroll to explore my journey
+                  </p>
+                  <svg
+                    className="w-6 h-6 text-primary-500 dark:text-primary-400"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                  </svg>
+                </div>
+              )}
             </div>
           </div>
 
-          {expanded && <Timeline />}
+          {/* Timeline Trigger Point */}
+          <div ref={timelineRef} className="xl:col-span-3 h-32" />
+
+          {/* Timeline with fade-in animation */}
+          <div className="xl:col-span-3">
+            <div
+              className={`transition-all duration-1000 ease-out ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
+              {showTimeline && <Timeline />}
+            </div>
+          </div>
         </div>
       </div>
     </>
