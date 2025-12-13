@@ -25,10 +25,13 @@ const RestaurantGallery = ({ restaurants }) => {
     (a, b) => new Date(b.visitDate) - new Date(a.visitDate)
   )
 
+  // Filter out 'coming soon' restaurants from card view only
+  const cardViewRestaurants = sortedRestaurants.filter((r) => !r.comingSoon)
+
   return (
     <div>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 flex-1">
+      <div className="mb-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
             <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {stats.totalVisits}
@@ -42,7 +45,7 @@ const RestaurantGallery = ({ restaurants }) => {
             <div className="text-sm text-gray-500 dark:text-gray-300">Avg Rating</div>
           </div>
           <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
-            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 break-words">
               {stats.topCuisine}
             </div>
             <div className="text-sm text-gray-500 dark:text-gray-300">Favourite Cuisine</div>
@@ -54,8 +57,10 @@ const RestaurantGallery = ({ restaurants }) => {
             <div className="text-sm text-gray-500 dark:text-gray-300">Cities Explored</div>
           </div>
         </div>
+      </div>
 
-        <div className="flex gap-2 self-start sm:self-center">
+      <div className="flex justify-end mb-8">
+        <div className="flex gap-2">
           <button
             onClick={() => setViewMode('card')}
             className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
@@ -91,12 +96,12 @@ const RestaurantGallery = ({ restaurants }) => {
 
       {viewMode === 'card' ? (
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {sortedRestaurants.length === 0 ? (
+          {cardViewRestaurants.length === 0 ? (
             <li className="py-12 text-center text-gray-500 dark:text-gray-300">
               No restaurants yet. Start adding your culinary adventures!
             </li>
           ) : (
-            sortedRestaurants.map((restaurant) => (
+            cardViewRestaurants.map((restaurant) => (
               <RestaurantCard key={restaurant.id} restaurant={restaurant} />
             ))
           )}

@@ -2,8 +2,8 @@ import Link from '@/components/Link'
 import Image from 'next/image'
 
 const RestaurantSection = ({ restaurants }) => {
-  // Only show the most recent 3 restaurants
-  const displayRestaurants = restaurants.slice(0, 3)
+  // Filter out 'coming soon' restaurants and show the most recent 3
+  const displayRestaurants = restaurants.filter((r) => !r.comingSoon).slice(0, 3)
 
   if (!displayRestaurants || displayRestaurants.length === 0) {
     return null
@@ -67,10 +67,10 @@ const RestaurantSection = ({ restaurants }) => {
                   {restaurant.name}
                 </h4>
 
-                <div className="mt-1 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                  <span>{restaurant.cuisine}</span>
+                <div className="mt-1 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 flex-wrap">
+                  <span className="break-words">{restaurant.cuisine}</span>
                   <span>•</span>
-                  <span>{restaurant.location}</span>
+                  <span className="break-words">{restaurant.location}</span>
                 </div>
 
                 {restaurant.excerpt && (

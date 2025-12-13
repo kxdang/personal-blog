@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
+  const router = useRouter()
 
   const onToggleNav = () => {
     setNavShow((status) => {
@@ -21,7 +23,7 @@ const MobileNav = () => {
     <div className="sm:hidden">
       <button
         type="button"
-        className="ml-1 mr-1 h-8 w-8 rounded py-1"
+        className="ml-1 mr-1 h-8 w-8 rounded p-1 flex items-center justify-center"
         aria-label="Toggle Menu"
         onClick={onToggleNav}
       >
@@ -65,17 +67,26 @@ const MobileNav = () => {
           </button>
         </div>
         <nav className="fixed mt-8 h-full">
-          {headerNavLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
-              <Link
-                href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                onClick={onToggleNav}
+          {headerNavLinks.map((link) => {
+            const isActive =
+              router.pathname === link.href || router.pathname.startsWith(link.href + '/')
+            return (
+              <div
+                key={link.title}
+                className={`px-12 py-4 border-l-4 transition-colors ${
+                  isActive ? 'border-primary-500 dark:border-primary-400' : 'border-transparent'
+                }`}
               >
-                {link.title}
-              </Link>
-            </div>
-          ))}
+                <Link
+                  href={link.href}
+                  className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                  onClick={onToggleNav}
+                >
+                  {link.title}
+                </Link>
+              </div>
+            )
+          })}
         </nav>
       </div>
     </div>
