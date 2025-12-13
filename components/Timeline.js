@@ -253,7 +253,7 @@ export default function Timeline() {
             </p>
           </TimelineItem>
           {/* Branching Timeline - Current Roles */}
-          <li className="mb-10 ml-6">
+          <TimelineItem index={7}>
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
                 Dual Career Path
@@ -314,7 +314,7 @@ export default function Timeline() {
                 </div>
               </div>
             </div>
-          </li>
+          </TimelineItem>
         </ol>
       </div>
     </div>

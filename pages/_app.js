@@ -10,7 +10,7 @@ import '@fontsource/crimson-pro/400.css'
 import '@fontsource/crimson-pro/600.css'
 import '@fontsource/crimson-pro/700.css'
 
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider, useTheme } from 'next-themes'
 import Head from 'next/head'
 import Snowfall from 'react-snowfall'
 
@@ -25,26 +25,33 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 const isDecemberOrJanuary = [11, 0].includes(new Date().getMonth())
 
+function SnowEffect({ currentPathname }) {
+  const { theme, resolvedTheme } = useTheme()
+  const shouldSnow =
+    ['/', '/blog', '/tags', '/about'].includes(currentPathname) && isDecemberOrJanuary
+
+  const snowColor = theme === 'dark' || resolvedTheme === 'dark' ? '#ffffff' : '#6b7280'
+
+  return shouldSnow ? (
+    <Snowfall
+      style={{
+        position: 'fixed',
+        width: '100vw',
+        height: '100vh',
+      }}
+      color={snowColor}
+      snowflakeCount={28}
+    />
+  ) : null
+}
+
 export default function App({ Component, pageProps }) {
   const router = useRouter()
   const currentPathname = router.pathname
 
-  const shouldSnow =
-    ['/', '/blog', '/tags', '/about'].includes(currentPathname) && isDecemberOrJanuary
-
   return (
     <>
-      {shouldSnow ? (
-        <Snowfall
-          style={{
-            position: 'fixed',
-            width: '100vw',
-            height: '100vh',
-          }}
-          color="white"
-          snowflakeCount={28}
-        />
-      ) : null}
+      <SnowEffect currentPathname={currentPathname} />
 
       <PHProvider>
         <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
