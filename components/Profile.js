@@ -4,7 +4,6 @@ import Link from '@/components/Link'
 import SocialIcon from '@/components/social-icons'
 import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 
 import { KienPronunciation } from './KienPronunciation'
 import TextGradient from '@/components/TextGradient'
@@ -18,8 +17,6 @@ const fetchBookData = async () => {
 
 export default function Profile() {
   const [bookData, setBookData] = useState(undefined)
-  const [showAllFrontend, setShowAllFrontend] = useState(false)
-  const [showAllPlatform, setShowAllPlatform] = useState(false)
 
   const { data, isLoading } = useQuery('bookData', fetchBookData)
 
@@ -81,216 +78,49 @@ export default function Profile() {
             👋 <TextGradient text="Hello" />
           </p>
 
-          <p className="sm:text-md flex pb-1 text-gray-600 dark:text-gray-300">
+          <p className="sm:text-md flex pb-2 text-gray-600 dark:text-gray-300">
             Welcome to my blog, my name is <KienPronunciation />
           </p>
-          <p className="sm:text-md text-gray-600 dark:text-gray-300">
+          <p className="sm:text-md pb-2 text-gray-600 dark:text-gray-300">
             I am a lifelong learner with a passion for solving problems via code.
           </p>
-          <p className="sm:text-md text-gray-600 dark:text-gray-300">
+          <p className="sm:text-md pb-2 text-gray-600 dark:text-gray-300">
             Here is where I write my technical thoughts, document my learning journey and
             introspection with my career growth. Also, I give honest reviews of my dining
             experiences.
           </p>
-          <div className="pt-6 pb-4">
+          <div className="pt-4 pb-4">
             <div className="space-y-4">
-              {/* Frontend Development */}
+              {/* Currently Working On */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  Frontend Development
+                  Currently Working On
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  Building responsive, accessible, and performant user interfaces
+                  Software engineer at theScore and building data solutions in healthcare at CGMH.
+                  Expanding my T-shaped skillset across web development and data engineering—follow
+                  my blog for the journey!
                 </p>
 
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
                       TypeScript
                     </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
                       React
                     </span>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-900 dark:bg-slate-700/50 dark:text-slate-200">
                       Next.js
                     </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-pink-100 text-pink-900 dark:bg-pink-900/40 dark:text-pink-200">
-                      GraphQL
-                    </span>
-                    {showAllFrontend && (
-                      <>
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-rose-100 text-rose-900 dark:bg-rose-900/40 dark:text-rose-200 animate-fadeIn">
-                          Apollo
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200 animate-fadeIn"
-                          style={{ animationDelay: '50ms' }}
-                        >
-                          Redux
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-200 animate-fadeIn"
-                          style={{ animationDelay: '100ms' }}
-                        >
-                          Tailwind
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200 animate-fadeIn"
-                          style={{ animationDelay: '150ms' }}
-                        >
-                          Zustand
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-900 dark:bg-yellow-900/40 dark:text-yellow-200 animate-fadeIn"
-                          style={{ animationDelay: '200ms' }}
-                        >
-                          JavaScript
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200 animate-fadeIn"
-                          style={{ animationDelay: '250ms' }}
-                        >
-                          Node.js
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-900 dark:bg-violet-900/40 dark:text-violet-200 animate-fadeIn"
-                          style={{ animationDelay: '300ms' }}
-                        >
-                          Figma
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200 animate-fadeIn"
-                          style={{ animationDelay: '350ms' }}
-                        >
-                          Photoshop
-                        </span>
-                      </>
-                    )}
-                  </div>
-                  <button
-                    onClick={() => setShowAllFrontend(!showAllFrontend)}
-                    className="text-sm text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 flex items-center gap-1 transition-colors font-medium mt-2"
-                  >
-                    {showAllFrontend ? (
-                      <>
-                        Show less <ChevronUpIcon className="h-4 w-4" />
-                      </>
-                    ) : (
-                      <>
-                        Show 8 more <ChevronDownIcon className="h-4 w-4" />
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Platform Engineering */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  Platform Engineering
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  Building tools, improving DX, and ensuring system reliability
-                </p>
-
-                <div className="space-y-3">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200">
-                      Datadog
-                    </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200">
-                      CircleCI
-                    </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200">
-                      PostHog
-                    </span>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-900 dark:bg-green-900/40 dark:text-green-200">
-                      Playwright
-                    </span>
-                    {showAllPlatform && (
-                      <>
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-900 dark:bg-indigo-900/40 dark:text-indigo-200 animate-fadeIn">
-                          Bugsnag
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200 animate-fadeIn"
-                          style={{ animationDelay: '50ms' }}
-                        >
-                          Git
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-900 dark:bg-zinc-700/50 dark:text-zinc-200 animate-fadeIn"
-                          style={{ animationDelay: '100ms' }}
-                        >
-                          GitHub
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-900 dark:bg-sky-900/40 dark:text-sky-200 animate-fadeIn"
-                          style={{ animationDelay: '150ms' }}
-                        >
-                          Webpack
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200 animate-fadeIn"
-                          style={{ animationDelay: '200ms' }}
-                        >
-                          Vite
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-900 dark:bg-red-900/40 dark:text-red-200 animate-fadeIn"
-                          style={{ animationDelay: '250ms' }}
-                        >
-                          RTL
-                        </span>
-                        <span
-                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200 animate-fadeIn"
-                          style={{ animationDelay: '300ms' }}
-                        >
-                          Happo
-                        </span>
-                      </>
-                    )}
-                  </div>
-                  <button
-                    onClick={() => setShowAllPlatform(!showAllPlatform)}
-                    className="text-sm text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100 flex items-center gap-1 transition-colors font-medium mt-2"
-                  >
-                    {showAllPlatform ? (
-                      <>
-                        Show less <ChevronUpIcon className="h-4 w-4" />
-                      </>
-                    ) : (
-                      <>
-                        Show 7 more <ChevronDownIcon className="h-4 w-4" />
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Data Engineering */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  Data Engineering
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  Building data solutions in healthcare at CGMH. Leading projects and expanding into
-                  a new domain after 7 years in web development—follow my blog for the journey!
-                </p>
-
-                <div className="space-y-3">
-                  <div className="flex flex-wrap gap-2">
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
                       Python
                     </span>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200">
                       SQL
                     </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
-                      ETL
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-900 dark:bg-purple-900/40 dark:text-purple-200">
-                      Data Pipelines
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-900 dark:bg-teal-900/40 dark:text-teal-200">
+                      Microsoft Fabric
                     </span>
                   </div>
                 </div>
