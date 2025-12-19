@@ -43,6 +43,37 @@ const TimelineItem = ({ children, index }) => {
 }
 
 export default function Timeline() {
+  const [lineHeight, setLineHeight] = useState(0)
+  const timelineRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return
+
+      const timelineRect = timelineRef.current.getBoundingClientRect()
+      const timelineTop = timelineRect.top + window.scrollY
+      const timelineHeight = timelineRect.height
+      const scrollPosition = window.scrollY + window.innerHeight
+
+      // Calculate how much of the timeline should be visible
+      const scrolledPast = scrollPosition - timelineTop
+      const percentScrolled = Math.min(Math.max(scrolledPast / timelineHeight, 0), 1)
+
+      setLineHeight(percentScrolled * 100)
+    }
+
+    // Initial calculation
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="xl:col-span-2 xl:col-start-2">
       <div className="mb-8 text-center">
@@ -51,9 +82,15 @@ export default function Timeline() {
         </h2>
         <div className="mt-2 h-1 w-24 mx-auto bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full" />
       </div>
-      <div className="relative">
-        {/* Gradient timeline line */}
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full" />
+      <div className="relative" ref={timelineRef}>
+        {/* Background timeline line (gray/faded) */}
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-700 rounded-full" />
+
+        {/* Animated gradient timeline line */}
+        <div
+          className="absolute left-0 top-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full transition-all duration-150 ease-out"
+          style={{ height: `${lineHeight}%` }}
+        />
         <ol className="relative pl-0">
           <TimelineItem index={0}>
             <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-3xl ring-8 ring-white dark:bg-blue-700 dark:ring-gray-900">

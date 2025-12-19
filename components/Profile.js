@@ -78,13 +78,10 @@ export default function Profile() {
             👋 <TextGradient text="Hello" />
           </p>
 
-          <p className="sm:text-md flex pb-2 text-gray-600 dark:text-gray-300">
+          <h3 className="sm:text-md flex pb-2 text-gray-600 dark:text-gray-300">
             Welcome to my blog, my name is <KienPronunciation />
-          </p>
-          <p className="sm:text-md pb-2 text-gray-600 dark:text-gray-300">
-            I am a lifelong learner with a passion for solving problems via code.
-          </p>
-          <p className="sm:text-md pb-2 text-gray-600 dark:text-gray-300">
+          </h3>
+          <p className="text-sm pb-2 text-gray-600 dark:text-gray-300">
             Here is where I write my technical thoughts, document my learning journey and
             introspection with my career growth. Also, I give honest reviews of my dining
             experiences.
@@ -97,9 +94,9 @@ export default function Profile() {
                   Currently Working On
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  Software engineer at theScore and building data solutions in healthcare at CGMH.
-                  Expanding my T-shaped skillset across web development and data engineering—follow
-                  my blog for the journey!
+                  Building and growing the sportsbook web application at theScore and developing
+                  data engineering solutions in healthcare at CGMH. Expanding my T-shaped skillset
+                  across web development and data engineering—follow my blog for the journey!
                 </p>
 
                 <div className="space-y-3">
