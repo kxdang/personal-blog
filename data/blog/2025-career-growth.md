@@ -28,7 +28,7 @@ When I think about my career path, I see two directions it could have gone.
 
 ## 1. The High-Comp Senior Engineer Path
 
-This is the classic one: focus on a single discipline, go deep, and master your craft. You build speed, context, and expertise. Historically, this path could get you around $180–220k CAD in stable companies, maybe more in startups.
+This is the classic one: focus on a single discipline, go deep, and master your craft. You build speed, context, and expertise. Historically, this path could get you pretty good salary.
 
 But lately, that curve has been flattening. With AI, automation, and low-code tools becoming more capable, the market is shifting. It’s still a solid path, but it can plateau faster unless you add another layer like data, ML, or product thinking.
 
