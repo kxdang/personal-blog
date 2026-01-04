@@ -7,22 +7,75 @@ import Pagination from '@/components/Pagination'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
+  const [selectedTag, setSelectedTag] = useState(null)
+
+  // Get all unique tags from posts
+  const allTags = [...new Set(posts.flatMap((post) => post.tags))].sort()
+
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+    const matchesSearch = searchContent.toLowerCase().includes(searchValue.toLowerCase())
+    const matchesTag = !selectedTag || frontMatter.tags.includes(selectedTag)
+    return matchesSearch && matchesTag
   })
 
-  // If initialDisplayPosts exist, display it if no searchValue is specified
+  // If initialDisplayPosts exist, display it if no searchValue or selectedTag is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue && !selectedTag
+      ? initialDisplayPosts
+      : filteredBlogPosts
 
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-4 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
+
+          {/* Tag Filter */}
+          <div className="flex flex-wrap gap-2 items-center">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Filter by tag:
+            </span>
+            <button
+              onClick={() => setSelectedTag(null)}
+              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                !selectedTag
+                  ? 'bg-primary-500 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+              }`}
+            >
+              All
+            </button>
+            {allTags.map((tag) => {
+              const colorClasses = [
+                'bg-indigo-100 text-indigo-800 hover:bg-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:hover:bg-indigo-900/60',
+                'bg-amber-100 text-amber-800 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:hover:bg-amber-900/60',
+                'bg-emerald-100 text-emerald-800 hover:bg-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:hover:bg-emerald-900/60',
+                'bg-rose-100 text-rose-800 hover:bg-rose-200 dark:bg-rose-900/40 dark:text-rose-300 dark:hover:bg-rose-900/60',
+              ]
+              const colorIndex =
+                tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) %
+                colorClasses.length
+              const isSelected = selectedTag === tag
+              const shouldGrayscale = selectedTag && !isSelected
+
+              return (
+                <button
+                  key={tag}
+                  onClick={() => setSelectedTag(tag)}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                    isSelected ? 'scale-105' : ''
+                  } ${shouldGrayscale ? 'grayscale opacity-50' : ''} ${colorClasses[colorIndex]}`}
+                >
+                  {tag}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Search Bar */}
           <div className="relative max-w-lg">
             <input
               aria-label="Search articles"
@@ -46,6 +99,36 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               />
             </svg>
           </div>
+
+          {/* Active filter indicator */}
+          {(selectedTag || searchValue) && (
+            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <span>
+                Showing {displayPosts.length} {displayPosts.length === 1 ? 'post' : 'posts'}
+                {selectedTag && (
+                  <span>
+                    {' '}
+                    tagged with <span className="font-semibold">{selectedTag}</span>
+                  </span>
+                )}
+                {searchValue && (
+                  <span>
+                    {' '}
+                    matching <span className="font-semibold">"{searchValue}"</span>
+                  </span>
+                )}
+              </span>
+              <button
+                onClick={() => {
+                  setSearchValue('')
+                  setSelectedTag(null)
+                }}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!filteredBlogPosts.length && 'No posts found.'}

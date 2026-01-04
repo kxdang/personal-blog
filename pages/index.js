@@ -9,6 +9,8 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { getAllRestaurants } from '@/lib/restaurants'
 import { generateNumberedPhotos } from '@/lib/cloudinary'
 import { fetchCloudinaryFolder } from '@/lib/cloudinary-server'
+import kebabCase from '@/lib/utils/kebabCase'
+import { useRouter } from 'next/router'
 
 const MAX_DISPLAY = 6
 
@@ -58,6 +60,7 @@ export async function getStaticProps() {
 const queryClient = new QueryClient()
 
 export default function Home({ posts, restaurants }) {
+  const router = useRouter()
   const selectedTitles = [
     '☃️ 2025 Year End Reflection',
     '🎒My Portfolio Career Era',
@@ -97,22 +100,31 @@ export default function Home({ posts, restaurants }) {
           {posts.slice(0, 6).map((post) => (
             <article
               key={post.slug}
-              className="py-4 border-b border-gray-100 dark:border-gray-800 last:border-0"
+              onClick={(e) => {
+                // Don't navigate if clicking on a link
+                if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+                  router.push(`/blog/${post.slug}`)
+                }
+              }}
+              className="group py-5 px-3 -mx-3 border-b border-gray-100 dark:border-gray-800 last:border-0 rounded-lg hover:bg-[#f0ebe3] dark:hover:bg-gray-800/50 transition-all duration-200 cursor-pointer"
             >
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <Link href={`/blog/${post.slug}`}>
-                      <h1 className="text-base font-bold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors line-clamp-1">
+                      <h1 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
                         {post.title}
                       </h1>
                     </Link>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                       {post.summary}
                     </p>
                   </div>
                   <div className="flex-shrink-0">
-                    <time className="text-xs text-gray-500 dark:text-gray-500" dateTime={post.date}>
+                    <time
+                      className="text-[11px] text-gray-400 dark:text-gray-500 font-medium"
+                      dateTime={post.date}
+                    >
                       {new Date(post.date).toLocaleDateString('en-US', {
                         month: 'short',
                         day: 'numeric',
@@ -124,41 +136,42 @@ export default function Home({ posts, restaurants }) {
                     </time>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-xs">
-                  <span className="text-gray-500 dark:text-gray-500">{post.readingTime.text}</span>
+                <div className="flex items-center flex-wrap gap-x-2.5 gap-y-1 text-[11px]">
+                  <span className="text-gray-400 dark:text-gray-500 font-medium inline-flex items-center gap-1.5">
+                    <span>{post.readingTime.text}</span>
+                    <span className="text-sm">
+                      {'☕'.repeat(Math.ceil(parseInt(post.readingTime.text) / 3) || 1)}
+                    </span>
+                  </span>
                   {post.tags && post.tags.length > 0 && (
                     <>
-                      <span className="text-gray-400 dark:text-gray-600">•</span>
-                      <div className="flex gap-1.5">
-                        {post.tags.slice(0, 2).map((tag) => {
-                          const colorClasses = [
-                            'bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50',
-                            'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-900/50',
-                            'bg-purple-100 text-purple-700 hover:bg-purple-200 dark:bg-purple-900/30 dark:text-purple-400 dark:hover:bg-purple-900/50',
-                            'bg-orange-100 text-orange-700 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-400 dark:hover:bg-orange-900/50',
-                            'bg-pink-100 text-pink-700 hover:bg-pink-200 dark:bg-pink-900/30 dark:text-pink-400 dark:hover:bg-pink-900/50',
-                            'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-400 dark:hover:bg-cyan-900/50',
-                          ]
-                          // Use a simple hash to consistently assign colors to tags
-                          const colorIndex =
-                            tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) %
-                            colorClasses.length
-                          return (
-                            <Link
-                              key={tag}
-                              href={`/tags/${tag}`}
-                              className={`homepage-tag-badge inline-flex items-center px-1.5 py-0.5 rounded-full transition-colors text-xs font-medium ${colorClasses[colorIndex]}`}
-                            >
-                              {tag}
-                            </Link>
-                          )
-                        })}
-                        {post.tags.length > 2 && (
-                          <span className="text-gray-400 dark:text-gray-600">
-                            +{post.tags.length - 2}
-                          </span>
-                        )}
-                      </div>
+                      <span className="text-gray-300 dark:text-gray-600">•</span>
+                      {post.tags.slice(0, 2).map((tag) => {
+                        const colorClasses = [
+                          'bg-indigo-100 text-indigo-800 hover:bg-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:hover:bg-indigo-900/60',
+                          'bg-amber-100 text-amber-800 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:hover:bg-amber-900/60',
+                          'bg-emerald-100 text-emerald-800 hover:bg-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:hover:bg-emerald-900/60',
+                          'bg-rose-100 text-rose-800 hover:bg-rose-200 dark:bg-rose-900/40 dark:text-rose-300 dark:hover:bg-rose-900/60',
+                        ]
+                        // Use a simple hash to consistently assign colors to tags
+                        const colorIndex =
+                          tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) %
+                          colorClasses.length
+                        return (
+                          <Link
+                            key={tag}
+                            href={`/tags/${kebabCase(tag)}`}
+                            className={`inline-flex items-center px-2 py-0.5 rounded-full transition-colors font-semibold text-[10px] ${colorClasses[colorIndex]}`}
+                          >
+                            {tag.split(' ').join('-')}
+                          </Link>
+                        )
+                      })}
+                      {post.tags.length > 2 && (
+                        <span className="text-gray-400 dark:text-gray-600 font-medium">
+                          +{post.tags.length - 2}
+                        </span>
+                      )}
                     </>
                   )}
                 </div>

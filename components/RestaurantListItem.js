@@ -7,7 +7,7 @@ const RestaurantListItem = ({ restaurant }) => {
   }
 
   return (
-    <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+    <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-[#f0ebe3] dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
       <td className="py-3 pr-4">
         {restaurant.comingSoon ? (
           <span className="font-medium text-gray-500 dark:text-gray-400">{restaurant.name}</span>

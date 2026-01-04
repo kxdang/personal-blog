@@ -12,7 +12,7 @@ export default function PostCard({ posts, maxDisplay = 3 }) {
         return (
           <div
             key={slug}
-            className="rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800 first:sm:col-span-2 first:md:col-span-1"
+            className="rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800 first:sm:col-span-2 first:md:col-span-1 hover:bg-[#f0ebe3] dark:hover:bg-gray-800/80 hover:shadow-lg transition-all duration-200"
           >
             <div className="flex h-full flex-col p-5">
               <div className="mb-auto">

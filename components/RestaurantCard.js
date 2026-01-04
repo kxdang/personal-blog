@@ -10,7 +10,7 @@ const RestaurantCard = ({ restaurant }) => {
   const mainPhoto = restaurant.photos?.[0]
 
   return (
-    <li className="py-12">
+    <li className="py-12 px-4 -mx-4 rounded-lg hover:bg-[#f0ebe3] dark:hover:bg-gray-800/50 transition-all duration-200">
       <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
         <dl>
           <dt className="sr-only">Visited on</dt>
