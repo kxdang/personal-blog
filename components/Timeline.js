@@ -291,10 +291,14 @@ export default function Timeline() {
           </TimelineItem>
           {/* Branching Timeline - Current Roles */}
           <TimelineItem index={7}>
-            <div className="mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900">
+              🌿
+            </span>
+
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center flex-wrap gap-2">
                 Dual Career Path
-                <span className="mr-2 ml-3 rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-2.5 py-0.5 text-sm font-medium text-white animate-pulse">
+                <span className="rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-2.5 py-0.5 text-sm font-medium text-white animate-pulse">
                   Currently in {new Date().getFullYear()}
                 </span>
               </h3>
@@ -303,51 +307,103 @@ export default function Timeline() {
               </p>
             </div>
 
-            {/* Branching container */}
-            <div className="relative pl-8">
-              {/* Branch line */}
-              <div className="absolute left-0 top-8 bottom-8 w-px bg-gradient-to-b from-pink-300 to-pink-500 dark:from-pink-600 dark:to-pink-400" />
+            {/* Fork visualization */}
+            <div className="relative">
+              {/* Parallel branches container */}
+              <div className="relative pt-4">
+                {/* Desktop: Side by side layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 md:items-end">
+                  {/* Left branch - theScore */}
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-5 border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3 mb-3">
+                        <span className="text-2xl">🎯</span>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 dark:text-white">
+                            <Link
+                              href="https://thescore.bet/"
+                              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                            >
+                              Software Developer
+                            </Link>
+                          </h4>
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            theScore (now PENN Entertainment)
+                          </p>
+                        </div>
+                      </div>
+                      <time className="text-xs text-gray-500 dark:text-gray-400 block mb-3">
+                        January 2022 - Present
+                      </time>
 
-              {/* theScore - continuing role */}
-              <div className="mb-8 relative">
-                <span className="absolute -left-11 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-2xl ring-4 ring-white dark:bg-pink-700 dark:ring-gray-900">
-                  🎯
-                </span>
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border-l-4 border-blue-500">
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    <Link
-                      href="https://thescore.bet/"
-                      className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      Software Developer at theScore
-                    </Link>
-                  </h4>
-                  <time className="text-xs text-gray-500 dark:text-gray-400">
-                    January 2022 - Present
-                  </time>
-                </div>
-              </div>
+                      {/* Role progression */}
+                      <div className="space-y-2 text-sm">
+                        <div className="flex items-start gap-2">
+                          <span className="text-xs mt-0.5">📱</span>
+                          <div>
+                            <p className="font-medium text-gray-700 dark:text-gray-300">
+                              Web Platform Developer
+                            </p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">
+                              Jan 2022 - Mar 2024
+                            </p>
+                          </div>
+                        </div>
 
-              {/* Collingwood Hospital - new role */}
-              <div className="relative">
-                <span className="absolute -left-11 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-2xl ring-4 ring-white dark:bg-pink-700 dark:ring-gray-900">
-                  🏥
-                </span>
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border-l-4 border-blue-500">
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    <Link
-                      href="https://www.cgmh.on.ca/"
-                      className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      Data Engineer at Collingwood General & Marine Hospital
-                    </Link>
-                  </h4>
-                  <time className="text-xs text-gray-500 dark:text-gray-400">
-                    September 2025 - Present
-                  </time>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    💡 Leveraging data to improve healthcare outcomes
-                  </p>
+                        <div className="flex items-start gap-2">
+                          <span className="text-xs mt-0.5">⚡</span>
+                          <div>
+                            <p className="font-medium text-gray-700 dark:text-gray-300">
+                              Sportsbook Experience Developer
+                            </p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">
+                              Mar 2024 - Jan 2026
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-2">
+                          <span className="text-xs mt-0.5">📈</span>
+                          <div>
+                            <p className="font-medium text-gray-700 dark:text-gray-300">
+                              Sportsbook Growth Team
+                            </p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">
+                              Jan 2026 - Present
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right branch - Collingwood Hospital */}
+                  <div className="relative">
+                    <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-lg p-5 border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3 mb-3">
+                        <span className="text-2xl">🏥</span>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 dark:text-white">
+                            <Link
+                              href="https://www.cgmh.on.ca/"
+                              className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
+                            >
+                              Data Engineer
+                            </Link>
+                          </h4>
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Collingwood General & Marine Hospital
+                          </p>
+                        </div>
+                      </div>
+                      <time className="text-xs text-gray-500 dark:text-gray-400 block mb-2">
+                        September 2025 - Present
+                      </time>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Leveraging data to improve healthcare outcomes
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -21,8 +21,13 @@ const tools = [
   {
     name: 'Cursor',
     description:
-      'Primary coding IDE powered by Claude - scaffolding, debugging, and exploring ideas',
+      'Primary coding IDE paired with Claude CLI - scaffolding, debugging, and exploring ideas',
     url: 'https://cursor.sh',
+  },
+  {
+    name: 'Claude Code',
+    description: 'CLI-based AI pair programmer for terminal-driven development and automation',
+    url: 'https://claude.com/claude-code',
   },
   {
     name: 'SuperWhisper',
@@ -38,6 +43,16 @@ const tools = [
     name: 'Perplexity',
     description: 'Product research and comparison shopping',
     url: 'https://perplexity.ai',
+  },
+  {
+    name: 'z.ai',
+    description: 'Currently experimenting to understand its strengths and use cases',
+    url: 'https://z.ai',
+  },
+  {
+    name: 'Google Antigravity',
+    description: 'Testing as a potential replacement for Cursor',
+    url: 'https://antigravity.google/',
   },
 ]
 
@@ -64,170 +79,192 @@ export default function Tools() {
 
         <div className="py-12">
           {/* Thinking & Research */}
-          <div className="mb-16">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <div className="mb-12">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               <span className="text-2xl">🧠</span>
               Thinking & Research
             </h2>
-            <div className="space-y-6 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {tools.slice(0, 3).map((tool) => (
-                <div
+                <Link
                   key={tool.name}
-                  className="group flex flex-col sm:flex-row sm:gap-6 gap-2 pb-6 border-b border-gray-100 dark:border-gray-800 last:border-0"
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
                 >
-                  <div className="flex-shrink-0 sm:w-40">
-                    <Link
-                      href={tool.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {tool.name}
-                      <svg
-                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <p className="flex-1 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {tool.description}
-                  </p>
-                </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Building */}
-          <div className="mb-16">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <div className="mb-12">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               <span className="text-2xl">⚡</span>
               Building
             </h2>
-            <div className="space-y-6 max-w-4xl">
-              {tools.slice(3, 4).map((tool) => (
-                <div
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.slice(3, 5).map((tool) => (
+                <Link
                   key={tool.name}
-                  className="group flex flex-col sm:flex-row sm:gap-6 gap-2 pb-6 border-b border-gray-100 dark:border-gray-800 last:border-0"
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
                 >
-                  <div className="flex-shrink-0 sm:w-40">
-                    <Link
-                      href={tool.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {tool.name}
-                      <svg
-                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <p className="flex-1 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {tool.description}
-                  </p>
-                </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Capturing Ideas */}
-          <div className="mb-16">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <div className="mb-12">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               <span className="text-2xl">🎙️</span>
               Capturing Ideas
             </h2>
-            <div className="space-y-6 max-w-4xl">
-              {tools.slice(4, 6).map((tool) => (
-                <div
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.slice(5, 7).map((tool) => (
+                <Link
                   key={tool.name}
-                  className="group flex flex-col sm:flex-row sm:gap-6 gap-2 pb-6 border-b border-gray-100 dark:border-gray-800 last:border-0"
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
                 >
-                  <div className="flex-shrink-0 sm:w-40">
-                    <Link
-                      href={tool.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {tool.name}
-                      <svg
-                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <p className="flex-1 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {tool.description}
-                  </p>
-                </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
               ))}
             </div>
           </div>
 
           {/* Researching */}
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <div className="mb-12">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               <span className="text-2xl">🔎</span>
               Researching
             </h2>
-            <div className="space-y-6 max-w-4xl">
-              {tools.slice(6, 7).map((tool) => (
-                <div key={tool.name} className="group flex flex-col sm:flex-row sm:gap-6 gap-2">
-                  <div className="flex-shrink-0 sm:w-40">
-                    <Link
-                      href={tool.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-gray-900 dark:text-gray-100 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.slice(7, 8).map((tool) => (
+                <Link
+                  key={tool.name}
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {tool.name}
-                      <svg
-                        className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                  <p className="flex-1 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {tool.description}
-                  </p>
-                </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Exploring */}
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <span className="text-2xl">🧪</span>
+              Exploring
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-4 max-w-3xl">
+              I'm currently experimenting with these AI tools to better understand their comparative
+              strengths and weaknesses. By testing different tools side-by-side, I can identify
+              which ones excel at specific tasks - helping me work more efficiently as my toolkit
+              evolves.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.slice(8).map((tool) => (
+                <Link
+                  key={tool.name}
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
               ))}
             </div>
           </div>
