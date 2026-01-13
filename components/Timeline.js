@@ -93,213 +93,269 @@ export default function Timeline() {
         />
         <ol className="relative pl-0">
           <TimelineItem index={0}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-3xl ring-8 ring-white dark:bg-blue-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-3xl ring-8 ring-white dark:bg-blue-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🏫
             </span>
-            <h3 className="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
-              University of Waterloo{' '}
-            </h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              2011-2016
-            </time>
-            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-              🧪{' '}
-              <Link
-                href="/blog/biochemistry-story"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                My Biochemistry Story
-              </Link>{' '}
-              <br />
-              Graduated a 5 year co-op program with a Bachelors of Science in Honours Biochemistry
-              (B.Sc.)
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300">
+                  Education
+                </span>
+              </div>
+              <h3 className="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                University of Waterloo{' '}
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                2011-2016
+              </time>
+              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                🧪{' '}
+                <Link
+                  href="/blog/biochemistry-story"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  My Biochemistry Story
+                </Link>{' '}
+                <br />
+                Graduated a 5 year co-op program with a Bachelors of Science in Honours Biochemistry
+                (B.Sc.)
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={1}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 text-3xl ring-8 ring-white dark:bg-indigo-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-3xl ring-8 ring-white dark:bg-indigo-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🏢
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">First Job</h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              2017-2019
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              💻 Costing Technologist <br /> <br /> After graduating, I worked at a chemical company
-              specializing in polyurethane for the automotive industry for over 2 years. I{' '}
-              <Link
-                href="/blog/automated-job-process"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                automated
-              </Link>{' '}
-              a portion of my work using VBA which sparked my interest in programming. Thus, I
-              decided to{' '}
-              <Link
-                href="/blog/new-chapter-2019"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                resign
-              </Link>{' '}
-              to pursue my passion and start my programming journey.
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300">
+                  Career
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                First Job
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                2017-2019
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                💻 Costing Technologist <br /> <br /> After graduating, I worked at a chemical
+                company specializing in polyurethane for the automotive industry for over 2 years. I{' '}
+                <Link
+                  href="/blog/automated-job-process"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  automated
+                </Link>{' '}
+                a portion of my work using VBA which sparked my interest in programming. Thus, I
+                decided to{' '}
+                <Link
+                  href="/blog/new-chapter-2019"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  resign
+                </Link>{' '}
+                to pursue my passion and start my programming journey.
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={2}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-3xl ring-8 ring-white dark:bg-purple-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-purple-100 text-3xl ring-8 ring-white dark:bg-purple-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🚀
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-              The Leap of Faith
-            </h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              May 3rd 2019
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              🌿{' '}
-              <Link
-                href="/blog/the-jump"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                Begins the self-taught journey
-              </Link>{' '}
-              <br /> <br /> I had plans to dedicate 100% of my time studying and learning HTML, CSS,
-              JS and React as my framework of choice for web development.
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300">
+                  Personal Growth
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                The Leap of Faith
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                May 3rd 2019
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                🌿{' '}
+                <Link
+                  href="/blog/the-jump"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Begins the self-taught journey
+                </Link>{' '}
+                <br /> <br /> I had plans to dedicate 100% of my time studying and learning HTML,
+                CSS, JS and React as my framework of choice for web development.
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={3}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 text-3xl ring-8 ring-white dark:bg-purple-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-purple-100 text-3xl ring-8 ring-white dark:bg-purple-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🏥
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">The Fall</h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              June 2019 - October 2019
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              💊{' '}
-              <Link
-                href="/tags/biochemistry"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                Antibiotics galore
-              </Link>{' '}
-              <br />
-              <br />A month later, I encountered a health issue that required several
-              hospitalizations. I was unable to focus due to my long recovery. <br />
-              <br /> Through this difficult period, I began writing a blog and decided to embrace
-              the opportunity to document my journey, finding solace in the activity.
-              <br />
-              <br /> I started to change my perspective and draw inspiration from my negative
-              experience and wrote about my prescribed medications.
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300">
+                  Challenge
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">The Fall</h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                June 2019 - October 2019
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                💊{' '}
+                <Link
+                  href="/tags/biochemistry"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Antibiotics galore
+                </Link>{' '}
+                <br />
+                <br />A month later, I encountered a health issue that required several
+                hospitalizations. I was unable to focus due to my long recovery. <br />
+                <br /> Through this difficult period, I began writing a blog and decided to embrace
+                the opportunity to document my journey, finding solace in the activity.
+                <br />
+                <br /> I started to change my perspective and draw inspiration from my negative
+                experience and wrote about my prescribed medications.
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={4}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-100 text-2xl ring-8 ring-white dark:bg-fuchsia-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-fuchsia-100 text-2xl ring-8 ring-white dark:bg-fuchsia-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🧗
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-              The Recovery
-            </h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              December 2019
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              💉{' '}
-              <Link
-                href="/blog/propofol"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                2 surgeries,
-              </Link>{' '}
-              <br />
-              💊{' '}
-              <Link
-                href="/tags/biochemistry"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                9 antibiotics,
-              </Link>{' '}
-              <br />
-              🌺{' '}
-              <Link
-                href="/blog/opioids"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                4 painkillers later
-              </Link>{' '}
-              <br />
-              <br />
-              Nearing the end of 2019, I had slowly worked my way back on my feet, using the
-              momentum I built from creating this blog and writing about my journey. <br /> <br />
-              <Link
-                href="/blog/year-end-summary-2019"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                My 2019 year end Pomodoro blog post
-              </Link>
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300">
+                  Recovery
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                The Recovery
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                December 2019
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                💉{' '}
+                <Link
+                  href="/blog/propofol"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  2 surgeries,
+                </Link>{' '}
+                <br />
+                💊{' '}
+                <Link
+                  href="/tags/biochemistry"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  9 antibiotics,
+                </Link>{' '}
+                <br />
+                🌺{' '}
+                <Link
+                  href="/blog/opioids"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  4 painkillers later
+                </Link>{' '}
+                <br />
+                <br />
+                Nearing the end of 2019, I had slowly worked my way back on my feet, using the
+                momentum I built from creating this blog and writing about my journey. <br /> <br />
+                <Link
+                  href="/blog/year-end-summary-2019"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  My 2019 year end Pomodoro blog post
+                </Link>
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={5}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-3xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100 text-3xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🥳
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-              Employment Found
-            </h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              May 2020
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              🎉{' '}
-              <Link
-                href="/blog/new-chapter"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                Software Developer at Coveo
-              </Link>{' '}
-              <br />
-              <br />
-              Honestly, 2019 hasn't been a kind year, but neither was 2020. After a year of
-              studying, I accomplished my goal in becoming a developer after 🍅
-              <Link
-                href="/blog/year-journey-summary"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                1031 Pomdoro's
-              </Link>
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300">
+                  Milestone
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                Employment Found
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                May 2020
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                🎉{' '}
+                <Link
+                  href="/blog/new-chapter"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Software Developer at Coveo
+                </Link>{' '}
+                <br />
+                <br />
+                Honestly, 2019 hasn't been a kind year, but neither was 2020. After a year of
+                studying, I accomplished my goal in becoming a developer after 🍅
+                <Link
+                  href="/blog/year-journey-summary"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  1031 Pomdoro's
+                </Link>
+              </p>
+            </div>
           </TimelineItem>
           <TimelineItem index={6}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-2xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100 text-2xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🙌
             </span>
-            <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-              New Chapter
-            </h3>
-            <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              January 2022
-            </time>
-            <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-              🎯
-              <Link
-                href="https://thescore.bet/"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                Software Developer at theScore
-              </Link>{' '}
-              <br />
-              <br />
-            </p>
+            <div className="ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300">
+                  Career
+                </span>
+              </div>
+              <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                New Chapter
+              </h3>
+              <time className="mb-2 block text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                January 2022
+              </time>
+              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+                🎯
+                <Link
+                  href="https://thescore.bet/"
+                  className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Software Engineer at theScore
+                </Link>{' '}
+                <br />
+                <br />
+              </p>
+            </div>
           </TimelineItem>
           {/* Branching Timeline - Current Roles */}
           <TimelineItem index={7}>
-            <span className="absolute -left-9 flex h-6 w-6 items-center justify-center rounded-full bg-pink-100 text-xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900">
+            <span className="absolute -left-10 flex h-8 w-8 items-center justify-center rounded-full bg-pink-100 text-xl ring-8 ring-white dark:bg-pink-700 dark:ring-gray-900 shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
               🌿
             </span>
 
-            <div className="mb-6">
+            <div className="mb-6 ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white">
+                  Current
+                </span>
+              </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center flex-wrap gap-2">
                 Dual Career Path
                 <span className="rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-2.5 py-0.5 text-sm font-medium text-white animate-pulse">
-                  Currently in {new Date().getFullYear()}
+                  {new Date().getFullYear()}
                 </span>
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
@@ -315,7 +371,7 @@ export default function Timeline() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 md:items-end">
                   {/* Left branch - theScore */}
                   <div className="relative">
-                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-5 border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="ml-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-5 border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex items-start gap-3 mb-3">
                         <span className="text-2xl">🎯</span>
                         <div className="flex-1">
@@ -324,11 +380,11 @@ export default function Timeline() {
                               href="https://thescore.bet/"
                               className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
                             >
-                              Software Developer
+                              Software Engineer
                             </Link>
                           </h4>
                           <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                            theScore (now PENN Entertainment)
+                            theScore (under the umbrella of PENN Entertainment)
                           </p>
                         </div>
                       </div>
@@ -379,7 +435,7 @@ export default function Timeline() {
 
                   {/* Right branch - Collingwood Hospital */}
                   <div className="relative">
-                    <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-lg p-5 border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="ml-4 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-lg p-5 border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex items-start gap-3 mb-3">
                         <span className="text-2xl">🏥</span>
                         <div className="flex-1">
