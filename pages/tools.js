@@ -45,11 +45,6 @@ const tools = [
     url: 'https://perplexity.ai',
   },
   {
-    name: 'z.ai',
-    description: 'Currently experimenting to understand its strengths and use cases',
-    url: 'https://z.ai',
-  },
-  {
     name: 'Google Antigravity',
     description: 'Testing as a potential replacement for Cursor',
     url: 'https://antigravity.google/',
