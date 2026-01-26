@@ -69,6 +69,30 @@ module.exports = withContentlayer(
         },
       ]
     },
+    async redirects() {
+      return [
+        {
+          source: '/blog',
+          destination: '/',
+          permanent: true,
+        },
+        {
+          source: '/blog/page/:page',
+          destination: '/',
+          permanent: true,
+        },
+        {
+          source: '/tags',
+          destination: '/',
+          permanent: true,
+        },
+        {
+          source: '/tags/:tag',
+          destination: '/?tag=:tag',
+          permanent: false,
+        },
+      ]
+    },
     images: {
       domains: [
         'i.gr-assets.com',

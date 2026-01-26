@@ -5,6 +5,25 @@ import Tag from '@/components/Tag'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 
+// Expanded colorful palette for tags
+const tagColors = [
+  'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-900/50 dark:text-indigo-300 dark:hover:bg-indigo-800/60',
+  'bg-amber-100 text-amber-700 hover:bg-amber-200 dark:bg-amber-900/50 dark:text-amber-300 dark:hover:bg-amber-800/60',
+  'bg-emerald-100 text-emerald-700 hover:bg-emerald-200 dark:bg-emerald-900/50 dark:text-emerald-300 dark:hover:bg-emerald-800/60',
+  'bg-rose-100 text-rose-700 hover:bg-rose-200 dark:bg-rose-900/50 dark:text-rose-300 dark:hover:bg-rose-800/60',
+  'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 dark:bg-cyan-900/50 dark:text-cyan-300 dark:hover:bg-cyan-800/60',
+  'bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200 dark:bg-fuchsia-900/50 dark:text-fuchsia-300 dark:hover:bg-fuchsia-800/60',
+  'bg-lime-100 text-lime-700 hover:bg-lime-200 dark:bg-lime-900/50 dark:text-lime-300 dark:hover:bg-lime-800/60',
+  'bg-orange-100 text-orange-700 hover:bg-orange-200 dark:bg-orange-900/50 dark:text-orange-300 dark:hover:bg-orange-800/60',
+  'bg-violet-100 text-violet-700 hover:bg-violet-200 dark:bg-violet-900/50 dark:text-violet-300 dark:hover:bg-violet-800/60',
+  'bg-teal-100 text-teal-700 hover:bg-teal-200 dark:bg-teal-900/50 dark:text-teal-300 dark:hover:bg-teal-800/60',
+]
+
+const getTagColor = (tag) => {
+  const index = tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % tagColors.length
+  return tagColors[index]
+}
+
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
   const [selectedTag, setSelectedTag] = useState(null)
@@ -35,39 +54,29 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
           {/* Tag Filter */}
           <div className="flex flex-wrap gap-2 items-center">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Filter by tag:
-            </span>
             <button
               onClick={() => setSelectedTag(null)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${
                 !selectedTag
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md scale-105'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
               }`}
             >
-              All
+              All Posts
             </button>
             {allTags.map((tag) => {
-              const colorClasses = [
-                'bg-indigo-100 text-indigo-800 hover:bg-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:hover:bg-indigo-900/60',
-                'bg-amber-100 text-amber-800 hover:bg-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:hover:bg-amber-900/60',
-                'bg-emerald-100 text-emerald-800 hover:bg-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:hover:bg-emerald-900/60',
-                'bg-rose-100 text-rose-800 hover:bg-rose-200 dark:bg-rose-900/40 dark:text-rose-300 dark:hover:bg-rose-900/60',
-              ]
-              const colorIndex =
-                tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) %
-                colorClasses.length
               const isSelected = selectedTag === tag
-              const shouldGrayscale = selectedTag && !isSelected
+              const shouldFade = selectedTag && !isSelected
 
               return (
                 <button
                   key={tag}
-                  onClick={() => setSelectedTag(tag)}
-                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
-                    isSelected ? 'scale-105' : ''
-                  } ${shouldGrayscale ? 'grayscale opacity-50' : ''} ${colorClasses[colorIndex]}`}
+                  onClick={() => setSelectedTag(isSelected ? null : tag)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${getTagColor(
+                    tag
+                  )} ${isSelected ? 'scale-110 shadow-md ring-2 ring-inset' : ''} ${
+                    shouldFade ? 'opacity-40 hover:opacity-70' : ''
+                  }`}
                 >
                   {tag}
                 </button>
@@ -76,16 +85,17 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
 
           {/* Search Bar */}
-          <div className="relative max-w-lg">
+          <div className="relative max-w-md">
             <input
               aria-label="Search articles"
               type="text"
+              value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search articles"
-              className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
+              placeholder="Search articles..."
+              className="block w-full rounded-xl border-0 bg-gray-100 dark:bg-gray-800 px-4 py-2.5 pl-10 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:ring-2 focus:ring-primary-500 transition-all"
             />
             <svg
-              className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
+              className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -98,23 +108,46 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+            {searchValue && (
+              <button
+                onClick={() => setSearchValue('')}
+                className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            )}
           </div>
 
           {/* Active filter indicator */}
           {(selectedTag || searchValue) && (
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-              <span>
-                Showing {displayPosts.length} {displayPosts.length === 1 ? 'post' : 'posts'}
+              <span className="flex items-center gap-1.5">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-xs font-bold">
+                  {displayPosts.length}
+                </span>
+                {displayPosts.length === 1 ? 'post' : 'posts'} found
                 {selectedTag && (
-                  <span>
-                    {' '}
-                    tagged with <span className="font-semibold">{selectedTag}</span>
+                  <span className="inline-flex items-center gap-1">
+                    in{' '}
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-xs font-bold ${getTagColor(
+                        selectedTag
+                      )}`}
+                    >
+                      {selectedTag}
+                    </span>
                   </span>
                 )}
                 {searchValue && (
                   <span>
-                    {' '}
-                    matching <span className="font-semibold">"{searchValue}"</span>
+                    matching "<span className="font-semibold">{searchValue}</span>"
                   </span>
                 )}
               </span>
@@ -123,9 +156,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   setSearchValue('')
                   setSelectedTag(null)
                 }}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium underline underline-offset-2"
               >
-                Clear filters
+                Clear all
               </button>
             </div>
           )}
