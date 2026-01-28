@@ -78,8 +78,9 @@ export default function Profile() {
             👋 <TextGradient text="Hello" />
           </p>
 
-          <h3 className="sm:text-md flex pb-2 text-gray-600 dark:text-gray-300">
-            Welcome to my blog, my name is <KienPronunciation />
+          <h3 className="sm:text-md flex flex-wrap items-center pb-2 text-gray-600 dark:text-gray-300">
+            <span>Welcome to my blog, my name is</span>
+            <KienPronunciation />
           </h3>
           <p className="text-sm pb-2 text-gray-600 dark:text-gray-300">
             Here is where I write my technical thoughts, document my learning journey and
