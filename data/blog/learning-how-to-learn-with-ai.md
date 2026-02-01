@@ -4,8 +4,8 @@ date: 2026-02-02T00:00:00.000Z
 tags:
   - AI
   - life
-summary: ''
-description: 'Learning how to learn, juiced with AI. My progress and introspection with using AI to learn Systems Design and Designing Data-Intensive Applications.'
+summary: 'Learning how to learn, juiced with AI. My progress and introspection with using AI to learn Systems Design and Designing Data-Intensive Applications.'
+description: ''
 author: Kien
 ---
 
