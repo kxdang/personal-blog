@@ -95,6 +95,7 @@
             "name": "author",
             "label": "Author",
             "required": true,
+            "ui": { "defaultValue": "Kien" },
             "namespace": ["blog", "author"],
             "searchable": true,
             "uid": false

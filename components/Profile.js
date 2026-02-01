@@ -7,6 +7,7 @@ import { useQuery } from 'react-query'
 
 import { KienPronunciation } from './KienPronunciation'
 import TextGradient from '@/components/TextGradient'
+import VisitorCounter from '@/components/VisitorCounter'
 
 const fetchBookData = async () => {
   // Using Hardcover API exclusively
@@ -87,6 +88,7 @@ export default function Profile() {
             introspection with my career growth. Also, I give honest reviews of my dining
             experiences.
           </p>
+
           <div className="pt-4 pb-4">
             <div className="space-y-4">
               {/* Currently Working On */}
@@ -125,7 +127,11 @@ export default function Profile() {
               </div>
             </div>
           </div>
+          <div className="flex justify-center py-3">
+            <VisitorCounter />
+          </div>
         </div>
+
         <div className="pb-8 text-center md:pt-0 flex-shrink-0">
           <Image
             src="/static/images/avatar.jpg"
