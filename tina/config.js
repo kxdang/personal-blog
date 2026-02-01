@@ -29,7 +29,10 @@ export default defineConfig({
         name: 'blog',
         label: 'Blog Posts',
         path: 'data/blog',
-        format: 'mdx',
+        match: {
+          include: '*',
+          exclude: '',
+        },
         ui: {
           filename: {
             readonly: false,
