@@ -108,7 +108,7 @@ export default function Home({ posts, restaurants }) {
   const selectedTitles = [
     '☃️ 2025 Year End Reflection',
     '🎒My Portfolio Career Era',
-    "🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel's Free Tier)",
+    '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel’s Free Tier)',
   ]
 
   const pinnedPosts = posts.filter((post) => selectedTitles.includes(post.title))
