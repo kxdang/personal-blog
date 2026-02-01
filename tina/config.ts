@@ -110,6 +110,9 @@ export default defineConfig({
             name: 'author',
             label: 'Author',
             required: true,
+            ui: {
+              defaultValue: 'Kien',
+            },
           },
           {
             type: 'string',
