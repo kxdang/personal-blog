@@ -2,16 +2,23 @@ import fs from 'fs'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { allBlogs, allAuthors } from 'contentlayer/generated'
-import { sortedBlogPost } from '@/lib/contentlayer'
+import {
+  getAllBlogPosts,
+  getSortedBlogPosts,
+  getBundledBlogPost,
+  getAuthorByName,
+} from '@/lib/mdx-server'
+import { extractTocHeadings, getReadingTime } from '@/lib/mdx-content'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
+  const posts = getAllBlogPosts()
+
   return {
-    paths: allBlogs.map((post) => ({
+    paths: posts.map((post) => ({
       params: {
-        slug: post.slug.split('/'),
+        slug: [post._sys.filename],
       },
     })),
     fallback: false,
@@ -20,43 +27,84 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const slug = params.slug.join('/')
-  const allPosts = sortedBlogPost()
-  const postIndex = allPosts.findIndex((post) => post.slug === slug)
+
+  // Get the current post with bundled MDX
+  const post = await getBundledBlogPost(slug)
+
+  if (!post) {
+    return { notFound: true }
+  }
+
+  // Get all posts for prev/next navigation and RSS
+  const allPosts = getSortedBlogPosts()
+
+  const postIndex = allPosts.findIndex((p) => p._sys.filename === slug)
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
-  const post = allBlogs.find((p) => p.slug === slug)
 
-  const authorList = post.author ? [post.author] : ['default']
-  const authorDetails = authorList.map((author) => {
-    const authorData = allAuthors.find((a) => a.name === author)
-    return authorData || { name: author }
-  })
+  // Get author details
+  const authorName = post.author || 'Kien'
+  const author = getAuthorByName(authorName)
+  const authorDetails = author ? [author] : [{ name: authorName }]
 
-  // rss
-  if (allPosts.length > 0) {
-    const rss = generateRss(allPosts)
+  // Generate RSS
+  const rssData = allPosts.map((p) => ({
+    slug: p._sys.filename,
+    title: p.title,
+    date: p.date,
+    summary: p.summary,
+    tags: p.tags,
+  }))
+
+  if (rssData.length > 0) {
+    const rss = generateRss(rssData)
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
+  // Extract TOC from raw body
+  const toc = extractTocHeadings(post.body || '')
+
   return {
     props: {
-      post,
+      post: {
+        ...post,
+        body: null, // Don't pass raw body to client
+      },
+      toc,
       authorDetails,
-      prev: prev ? { slug: prev.slug, title: prev.title } : null,
-      next: next ? { slug: next.slug, title: next.title } : null,
+      prev: prev ? { slug: prev._sys.filename, title: prev.title } : null,
+      next: next ? { slug: next._sys.filename, title: next.title } : null,
     },
   }
 }
 
-export default function Blog({ post, authorDetails, prev, next }) {
-  const { body, toc, ...frontMatter } = post
+export default function Blog({ post, toc, authorDetails, prev, next }) {
+  const readingTime = getReadingTime(post.code || '')
+
+  const frontMatter = {
+    title: post.title,
+    date: post.date,
+    lastmod: post.lastmod,
+    tags: post.tags || [],
+    draft: post.draft || false,
+    summary: post.summary,
+    description: post.description,
+    images: post.images,
+    author: post.author,
+    layout: post.layout,
+    bibliography: post.bibliography,
+    canonicalUrl: post.canonicalUrl,
+    slug: post._sys.filename,
+    fileName: `${post._sys.filename}.${post._sys.extension}`,
+    readingTime,
+  }
 
   return (
     <>
       {frontMatter.draft !== true ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
-          mdxSource={body.code}
+          mdxSource={post.code}
           toc={toc}
           frontMatter={frontMatter}
           authorDetails={authorDetails}

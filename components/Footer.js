@@ -8,7 +8,7 @@ export default function Footer() {
     { name: 'Tailwind CSS', url: 'https://tailwindcss.com' },
     { name: 'MDX', url: 'https://mdxjs.com' },
     { name: 'Cloudinary', url: 'https://cloudinary.com' },
-    { name: 'Contentlayer', url: 'https://contentlayer.dev' },
+    { name: 'Tina CMS', url: 'https://tina.io' },
   ]
 
   return (

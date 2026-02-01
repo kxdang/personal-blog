@@ -1,5 +1,3 @@
-const { withContentlayer } = require('next-contentlayer')
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -54,61 +52,59 @@ const securityHeaders = [
   },
 ]
 
-module.exports = withContentlayer(
-  withBundleAnalyzer({
-    reactStrictMode: true,
-    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-    eslint: {
-      dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
-    },
-    async headers() {
-      return [
-        {
-          source: '/(.*)',
-          headers: securityHeaders,
-        },
-      ]
-    },
-    async redirects() {
-      return [
-        {
-          source: '/blog',
-          destination: '/',
-          permanent: true,
-        },
-        {
-          source: '/blog/page/:page',
-          destination: '/',
-          permanent: true,
-        },
-        {
-          source: '/tags',
-          destination: '/',
-          permanent: true,
-        },
-        {
-          source: '/tags/:tag',
-          destination: '/?tag=:tag',
-          permanent: false,
-        },
-      ]
-    },
-    images: {
-      domains: [
-        'i.gr-assets.com',
-        'covers.openlibrary.org',
-        'assets.hardcover.app',
-        'via.placeholder.com',
-        'res.cloudinary.com',
-      ],
-    },
-    webpack: (config, { dev, isServer }) => {
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      })
+module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  eslint: {
+    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts', 'tina'],
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/blog',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog/page/:page',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/tags',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/tags/:tag',
+        destination: '/?tag=:tag',
+        permanent: false,
+      },
+    ]
+  },
+  images: {
+    domains: [
+      'i.gr-assets.com',
+      'covers.openlibrary.org',
+      'assets.hardcover.app',
+      'via.placeholder.com',
+      'res.cloudinary.com',
+    ],
+  },
+  webpack: (config, { dev, isServer }) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
 
-      return config
-    },
-  })
-)
+    return config
+  },
+})

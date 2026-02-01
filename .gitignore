@@ -23,6 +23,9 @@ public/sitemap.xml
 # contentlayer
 .contentlayer
 
+# tinacms generated files
+tina/__generated__
+
 # private notes and learnings
 private-notes/
 CONTENTLAYER_MIGRATION.md 

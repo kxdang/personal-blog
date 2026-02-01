@@ -4,7 +4,8 @@ import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
 import RestaurantSection from '@/components/RestaurantSection'
 import siteMetadata from '@/data/siteMetadata'
-import { sortedBlogPost, allCoreContent } from '@/lib/contentlayer'
+import { getSortedBlogPosts } from '@/lib/mdx-server'
+import { getCoreContent } from '@/lib/mdx-content'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { getAllRestaurants } from '@/lib/restaurants'
 import { generateNumberedPhotos } from '@/lib/cloudinary'
@@ -40,8 +41,9 @@ const getTagColor = (tag) => {
 }
 
 export async function getStaticProps() {
-  const posts = sortedBlogPost()
-  const simplifiedPosts = allCoreContent(posts)
+  // Get all blog posts from MDX files
+  const posts = getSortedBlogPosts()
+  const simplifiedPosts = getCoreContent(posts)
 
   // Get restaurants for the homepage
   const allRestaurants = await getAllRestaurants()

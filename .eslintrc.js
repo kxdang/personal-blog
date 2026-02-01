@@ -7,6 +7,7 @@ module.exports = {
     es6: true,
   },
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'next', 'next/core-web-vitals'],
+  ignorePatterns: ['tina/__generated__/**'],
   rules: {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
