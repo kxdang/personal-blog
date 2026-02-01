@@ -9,9 +9,9 @@ description: ''
 author: Kien
 ---
 
-That experience made the next step feel obvious. If I want to keep growing, I need to go deeper into backend fundamentals and scalable system design. It increasingly feels like frontend alone is no longer enough. The direction I see engineering heading is toward more complete, full-stack thinking.
+The experience of using AI to learn made the next step feel obvious. If I want to keep growing, I need to go deeper into backend fundamentals and scalable system design. It increasingly feels like frontend alone is no longer enough. The direction I see engineering heading is toward more complete, full-stack thinking.
 
-Which brings me to chapter one.
+Which brings me to chapter one of the systems design book.
 
 Chapter one introduced a simple but important idea: understanding scalability and load. I am trying to develop a lens for how real systems behave as they grow.
 
