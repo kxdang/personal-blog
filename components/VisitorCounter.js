@@ -1,30 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 const PERIODS = [
   { key: 'today', label: 'today' },
   { key: 'week', label: 'this week' },
   { key: 'month', label: 'this month' },
   { key: 'year', label: 'this year' },
-  { key: 'all', label: 'all time' },
+  { key: 'all', label: 'since 2025' },
 ]
+
+const CYCLE_INTERVAL = 6000 // 6 seconds
 
 export default function VisitorCounter() {
   const [periodIndex, setPeriodIndex] = useState(2) // Start with 'month'
-  const [visitors, setVisitors] = useState(null)
+  const [visitorsData, setVisitorsData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const currentPeriod = PERIODS[periodIndex]
+  const visitors = visitorsData?.[currentPeriod.key]
 
+  // Fetch all periods at once
   useEffect(() => {
-    async function fetchVisitors() {
-      setLoading(true)
+    async function fetchAllVisitors() {
       try {
-        const response = await fetch(`/api/visitors?period=${currentPeriod.key}`)
+        const response = await fetch('/api/visitors?all=true')
         const data = await response.json()
 
-        if (data.visitors !== null) {
-          setVisitors(data.visitors)
+        if (data && !data.error) {
+          setVisitorsData(data)
           setError(false)
         } else {
           setError(true)
@@ -37,15 +41,35 @@ export default function VisitorCounter() {
       }
     }
 
-    fetchVisitors()
-  }, [currentPeriod.key])
+    fetchAllVisitors()
+  }, [])
 
+  // Cycle to next period with blur transition
+  const cycleToNext = useCallback(() => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setPeriodIndex((prev) => (prev + 1) % PERIODS.length)
+      setTimeout(() => {
+        setIsTransitioning(false)
+      }, 150)
+    }, 150)
+  }, [])
+
+  // Auto-cycle every 6 seconds
+  useEffect(() => {
+    if (loading || error) return
+
+    const interval = setInterval(cycleToNext, CYCLE_INTERVAL)
+    return () => clearInterval(interval)
+  }, [loading, error, cycleToNext])
+
+  // Manual click handler
   const handleClick = () => {
-    setPeriodIndex((prev) => (prev + 1) % PERIODS.length)
+    cycleToNext()
   }
 
   // Don't render anything if there's an error or no data
-  if (error || (!loading && visitors === null)) {
+  if (error || (!loading && !visitorsData)) {
     return null
   }
 
@@ -62,16 +86,16 @@ export default function VisitorCounter() {
         </span>
         <span>
           <span
-            className={`font-medium text-gray-700 dark:text-gray-300 transition-all duration-200 ${
-              loading ? 'blur-sm' : 'group-hover:blur-[2px]'
+            className={`font-medium text-gray-700 dark:text-gray-300 transition-all duration-150 ${
+              loading || isTransitioning ? 'blur-sm opacity-50' : 'group-hover:blur-[2px]'
             }`}
           >
-            {loading ? '---' : visitors.toLocaleString()}
+            {loading ? '---' : visitors?.toLocaleString() ?? '---'}
           </span>{' '}
           unique visitors{' '}
           <span
-            className={`transition-all duration-200 ${
-              loading ? 'blur-sm' : 'group-hover:blur-[2px]'
+            className={`transition-all duration-150 ${
+              loading || isTransitioning ? 'blur-sm opacity-50' : 'group-hover:blur-[2px]'
             }`}
           >
             {currentPeriod.label}
