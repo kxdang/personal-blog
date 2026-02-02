@@ -129,7 +129,12 @@ export default function SearchModal({ isOpen, onClose, posts }) {
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative min-h-screen flex items-start justify-center pt-[10vh] px-4">
+      <div
+        className="relative min-h-screen flex items-start justify-center pt-[10vh] px-4"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) onClose()
+        }}
+      >
         <div
           className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
           onKeyDown={handleKeyDown}
