@@ -135,10 +135,7 @@ export default function SearchModal({ isOpen, onClose, posts }) {
           if (e.target === e.currentTarget) onClose()
         }}
       >
-        <div
-          className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
-          onKeyDown={handleKeyDown}
-        >
+        <div className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
           {/* Search Input */}
           <div className="flex items-center px-5 border-b border-gray-200 dark:border-gray-700">
             <svg
