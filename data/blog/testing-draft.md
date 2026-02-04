@@ -1,11 +1,21 @@
 ---
 title: "\U0001F680Updating my blog to use TinaCMS!"
 date: 2026-02-02T20:01:01.216Z
-draft: true
-summary: Updating my blog to use TinaCMS! I'm trying to reduce the friction to write more on my blog so I started using TInaCMS. Writing about my honest experience with it.
+draft: false
+summary: Updating my blog to use TinaCMS! Writing about my experience and why I chose to move to TinaCM
+description: ''
 author: Kien
+canonicalUrl: tina-cms
 ---
 
-Test draftFor 2026, I planned on writing more. Last year I wrote about 12 posts, which actually was more than I expected!
+I've been wanting to improve my blogging habits this year, and writing more consistently has always helped me clarify my thoughts, reduce mental clutter, and gain clarity on my ideas. Even though I'm sharing my thoughts publicly, it's ultimately a personal exercise in reflection and self-improvement.
 
-I wanted to improve my cadence because writing gives me clarity. It helps me externalize my thoughts which is important because the longer they stay internal, the more noise it creates for me and the less focus I become. It also serves as a nice history of my progress in what I am learning as I continue my career and navigate through a changing landscape in tech.
+By journaling out loud, I can track my progress, identify areas for growth, and reflect on how far I've come. Plus, using automation to streamline my writing process is a key part of this goal.
+
+To reduce the friction between idea generation and publication, I used to write in Google Docs first and then paste it into my blog repository. However, I wanted a more efficient way to draft and publish content without the hassle of copying and pasting.
+
+After researching various Content Management Systems (CMSs), I settled on TinaCMS. While Gemini mentioned a few other options, TinaCMS's simplicity, Markdown support, and ability to preserve MDX files made it the perfect fit for my needs.
+
+So far, using TinaCMS has been a game-changer. I can save drafts, write and publish posts seamlessly, and even reuse React components manually if needed. 
+
+With TinaCMS in place, I'm excited to see my blog come alive with more frequent posts. The reduced friction has been a welcome relief, and I'm looking forward to continuing this journey of more blogging.
