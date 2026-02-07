@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-04-06
 title: '🍅 NeetCode × Pomodoro: A Love Letter to My Inner Dev 💌'
 summary: Owning the journey to senior — no permissions needed.
-tags: ['life', 'neetcode', 'pomodoro']
+tags: ['life', 'code', 'pomodoro']
 ---
 
 There was a time when a timer and sheer will carried me from zero to full-time developer.

@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-11-01
 title: 🍅October Pomodoro Reflection
 summary: A monthly progress for October. My current status and reflection on my productivity, goals and achievements.

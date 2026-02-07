@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-12-07
 title: 💊Celebrex
 summary: My personal experience with Celebrex inspired me to write a bite-sized explanation on how they work.

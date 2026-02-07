@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2018-10-23
 title: Managing energy - not time
 tags: ['productivity']

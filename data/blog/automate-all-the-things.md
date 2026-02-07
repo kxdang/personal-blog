@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2023-08-07
 title: 🤖 Automating all the things
 summary: Using Home Assistant to improve my quality of life.

@@ -1,8 +1,8 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-01-20
 title: 'Excel: VBA Tips and Tricks'
-tags: ['productivity']
+tags: ['code', 'productivity']
 ---
 
 My post here is to keep a reference of the functions and VBA codes I’ve found and modified for my own personal and professional use. I figure I might need these one day.

@@ -6,7 +6,7 @@ tags:
 draft: false
 summary: Updating my blog to use TinaCMS! Writing about my experience and why I chose to move to TinaCM
 description: ''
-author: Kien
+author: Kien Dang
 canonicalUrl: tina-cms
 ---
 

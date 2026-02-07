@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-03-01
 title: 🍅February Pomodoro Reflection
 summary: A monthly progress for February. My current status and reflection on my productivity, goals and achievements.

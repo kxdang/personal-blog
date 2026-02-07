@@ -2,11 +2,11 @@
 title: "\U0001F4DDLearning How to Learn, again, with AI"
 date: 2026-02-02T00:00:00.000Z
 tags:
-  - AI
   - life
+  - AI
 summary: 'Learning how to learn, juiced with AI. My progress and introspection with using AI to learn Systems Design and Designing Data-Intensive Applications.'
 description: ''
-author: Kien
+author: Kien Dang
 ---
 
 The experience of using AI to learn made the next step feel obvious. If I want to keep growing, I need to go deeper into backend fundamentals and scalable system design. It increasingly feels like frontend alone is no longer enough. The direction I see engineering heading is toward more complete, full-stack thinking.

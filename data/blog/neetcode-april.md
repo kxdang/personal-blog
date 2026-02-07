@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-05-12
 title: '🌱 NeetCode × April Progress 🍅'
 summary: Self reflection of the month of April.
-tags: ['neetcode', 'pomodoro']
+tags: ['code', 'pomodoro']
 ---
 
 <div class="flex justify-center">

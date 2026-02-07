@@ -77,6 +77,7 @@ export default defineConfig({
             name: 'tags',
             label: 'Tags',
             list: true,
+            options: ['pomodoro', 'life', 'biochemistry', 'productivity', 'code', 'AI', 'year-end'],
           },
           {
             type: 'boolean',
@@ -111,7 +112,7 @@ export default defineConfig({
             label: 'Author',
             required: true,
             ui: {
-              defaultValue: 'Kien',
+              defaultValue: 'Kien Dang',
             },
           },
           {
@@ -124,6 +125,13 @@ export default defineConfig({
             type: 'string',
             name: 'bibliography',
             label: 'Bibliography',
+          },
+          {
+            type: 'string',
+            name: 'slug',
+            label: 'URL Slug',
+            description:
+              'Custom URL slug. If empty, the filename is used. E.g. "my-custom-url" → /blog/my-custom-url',
           },
           {
             type: 'string',

@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-05-30
 title: 🧠Mind Over Matter
 summary: The story of how I fixed my sleeping problems and the steps I took to optimize for study, leisure, and sleep in my small bedroom. The things that worked for me throughout my journey in programming.

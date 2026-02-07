@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-01-04
 title: ⛰️2024 Year Reflection
 summary: My 2024 reflection.
-tags: ['life']
+tags: ['life', 'year-end']
 ---
 
 First and foremost, Happy New Year! I planned to publish this on the last day of 2024, but eventually forgot, so here we are.

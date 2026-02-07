@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-09-07
 title: 🎤Training Myself to Dictate at the Speed of Thought 🧠
 summary: An exploration of AI dictation tools and how I plan to improve a new skill.

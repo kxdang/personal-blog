@@ -33,16 +33,28 @@ const siteMetadata = require('../data/siteMetadata')
                     return
                   }
                 }
-                const path = page
-                  .replace('pages/', '/')
-                  .replace('data/blog', '/blog')
-                  .replace('public/', '/')
-                  .replace('.js', '')
-                  .replace('.tsx', '')
-                  .replace('.mdx', '')
-                  .replace('.md', '')
-                  .replace('/feed.xml', '')
-                const route = path === '/index' ? '' : path
+                // Use frontmatter slug if available for blog posts
+                let route
+                if (page.search('.md') >= 1 && fs.existsSync(page)) {
+                  const src = fs.readFileSync(page, 'utf8')
+                  const fmData = matter(src)
+                  const customSlug = fmData.data.slug
+                  if (customSlug) {
+                    route = `/blog/${customSlug}`
+                  }
+                }
+                if (!route) {
+                  const path = page
+                    .replace('pages/', '/')
+                    .replace('data/blog', '/blog')
+                    .replace('public/', '/')
+                    .replace('.js', '')
+                    .replace('.tsx', '')
+                    .replace('.mdx', '')
+                    .replace('.md', '')
+                    .replace('/feed.xml', '')
+                  route = path === '/index' ? '' : path
+                }
 
                 if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
                   return

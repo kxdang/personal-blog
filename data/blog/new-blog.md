@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2023-07-01
 title: 🥳 New Blog!
 summary: Current updates with life and other things.

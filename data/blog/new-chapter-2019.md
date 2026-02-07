@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-04-19
 title: Time for change
 tags: ['life']

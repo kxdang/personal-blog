@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-10-29
 title: 🌌Propofol - Milk of Amnesia
 summary: My personal experience with this anesthetic inspired me to write a bite-sized explanation on how propofol works.

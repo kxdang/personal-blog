@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-01-13
 title: 🤖How I automated a process at work using Excel VBA
 summary: I automated a work process after learning how to program and translated it in VB6
-tags: ['productivity']
+tags: ['code', 'productivity']
 ---
 
 _Disclaimer: I do not reveal any sensitive and confidential material that is tied to my employer. My post is about my experience with Visual Basic and how I used it to solve a problem. It is for educational and informational purposes only._

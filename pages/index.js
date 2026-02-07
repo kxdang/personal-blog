@@ -2,101 +2,59 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
-import RestaurantSection from '@/components/RestaurantSection'
+import Tag from '@/components/Tag'
 import SearchModal from '@/components/SearchModal'
 import siteMetadata from '@/data/siteMetadata'
 import { getSortedBlogPosts } from '@/lib/mdx-server'
 import { getCoreContent } from '@/lib/mdx-content'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { getAllRestaurants } from '@/lib/restaurants'
-import { generateNumberedPhotos } from '@/lib/cloudinary'
-import { fetchCloudinaryFolder } from '@/lib/cloudinary-server'
+import { getTagColor, getTagLabel } from '@/lib/utils/tagColors'
+import kebabCase from '@/lib/utils/kebabCase'
 import { useRouter } from 'next/router'
 import { useState, useEffect, useCallback } from 'react'
 
 const MAX_DISPLAY = 6
-
-// Colorful palette for tags - ordered to maximize contrast between adjacent colors
-const tagColors = [
-  'bg-violet-100 text-violet-700 hover:bg-violet-200 dark:bg-violet-900/50 dark:text-violet-300 dark:hover:bg-violet-800/60 ring-violet-500/20',
-  'bg-amber-100 text-amber-700 hover:bg-amber-200 dark:bg-amber-900/50 dark:text-amber-300 dark:hover:bg-amber-800/60 ring-amber-500/20',
-  'bg-cyan-100 text-cyan-700 hover:bg-cyan-200 dark:bg-cyan-900/50 dark:text-cyan-300 dark:hover:bg-cyan-800/60 ring-cyan-500/20',
-  'bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200 dark:bg-fuchsia-900/50 dark:text-fuchsia-300 dark:hover:bg-fuchsia-800/60 ring-fuchsia-500/20',
-  'bg-emerald-100 text-emerald-700 hover:bg-emerald-200 dark:bg-emerald-900/50 dark:text-emerald-300 dark:hover:bg-emerald-800/60 ring-emerald-500/20',
-  'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-900/50 dark:text-indigo-300 dark:hover:bg-indigo-800/60 ring-indigo-500/20',
-  'bg-orange-100 text-orange-700 hover:bg-orange-200 dark:bg-orange-900/50 dark:text-orange-300 dark:hover:bg-orange-800/60 ring-orange-500/20',
-  'bg-sky-100 text-sky-700 hover:bg-sky-200 dark:bg-sky-900/50 dark:text-sky-300 dark:hover:bg-sky-800/60 ring-sky-500/20',
-  'bg-pink-100 text-pink-700 hover:bg-pink-200 dark:bg-pink-900/50 dark:text-pink-300 dark:hover:bg-pink-800/60 ring-pink-500/20',
-  'bg-lime-100 text-lime-700 hover:bg-lime-200 dark:bg-lime-900/50 dark:text-lime-300 dark:hover:bg-lime-800/60 ring-lime-500/20',
-]
-
-const getTagColor = (tag) => {
-  // Special case: pomodoro gets tomato red
-  if (tag.toLowerCase().includes('pomodoro')) {
-    return 'bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-900/50 dark:text-red-300 dark:hover:bg-red-800/60 ring-red-500/20'
-  }
-  const index = tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % tagColors.length
-  return tagColors[index]
-}
 
 export async function getStaticProps() {
   // Get all blog posts from MDX files
   const posts = getSortedBlogPosts()
   const simplifiedPosts = getCoreContent(posts)
 
-  // Get restaurants for the homepage
-  const allRestaurants = await getAllRestaurants()
-
-  // Process restaurant images
-  const restaurantsWithImages = await Promise.all(
-    allRestaurants.map(async (restaurant) => {
-      let photos = []
-
-      if (restaurant.photos === 'auto') {
-        photos = await fetchCloudinaryFolder(restaurant.id)
-      } else if (typeof restaurant.photos === 'number') {
-        photos = generateNumberedPhotos(restaurant.photos, {
-          folder: restaurant.id,
-          altPrefix: restaurant.name,
-        })
-      } else if (Array.isArray(restaurant.photos)) {
-        photos = restaurant.photos
-      }
-
-      return {
-        ...restaurant,
-        photos: photos.slice(0, 1), // Only need first image for homepage
-      }
-    })
-  )
-
-  // Sort by visit date (most recent first)
-  const sortedRestaurants = restaurantsWithImages.sort((a, b) => {
-    return new Date(b.visitDate) - new Date(a.visitDate)
-  })
-
   return {
     props: {
       posts: simplifiedPosts,
-      restaurants: sortedRestaurants,
     },
   }
 }
 
 const queryClient = new QueryClient()
 
-export default function Home({ posts, restaurants }) {
+export default function Home({ posts }) {
   const router = useRouter()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [selectedTag, setSelectedTag] = useState(null)
 
   const selectedTitles = [
     '☃️ 2025 Year End Reflection',
     '🎒My Portfolio Career Era',
-    '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel’s Free Tier)',
+    '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel\u2019s Free Tier)',
   ]
 
   const pinnedPosts = posts.filter((post) => selectedTitles.includes(post.title))
-  const displayPosts = posts.slice(0, MAX_DISPLAY)
+
+  // Tag filtering
+  const allTags = [...new Set(posts.flatMap((p) => p.tags || []))].sort()
+  const filteredPosts = selectedTag
+    ? posts.filter((p) => (p.tags || []).includes(selectedTag))
+    : posts.slice(0, MAX_DISPLAY)
+
+  // Read tag from URL on mount
+  useEffect(() => {
+    if (router.query.tag) {
+      const match = allTags.find((t) => kebabCase(t) === router.query.tag)
+      if (match) setSelectedTag(match)
+    }
+  }, [router.query.tag]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Keyboard shortcut: Cmd/Ctrl + K to open search
   const handleKeyDown = useCallback((e) => {
@@ -130,9 +88,6 @@ export default function Home({ posts, restaurants }) {
         </div>
       </div>
 
-      {/* Restaurant Section */}
-      {restaurants && restaurants.length > 0 && <RestaurantSection restaurants={restaurants} />}
-
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-4 pt-6 pb-4">
           <div className="flex items-center justify-between gap-4">
@@ -160,9 +115,51 @@ export default function Home({ posts, restaurants }) {
             </button>
           </div>
           <p className="sm:text-md text-gray-500 dark:text-gray-400">{siteMetadata.description}</p>
+
+          {/* Tag Filter */}
+          <div className="flex flex-wrap gap-2 items-center">
+            <button
+              onClick={() => {
+                setSelectedTag(null)
+                router.push('/', undefined, { shallow: true })
+              }}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${
+                !selectedTag
+                  ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md scale-105'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
+              }`}
+            >
+              All
+            </button>
+            {allTags.map((tag) => {
+              const isSelected = selectedTag === tag
+              const shouldFade = selectedTag && !isSelected
+              return (
+                <button
+                  key={tag}
+                  onClick={() => {
+                    const newTag = isSelected ? null : tag
+                    setSelectedTag(newTag)
+                    if (newTag) {
+                      router.push(`/?tag=${kebabCase(newTag)}`, undefined, { shallow: true })
+                    } else {
+                      router.push('/', undefined, { shallow: true })
+                    }
+                  }}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${getTagColor(
+                    tag
+                  )} ${isSelected ? 'scale-110 shadow-md ring-2 ring-inset' : ''} ${
+                    shouldFade ? 'opacity-40 hover:opacity-70' : ''
+                  }`}
+                >
+                  {getTagLabel(tag)}
+                </button>
+              )
+            })}
+          </div>
         </div>
         <div className="pt-6">
-          {displayPosts.map((post) => (
+          {filteredPosts.map((post) => (
             <article
               key={post.slug}
               onClick={(e) => {
@@ -208,14 +205,7 @@ export default function Home({ posts, restaurants }) {
                     <>
                       <span className="text-gray-300 dark:text-gray-600">•</span>
                       {post.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full font-semibold text-[10px] ${getTagColor(
-                            tag
-                          )}`}
-                        >
-                          {tag.split(' ').join('-')}
-                        </span>
+                        <Tag key={tag} text={tag} small />
                       ))}
                       {post.tags.length > 3 && (
                         <span className="text-gray-400 dark:text-gray-600 font-medium">
@@ -231,7 +221,7 @@ export default function Home({ posts, restaurants }) {
         </div>
       </div>
 
-      {posts.length > MAX_DISPLAY && (
+      {posts.length > MAX_DISPLAY && !selectedTag && (
         <div className="flex justify-center pt-6">
           <button
             onClick={() => setIsSearchOpen(true)}

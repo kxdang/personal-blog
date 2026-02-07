@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-06-07
 title: 'Mastering concentration: Pomodoro Reflection'
 tags: ['productivity']

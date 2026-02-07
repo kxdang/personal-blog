@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-05-25
 title: 🎲 The Creation of Not Codenames
 summary: An online multiplayer board game similar to codenames!
-tags: ['webdev', 'react']
+tags: ['code']
 ---
 
 # <center><a href="https://notcodenames.com/">Not Codenames</a></center>

@@ -4,7 +4,7 @@ date: 2026-01-05T00:00:00.000Z
 tags:
   - life
 summary: Hot take. My blog. My thoughts. On the internet it goes.
-author: Kien
+author: Kien Dang
 ---
 
 There, I said it. It's a hot take I personally think is true.

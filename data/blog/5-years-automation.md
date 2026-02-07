@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-04-02
 title: ♠️ Five Years as an IC - A Blink and a Lifetime in Tech
 summary: Looking back at my progress so far, and what I'm noticing.

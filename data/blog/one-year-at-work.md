@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2021-06-22
 title: 🌿 One Year Work reflection
 summary: It's already been one year! Time really flies.

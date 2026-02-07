@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   return {
     paths: posts.map((post) => ({
       params: {
-        slug: [post._sys.filename],
+        slug: [post.slug],
       },
     })),
     fallback: false,
@@ -38,18 +38,18 @@ export async function getStaticProps({ params }) {
   // Get all posts for prev/next navigation and RSS
   const allPosts = getSortedBlogPosts()
 
-  const postIndex = allPosts.findIndex((p) => p._sys.filename === slug)
+  const postIndex = allPosts.findIndex((p) => p.slug === slug)
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
 
   // Get author details
-  const authorName = post.author || 'Kien'
+  const authorName = post.author || 'Kien Dang'
   const author = getAuthorByName(authorName)
   const authorDetails = author ? [author] : [{ name: authorName }]
 
   // Generate RSS
   const rssData = allPosts.map((p) => ({
-    slug: p._sys.filename,
+    slug: p.slug,
     title: p.title,
     date: p.date,
     summary: p.summary,
@@ -72,8 +72,8 @@ export async function getStaticProps({ params }) {
       },
       toc,
       authorDetails,
-      prev: prev ? { slug: prev._sys.filename, title: prev.title } : null,
-      next: next ? { slug: next._sys.filename, title: next.title } : null,
+      prev: prev ? { slug: prev.slug, title: prev.title } : null,
+      next: next ? { slug: next.slug, title: next.title } : null,
     },
   }
 }
@@ -94,7 +94,7 @@ export default function Blog({ post, toc, authorDetails, prev, next }) {
     layout: post.layout,
     bibliography: post.bibliography,
     canonicalUrl: post.canonicalUrl,
-    slug: post._sys.filename,
+    slug: post.slug,
     fileName: `${post._sys.filename}.${post._sys.extension}`,
     readingTime,
   }

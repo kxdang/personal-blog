@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-08-23
 title: 🏡 Lessons From 6 Years of Remote Work - My Journey and What I’ve Learned
 summary: Reflections and practical tips from six years of remote work - how to stay productive, comfortable, and sane while working from home.

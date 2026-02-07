@@ -31,7 +31,7 @@ export default function PostCard({ posts, maxDisplay = 3 }) {
               </div>
               <div className="mt-2 flex flex-wrap text-sm">
                 {tags.map((tag) => (
-                  <Tag key={tag} text={tag} />
+                  <Tag key={tag} text={tag} small />
                 ))}
               </div>
               <div className="flex justify-end">

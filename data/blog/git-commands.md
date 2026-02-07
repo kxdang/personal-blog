@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2022-01-30
 title: 🤖 My top 10 Git commands I use
 summary: Writing a post about my most used commands at work and what commands I learned to improve my workflow.
-tags: ['productivity']
+tags: ['code']
 ---
 
 There are a ton of commands and many things you can do with Git. Here are the ones I commonly use for my workflow. These include fixing commit messages, debugging with Git and finding shortcuts to improve my workflow.

@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2022-12-01
 title: 💯 2022 Year End Reflection
 summary: Writing about what I learned this year and what I am looking forward to next year.
-tags: ['react', 'life']
+tags: ['life', 'year-end']
 ---
 
 It’s been awhile since my last blog post and I haven’t had much to update since. I felt like a year end post would be nice to summarize what I’ve been doing at work, what I’ve been learning and what I am looking forward to in 2023.

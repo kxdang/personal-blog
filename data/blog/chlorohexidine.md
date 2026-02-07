@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-12-08
 title: 🦷Chlorhexidine gluconate
 summary: My personal experience with chlorhexidine gluconate inspired me to write a bite-sized explanation on how they work.

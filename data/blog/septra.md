@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-10-18
 title: 💊Sulfamethoxazole and trimethoprim (Septra)
 summary: My personal experience with this antibiotic inspired me to write a bite-sized explanation on how Septra works.

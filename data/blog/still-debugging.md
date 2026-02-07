@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-08-30
 title: '🌱Still Debugging Life: Six Years of Code and Curiosity'
 summary: More than half way through 2025 - another reflecting journal post.

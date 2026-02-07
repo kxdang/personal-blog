@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-08-01
 title: 🍅July Pomodoro Reflection
 summary: A monthly progress for July. My current status and reflection on my productivity, goals and achievements.

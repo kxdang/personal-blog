@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-10-15
 title: 🎒My Portfolio Career Era
 summary: A reflection on building range over rank in a portfolio-style career.
-tags: ['life', 'career']
+tags: ['life']
 ---
 
 Lately, I’ve been thinking a lot about how my relationship with career growth has changed.

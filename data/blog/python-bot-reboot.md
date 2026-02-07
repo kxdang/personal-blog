@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2021-02-15
 title: 💻 How to start your Telegram bot on boot
 summary: Solving a repetitive task when my Telegram bot goes offline.
-tags: ['python']
+tags: ['code']
 ---
 
 [Scroll to solution](#systemd)

@@ -1,28 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import kebabCase from '@/lib/utils/kebabCase'
-
-// Colorful palette for tags
-const tagColors = [
-  'bg-violet-100 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300',
-  'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300',
-  'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300',
-  'bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/50 dark:text-fuchsia-300',
-  'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300',
-  'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300',
-  'bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300',
-  'bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300',
-  'bg-pink-100 text-pink-700 dark:bg-pink-900/50 dark:text-pink-300',
-  'bg-lime-100 text-lime-700 dark:bg-lime-900/50 dark:text-lime-300',
-]
-
-const getTagColor = (tag) => {
-  if (tag.toLowerCase().includes('pomodoro')) {
-    return 'bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300'
-  }
-  const index = tag.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % tagColors.length
-  return tagColors[index]
-}
+import { getTagColor, getTagLabel } from '@/lib/utils/tagColors'
 
 export default function SearchModal({ isOpen, onClose, posts }) {
   const router = useRouter()
@@ -188,7 +167,7 @@ export default function SearchModal({ isOpen, onClose, posts }) {
                       : ''
                   } ${getTagColor(tag)}`}
                 >
-                  {tag}
+                  {getTagLabel(tag)}
                 </button>
               ))}
             </div>
@@ -248,7 +227,7 @@ export default function SearchModal({ isOpen, onClose, posts }) {
                           key={tag}
                           className={`text-[10px] px-1.5 py-0.5 rounded-full ${getTagColor(tag)}`}
                         >
-                          {tag}
+                          {getTagLabel(tag)}
                         </span>
                       ))}
                     </div>

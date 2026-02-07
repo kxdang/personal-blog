@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-06-25
 title: 🎰 Recalibrating my bets - Why I’m pausing LeetCode grind in an AI world
 summary: As someone working in the betting industry, whether you're betting on sports, the market, or even yourself…

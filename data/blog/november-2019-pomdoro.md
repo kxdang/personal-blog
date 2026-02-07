@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2019-12-01
 title: 🍅November Pomodoro Reflection
 summary: A monthly progress for November. My current status and reflection on my productivity, goals and achievements.

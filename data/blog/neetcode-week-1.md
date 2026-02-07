@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2025-04-14
 title: '🌱 NeetCode × Week 1 🍅'
 summary: Self reflection of week 1 grind into NeetCode.
-tags: ['neetcode', 'pomodoro']
+tags: ['code', 'pomodoro']
 ---
 
 <div class="flex justify-center">

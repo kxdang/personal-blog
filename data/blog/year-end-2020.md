@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-12-31
 title: 🎊A year end summary of 2020
 summary: A year that kept on taking.
-tags: ['life']
+tags: ['life', 'year-end']
 ---
 
 Well now that the year is ending, its time to do a final reflection.

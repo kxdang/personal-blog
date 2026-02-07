@@ -1,5 +1,5 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-06-13
 title: 🍾A New Chapter in 2020
 summary: 🎉🙌 I'm employed as a Software Developer at Coveo💙🧡!

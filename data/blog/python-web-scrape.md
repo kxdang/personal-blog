@@ -1,9 +1,9 @@
 ---
-author: Kien
+author: Kien Dang
 date: 2020-11-25
 title: 🤖 How to web scrape with Python for deals
 summary: How to web scrape with Python in 2020. A beginners guide on how to check any site for changes and generate an email notification when it changes. Just in time for Black Friday and Cyber Monday!
-tags: ['python']
+tags: ['code']
 ---
 
 It's been quite sometime since I programmed with Python. I started diving into Al Sweigart's Automate The Boring Stuff with Python book shortly after university to learn basic programming and eventually stopped after landing my first full time job.
