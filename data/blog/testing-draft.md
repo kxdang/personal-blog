@@ -1,6 +1,8 @@
 ---
 title: "\U0001F680Updating my blog to use TinaCMS!"
 date: 2026-02-02T20:01:01.216Z
+tags:
+  - productivity
 draft: false
 summary: Updating my blog to use TinaCMS! Writing about my experience and why I chose to move to TinaCM
 description: ''
@@ -16,6 +18,6 @@ To reduce the friction between idea generation and publication, I used to write 
 
 After researching various Content Management Systems (CMSs), I settled on TinaCMS. While Gemini mentioned a few other options, TinaCMS's simplicity, Markdown support, and ability to preserve MDX files made it the perfect fit for my needs.
 
-So far, using TinaCMS has been a game-changer. I can save drafts, write and publish posts seamlessly, and even reuse React components manually if needed. 
+So far, using TinaCMS has been a game-changer. I can save drafts, write and publish posts seamlessly, and even reuse React components manually if needed.
 
 With TinaCMS in place, I'm excited to see my blog come alive with more frequent posts. The reduced friction has been a welcome relief, and I'm looking forward to continuing this journey of more blogging.
