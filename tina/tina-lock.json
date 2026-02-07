@@ -51,6 +51,15 @@
             "name": "tags",
             "label": "Tags",
             "list": true,
+            "options": [
+              "pomodoro",
+              "life",
+              "biochemistry",
+              "productivity",
+              "code",
+              "AI",
+              "year-end"
+            ],
             "namespace": ["blog", "tags"],
             "searchable": true,
             "uid": false
@@ -95,7 +104,7 @@
             "name": "author",
             "label": "Author",
             "required": true,
-            "ui": { "defaultValue": "Kien" },
+            "ui": { "defaultValue": "Kien Dang" },
             "namespace": ["blog", "author"],
             "searchable": true,
             "uid": false
@@ -114,6 +123,15 @@
             "name": "bibliography",
             "label": "Bibliography",
             "namespace": ["blog", "bibliography"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "slug",
+            "label": "URL Slug",
+            "description": "Custom URL slug. If empty, the filename is used. E.g. \"my-custom-url\" → /blog/my-custom-url",
+            "namespace": ["blog", "slug"],
             "searchable": true,
             "uid": false
           },
@@ -1123,6 +1141,12 @@
           },
           {
             "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "slug" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "canonicalUrl" },
             "arguments": [],
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
@@ -1454,6 +1478,11 @@
           {
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "bibliography" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "slug" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
           },
           {
@@ -2142,6 +2171,11 @@
           {
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "bibliography" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "slug" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
           },
           {
