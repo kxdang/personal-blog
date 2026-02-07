@@ -1,5 +1,5 @@
 ---
-title: 'Building My Private Home Cloud: A Frontend Dev''s Journey with Zero Trust & Docker'
+title: '⛴️ Building My Private Home Cloud: A Frontend Dev''s Journey with Zero Trust & Docker'
 date: 2026-02-07T14:19:00.503Z
 publishDate: 2026-02-07T14:18:49.737Z
 tags:
