@@ -1,9 +1,11 @@
 ---
 title: 'Building My Private Home Cloud: A Frontend Dev''s Journey with Zero Trust & Docker'
-date: 2026-02-08T14:19:00.503Z
+date: 2026-02-07T14:19:00.503Z
 publishDate: 2026-02-07T14:18:49.737Z
-draft: true
-summary: 'Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about Docker, home networking and more. My experience with this upgrade has made my life stress free with my original home lab.'
+tags:
+  - productivity
+draft: false
+summary: 'Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about Docker, home networking and more. My experience with this upgrade has made my life stress free with my original home lab. Also, expanded my knowledge with Cloudflare services past service-workers :) '
 author: Kien
 ---
 
@@ -11,13 +13,13 @@ author: Kien
 
 I'll never forget the day my Home Assistant setup decided to throw up on me. It was like a tiny, temperamental server in a virtual machine, flaking out on me whenever I needed it most. That experience sparked something in me. I realized that I did not have to live with this kind of instability.
 
-Fast forward a few months, and I had upgraded my home lab from Windows 10 to Proxmox. It was a game changer. Suddenly, I had a solid foundation for my infrastructure, and I could start building my private cloud from scratch.
+Last weekend, I had upgraded my home lab from Windows 10 to Proxmox. It was a game changer. Suddenly, I had a solid foundation for my infrastructure, and I could start building my private cloud from scratch.
 
 \## The Problem
 
 I'll be honest. I was not exactly sure what I wanted when I started this journey. I knew I wanted to access my home services like qBittorrent, Sonarr, Radarr, Overseerr, and my NAS from anywhere. But I also did not want to expose my home network to the internet or trust port forwarding.
 
-I tried using VPNs, but they felt clunky, slow, and brittle across devices. And let’s be real, configuring VPNs on routers is not exactly fun.
+I tried using VPNs, but they felt clunky, slow, and brittle across devices. And let’s be real, configuring VPNs on routers is not exactly fun and having used Tailwind, it just wasn't convenient as I thought it was going to be as it clashed with my NextDNS service I had on my phone and devices.
 
 \## The Goal
 
