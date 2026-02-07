@@ -34,7 +34,7 @@ export default function Home({ posts }) {
   const [selectedTag, setSelectedTag] = useState(null)
 
   const selectedTitles = [
-    '☃️ 2025 Year End Reflection',
+    "🍅 1031 Pomodoro's Later and a Career Change Success",
     '🎒My Portfolio Career Era',
     '🇨🇦 How I Built a Canadian Recalls website (While Staying on Vercel\u2019s Free Tier)',
   ]
