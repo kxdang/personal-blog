@@ -79,7 +79,7 @@ export default function Profile() {
             👋 <TextGradient text="Hello" />
           </p>
 
-          <h3 className="flex flex-wrap items-center pb-2 text-base text-gray-600 dark:text-gray-300">
+          <h3 className="flex flex-wrap items-center pb-2 text-lg font-semibold leading-relaxed text-gray-900 dark:text-gray-100">
             <span>Welcome to my blog, my name is</span>
             <KienPronunciation />
           </h3>
@@ -97,33 +97,10 @@ export default function Profile() {
                   Currently Working On
                 </h3>
                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 mb-4">
-                  Building and growing the sportsbook web application at theScore and developing
-                  data engineering solutions in healthcare at CGMH. Expanding my T-shaped skillset
-                  across web development and data engineering—follow my blog for the journey!
+                  Growing theScore application in a new growth team and developing data engineering
+                  solutions in healthcare at CGMH. Expanding my T-shaped skillset across web
+                  development and data engineering.
                 </p>
-
-                <div className="space-y-3">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-900 dark:bg-cyan-900/40 dark:text-cyan-200">
-                      TypeScript
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
-                      React
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-900 dark:bg-slate-700/50 dark:text-slate-200">
-                      Next.js
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200">
-                      Python
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-200">
-                      SQL
-                    </span>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-900 dark:bg-teal-900/40 dark:text-teal-200">
-                      Microsoft Fabric
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

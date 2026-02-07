@@ -2,7 +2,6 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
-import Tag from '@/components/Tag'
 import SearchModal from '@/components/SearchModal'
 import siteMetadata from '@/data/siteMetadata'
 import { getSortedBlogPosts } from '@/lib/mdx-server'
@@ -121,7 +120,7 @@ export default function Home({ posts }) {
             <button
               onClick={() => {
                 setSelectedTag(null)
-                router.push('/', undefined, { shallow: true })
+                router.push('/', undefined, { shallow: true, scroll: false })
               }}
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${
                 !selectedTag
@@ -141,9 +140,12 @@ export default function Home({ posts }) {
                     const newTag = isSelected ? null : tag
                     setSelectedTag(newTag)
                     if (newTag) {
-                      router.push(`/?tag=${kebabCase(newTag)}`, undefined, { shallow: true })
+                      router.push(`/?tag=${kebabCase(newTag)}`, undefined, {
+                        shallow: true,
+                        scroll: false,
+                      })
                     } else {
-                      router.push('/', undefined, { shallow: true })
+                      router.push('/', undefined, { shallow: true, scroll: false })
                     }
                   }}
                   className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 ${getTagColor(
@@ -205,7 +207,14 @@ export default function Home({ posts }) {
                     <>
                       <span className="text-gray-300 dark:text-gray-600">•</span>
                       {post.tags.slice(0, 3).map((tag) => (
-                        <Tag key={tag} text={tag} small />
+                        <span
+                          key={tag}
+                          className={`pointer-events-none inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold mr-1 mb-0.5 ${getTagColor(
+                            tag
+                          )}`}
+                        >
+                          {getTagLabel(tag)}
+                        </span>
                       ))}
                       {post.tags.length > 3 && (
                         <span className="text-gray-400 dark:text-gray-600 font-medium">
