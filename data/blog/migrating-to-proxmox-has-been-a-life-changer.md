@@ -5,7 +5,7 @@ publishDate: 2026-02-07T14:18:49.737Z
 tags:
   - productivity
 draft: false
-summary: 'Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about Docker, home networking and more. My experience with this upgrade has made my life stress free with my original home lab. Also, expanded my knowledge with Cloudflare services past service-workers :) '
+summary: 'Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about Docker, home networking and more. My experience with this upgrade has made my life stress free with my original home lab.'
 author: Kien
 ---
 
@@ -59,9 +59,9 @@ I had one server and many services. Each one needed to be accessible via a clean
 
 That is when I discovered Nginx Proxy Manager. It acts like an API gateway for my home network and gave me:
 
-- Clean URLs without weird ports
-- Centralized routing
-- A single place to manage SSL
+* Clean URLs without weird ports
+* Centralized routing
+* A single place to manage SSL
 
 HTTPS everywhere instantly made the setup feel more professional and trustworthy.
 
@@ -73,9 +73,9 @@ Opening router ports felt like inviting the internet directly into my house. It 
 
 Instead, I used Cloudflare Tunnel. My server makes an outbound only connection to Cloudflare.
 
-- No open ports
-- No exposed home IP
-- Cloudflare becomes the public edge
+* No open ports
+* No exposed home IP
+* Cloudflare becomes the public edge
 
 ## Section 4: The Bouncer - Cloudflare Access
 
@@ -87,8 +87,8 @@ I absolutely did not want my home dashboard accessible to the public.
 
 Cloudflare Access solved this by applying Zero Trust principles to every service.
 
-- Every request is treated as hostile until authenticated
-- No implicit trust just because something is online
+* Every request is treated as hostile until authenticated
+* No implicit trust just because something is online
 
 I set up a wildcard policy for `*.kien.dev`, which means all services automatically inherit authentication.
 
@@ -108,10 +108,10 @@ One quick scare was discovering default admin credentials still enabled. Locking
 
 I ended up with a secure home cloud that gives me:
 
-- Secure remote access to all my home apps
-- No open ports
-- Single sign on everywhere
-- Clean URLs and HTTPS
+* Secure remote access to all my home apps
+* No open ports
+* Single sign on everywhere
+* Clean URLs and HTTPS
 
 The big takeaway for frontend developers is this: networking is just another layer of logic. Docker is infrastructure you can reason about. The edge matters more than ever.
 
