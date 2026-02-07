@@ -1,11 +1,9 @@
 ---
-title: Migrating to Proxmox has been a life changer
+title: 'Building My Private Home Cloud: A Frontend Dev''s Journey with Zero Trust & Docker'
 date: 2026-02-08T14:19:00.503Z
 publishDate: 2026-02-07T14:18:49.737Z
 draft: true
-summary: |-
-  Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about docker usage, home networking and more. My experience with this upgrade has made my life fully automated in ways I didn't think possible.
-  From Home Assistant to Home Butler.. named Kiki, my personal Iron Man Jarvis.
+summary: 'Upgrading my home lab from Windows 10 to Proxmox was the best decision I made this year! Learning a ton about Docker, home networking and more. My experience with this upgrade has made my life stress free with my original home lab.'
 author: Kien
 ---
 
@@ -83,7 +81,7 @@ Instead, I used Cloudflare Tunnel. My server makes an outbound only connection t
 
 Once my services were reachable, the next question was obvious. Who is allowed in?
 
-I absolutely did not want qBittorrent accessible to the public.
+I absolutely did not want my home dashboard accessible to the public.
 
 Cloudflare Access solved this by applying Zero Trust principles to every service.
 
@@ -116,3 +114,5 @@ I ended up with a secure home cloud that gives me:
 The big takeaway for frontend developers is this: networking is just another layer of logic. Docker is infrastructure you can reason about. The edge matters more than ever.
 
 As a final win, I can now run tools like n8n locally, safely exposed, and fully authenticated. My home server is no longer a fragile box under my desk. It is my private cloud.
+
+I can't wait to use n8n and build automation projects and sending data through my local LLM to process my data privately and securely!
