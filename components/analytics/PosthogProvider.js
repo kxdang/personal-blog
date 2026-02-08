@@ -14,17 +14,22 @@ export function PHProvider({ children }) {
   const router = useRouter()
 
   useEffect(() => {
-    // Initialize PostHog if we have an analytics ID
-    if (siteMetadata.analytics.posthogAnalyticsId) {
-      console.log('Initializing PostHog with key:', siteMetadata.analytics.posthogAnalyticsId)
-      console.log('Environment:', process.env.NODE_ENV)
+    // Allow opting out via ?optout=true URL param
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      if (params.get('optout') === 'true') {
+        localStorage.setItem('ph_optout', 'true')
+      }
+    }
 
+    const isOptedOut = typeof window !== 'undefined' && localStorage.getItem('ph_optout') === 'true'
+
+    // Initialize PostHog if we have an analytics ID and user hasn't opted out
+    if (siteMetadata.analytics.posthogAnalyticsId && !isOptedOut) {
       posthog.init(siteMetadata.analytics.posthogAnalyticsId, {
         api_host: 'https://us.i.posthog.com',
         loaded: (posthog) => {
-          console.log('PostHog loaded successfully')
           if (isDevelopment) {
-            // In development, we can check if PostHog is working
             posthog.debug()
           }
         },
@@ -37,8 +42,10 @@ export function PHProvider({ children }) {
 
   // Track page views on route change
   useEffect(() => {
+    const isOptedOut = typeof window !== 'undefined' && localStorage.getItem('ph_optout') === 'true'
+
     const handleRouteChange = () => {
-      if (siteMetadata.analytics.posthogAnalyticsId && typeof window !== 'undefined') {
+      if (siteMetadata.analytics.posthogAnalyticsId && !isOptedOut) {
         posthog.capture('$pageview')
       }
     }
