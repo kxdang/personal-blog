@@ -29,9 +29,171 @@ export default defineConfig({
         name: 'blog',
         label: 'Blog Posts',
         path: 'data/blog',
+        format: 'md',
         match: {
           include: '*',
-          exclude: '',
+        },
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return `${
+                values?.title
+                  ?.toLowerCase()
+                  .replace(/ /g, '-')
+                  .replace(/[^a-z0-9-]/g, '') || 'untitled'
+              }`
+            },
+          },
+        },
+        fields: [
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Title',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'datetime',
+            name: 'date',
+            label: 'Date',
+            required: true,
+          },
+          {
+            type: 'datetime',
+            name: 'lastmod',
+            label: 'Last Modified',
+          },
+          {
+            type: 'datetime',
+            name: 'publishDate',
+            label: 'Publish Date',
+            description:
+              'Schedule post for future publication. Leave empty to publish immediately.',
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            list: true,
+            options: ['pomodoro', 'life', 'biochemistry', 'productivity', 'code', 'AI', 'year-end'],
+          },
+          {
+            type: 'boolean',
+            name: 'draft',
+            label: 'Draft',
+          },
+          {
+            type: 'string',
+            name: 'summary',
+            label: 'Summary',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'string',
+            name: 'description',
+            label: 'Description',
+            ui: {
+              component: 'textarea',
+            },
+          },
+          {
+            type: 'image',
+            name: 'images',
+            label: 'Images',
+            list: true,
+          },
+          {
+            type: 'string',
+            name: 'author',
+            label: 'Author',
+            required: true,
+            ui: {
+              defaultValue: 'Kien Dang',
+            },
+          },
+          {
+            type: 'string',
+            name: 'layout',
+            label: 'Layout',
+            options: ['PostLayout', 'PostSimple', 'PostBanner'],
+          },
+          {
+            type: 'string',
+            name: 'bibliography',
+            label: 'Bibliography',
+          },
+          {
+            type: 'string',
+            name: 'slug',
+            label: 'URL Slug',
+            description:
+              'Custom URL slug. If empty, the filename is used. E.g. "my-custom-url" → /blog/my-custom-url',
+          },
+          {
+            type: 'string',
+            name: 'canonicalUrl',
+            label: 'Canonical URL',
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true,
+            templates: [
+              {
+                name: 'CloudinaryCarousel',
+                label: 'Cloudinary Carousel',
+                fields: [
+                  {
+                    name: 'folder',
+                    label: 'Folder',
+                    type: 'string',
+                    required: true,
+                  },
+                  {
+                    name: 'count',
+                    label: 'Image Count',
+                    type: 'number',
+                  },
+                ],
+              },
+              {
+                name: 'TOCInline',
+                label: 'Table of Contents',
+                fields: [
+                  {
+                    name: 'toc',
+                    label: 'TOC',
+                    type: 'object',
+                    list: true,
+                    fields: [
+                      { name: 'value', type: 'string' },
+                      { name: 'url', type: 'string' },
+                      { name: 'depth', type: 'number' },
+                    ],
+                  },
+                  {
+                    name: 'exclude',
+                    label: 'Exclude',
+                    type: 'string',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'blogMdx',
+        label: 'Blog Posts (MDX)',
+        path: 'data/blog',
+        format: 'mdx',
+        match: {
+          include: '*',
         },
         ui: {
           filename: {
