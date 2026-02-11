@@ -20,9 +20,6 @@ public/sitemap.xml
 # rss feed
 /public/feed.xml
 
-# contentlayer
-.contentlayer
-
 # tinacms generated files
 tina/__generated__
 
