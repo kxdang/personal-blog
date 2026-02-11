@@ -91,12 +91,12 @@ module.exports = withBundleAnalyzer({
     ]
   },
   images: {
-    domains: [
-      'i.gr-assets.com',
-      'covers.openlibrary.org',
-      'assets.hardcover.app',
-      'via.placeholder.com',
-      'res.cloudinary.com',
+    remotePatterns: [
+      { protocol: 'https', hostname: 'i.gr-assets.com' },
+      { protocol: 'https', hostname: 'covers.openlibrary.org' },
+      { protocol: 'https', hostname: 'assets.hardcover.app' },
+      { protocol: 'https', hostname: 'via.placeholder.com' },
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
     ],
   },
   webpack: (config, { dev, isServer }) => {

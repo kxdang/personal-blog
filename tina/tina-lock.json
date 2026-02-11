@@ -7,7 +7,8 @@
         "name": "blog",
         "label": "Blog Posts",
         "path": "data/blog",
-        "match": { "include": "*", "exclude": "" },
+        "format": "md",
+        "match": { "include": "*" },
         "ui": { "filename": { "readonly": false } },
         "fields": [
           {
@@ -224,6 +225,227 @@
         "namespace": ["blog"]
       },
       {
+        "name": "blogMdx",
+        "label": "Blog Posts (MDX)",
+        "path": "data/blog",
+        "format": "mdx",
+        "match": { "include": "*" },
+        "ui": { "filename": { "readonly": false } },
+        "fields": [
+          {
+            "type": "string",
+            "name": "title",
+            "label": "Title",
+            "isTitle": true,
+            "required": true,
+            "namespace": ["blogMdx", "title"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "datetime",
+            "name": "date",
+            "label": "Date",
+            "required": true,
+            "namespace": ["blogMdx", "date"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "datetime",
+            "name": "lastmod",
+            "label": "Last Modified",
+            "namespace": ["blogMdx", "lastmod"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "datetime",
+            "name": "publishDate",
+            "label": "Publish Date",
+            "description": "Schedule post for future publication. Leave empty to publish immediately.",
+            "namespace": ["blogMdx", "publishDate"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "tags",
+            "label": "Tags",
+            "list": true,
+            "options": [
+              "pomodoro",
+              "life",
+              "biochemistry",
+              "productivity",
+              "code",
+              "AI",
+              "year-end"
+            ],
+            "namespace": ["blogMdx", "tags"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "boolean",
+            "name": "draft",
+            "label": "Draft",
+            "namespace": ["blogMdx", "draft"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "summary",
+            "label": "Summary",
+            "ui": { "component": "textarea" },
+            "namespace": ["blogMdx", "summary"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "description",
+            "label": "Description",
+            "ui": { "component": "textarea" },
+            "namespace": ["blogMdx", "description"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "image",
+            "name": "images",
+            "label": "Images",
+            "list": true,
+            "namespace": ["blogMdx", "images"],
+            "searchable": false,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "author",
+            "label": "Author",
+            "required": true,
+            "ui": { "defaultValue": "Kien Dang" },
+            "namespace": ["blogMdx", "author"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "layout",
+            "label": "Layout",
+            "options": ["PostLayout", "PostSimple", "PostBanner"],
+            "namespace": ["blogMdx", "layout"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "bibliography",
+            "label": "Bibliography",
+            "namespace": ["blogMdx", "bibliography"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "slug",
+            "label": "URL Slug",
+            "description": "Custom URL slug. If empty, the filename is used. E.g. \"my-custom-url\" → /blog/my-custom-url",
+            "namespace": ["blogMdx", "slug"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "string",
+            "name": "canonicalUrl",
+            "label": "Canonical URL",
+            "namespace": ["blogMdx", "canonicalUrl"],
+            "searchable": true,
+            "uid": false
+          },
+          {
+            "type": "rich-text",
+            "name": "body",
+            "label": "Body",
+            "isBody": true,
+            "templates": [
+              {
+                "name": "CloudinaryCarousel",
+                "label": "Cloudinary Carousel",
+                "fields": [
+                  {
+                    "name": "folder",
+                    "label": "Folder",
+                    "type": "string",
+                    "required": true,
+                    "namespace": ["blogMdx", "body", "CloudinaryCarousel", "folder"],
+                    "searchable": true,
+                    "uid": false
+                  },
+                  {
+                    "name": "count",
+                    "label": "Image Count",
+                    "type": "number",
+                    "namespace": ["blogMdx", "body", "CloudinaryCarousel", "count"],
+                    "searchable": true,
+                    "uid": false
+                  }
+                ],
+                "namespace": ["blogMdx", "body", "CloudinaryCarousel"]
+              },
+              {
+                "name": "TOCInline",
+                "label": "Table of Contents",
+                "fields": [
+                  {
+                    "name": "toc",
+                    "label": "TOC",
+                    "type": "object",
+                    "list": true,
+                    "fields": [
+                      {
+                        "name": "value",
+                        "type": "string",
+                        "namespace": ["blogMdx", "body", "TOCInline", "toc", "value"]
+                      },
+                      {
+                        "name": "url",
+                        "type": "string",
+                        "namespace": ["blogMdx", "body", "TOCInline", "toc", "url"]
+                      },
+                      {
+                        "name": "depth",
+                        "type": "number",
+                        "namespace": ["blogMdx", "body", "TOCInline", "toc", "depth"]
+                      }
+                    ],
+                    "namespace": ["blogMdx", "body", "TOCInline", "toc"],
+                    "searchable": true,
+                    "uid": false
+                  },
+                  {
+                    "name": "exclude",
+                    "label": "Exclude",
+                    "type": "string",
+                    "namespace": ["blogMdx", "body", "TOCInline", "exclude"],
+                    "searchable": true,
+                    "uid": false
+                  }
+                ],
+                "namespace": ["blogMdx", "body", "TOCInline"]
+              }
+            ],
+            "namespace": ["blogMdx", "body"],
+            "searchable": true,
+            "parser": { "type": "mdx" },
+            "uid": false
+          }
+        ],
+        "namespace": ["blogMdx"]
+      },
+      {
         "name": "authors",
         "label": "Authors",
         "path": "data/authors",
@@ -323,7 +545,7 @@
     "DocumentConnection": {
       "type": "DocumentConnection",
       "resolveType": "multiCollectionDocumentList",
-      "collections": ["blog", "authors"]
+      "collections": ["blog", "blogMdx", "authors"]
     },
     "Node": { "type": "Node", "resolveType": "nodeDocument" },
     "DocumentNode": {
@@ -343,6 +565,18 @@
       "type": "BlogConnection",
       "resolveType": "collectionDocumentList",
       "collection": "blog"
+    },
+    "BlogMdx": {
+      "type": "BlogMdx",
+      "resolveType": "collectionDocument",
+      "collection": "blogMdx",
+      "createBlogMdx": "create",
+      "updateBlogMdx": "update"
+    },
+    "BlogMdxConnection": {
+      "type": "BlogMdxConnection",
+      "resolveType": "collectionDocumentList",
+      "collection": "blogMdx"
     },
     "Authors": {
       "type": "Authors",
@@ -773,6 +1007,67 @@
           },
           {
             "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "blogMdx" },
+            "arguments": [
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "relativePath" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+              }
+            ],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdx" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "blogMdxConnection" },
+            "arguments": [
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "before" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "after" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "first" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "last" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "sort" },
+                "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "filter" },
+                "type": {
+                  "kind": "NamedType",
+                  "name": { "kind": "Name", "value": "BlogMdxFilter" }
+                }
+              }
+            ],
+            "type": {
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "BlogMdxConnection" }
+              }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "authors" },
             "arguments": [
               {
@@ -842,6 +1137,11 @@
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "blog" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "blogMdx" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdxFilter" } }
           },
           {
             "kind": "InputValueDefinition",
@@ -1039,6 +1339,7 @@
         "directives": [],
         "types": [
           { "kind": "NamedType", "name": { "kind": "Name", "value": "Blog" } },
+          { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdx" } },
           { "kind": "NamedType", "name": { "kind": "Name", "value": "Authors" } },
           { "kind": "NamedType", "name": { "kind": "Name", "value": "Folder" } }
         ]
@@ -1565,6 +1866,372 @@
           { "kind": "NamedType", "name": { "kind": "Name", "value": "Document" } }
         ],
         "directives": [],
+        "name": { "kind": "Name", "value": "BlogMdx" },
+        "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "title" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "date" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "lastmod" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "publishDate" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "tags" },
+            "arguments": [],
+            "type": {
+              "kind": "ListType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "draft" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "summary" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "description" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "images" },
+            "arguments": [],
+            "type": {
+              "kind": "ListType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "author" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "layout" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "bibliography" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "slug" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "canonicalUrl" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "body" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "id" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ID" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "_sys" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "SystemInfo" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "_values" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxBodyCloudinaryCarouselFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "folder" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "count" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NumberFilter" } }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxBodyTOCInlineTocFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "value" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "url" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "depth" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "NumberFilter" } }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxBodyTOCInlineFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "toc" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "BlogMdxBodyTOCInlineTocFilter" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "exclude" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxBodyFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "CloudinaryCarousel" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "BlogMdxBodyCloudinaryCarouselFilter" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "TOCInline" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "BlogMdxBodyTOCInlineFilter" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "title" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "date" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DatetimeFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "lastmod" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DatetimeFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "publishDate" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "DatetimeFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "tags" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "draft" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BooleanFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "summary" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "description" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "images" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "ImageFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "author" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "layout" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "bibliography" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "slug" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "canonicalUrl" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "StringFilter" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "body" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "BlogMdxBodyFilter" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "ObjectTypeDefinition",
+        "interfaces": [],
+        "directives": [],
+        "name": { "kind": "Name", "value": "BlogMdxConnectionEdges" },
+        "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "cursor" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "node" },
+            "arguments": [],
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdx" } }
+          }
+        ]
+      },
+      {
+        "kind": "ObjectTypeDefinition",
+        "interfaces": [{ "kind": "NamedType", "name": { "kind": "Name", "value": "Connection" } }],
+        "directives": [],
+        "name": { "kind": "Name", "value": "BlogMdxConnection" },
+        "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "pageInfo" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "PageInfo" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "totalCount" },
+            "arguments": [],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Float" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "edges" },
+            "arguments": [],
+            "type": {
+              "kind": "ListType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "BlogMdxConnectionEdges" }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "ObjectTypeDefinition",
+        "interfaces": [
+          { "kind": "NamedType", "name": { "kind": "Name", "value": "Node" } },
+          { "kind": "NamedType", "name": { "kind": "Name", "value": "Document" } }
+        ],
+        "directives": [],
         "name": { "kind": "Name", "value": "Authors" },
         "fields": [
           {
@@ -2008,6 +2675,64 @@
           },
           {
             "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "updateBlogMdx" },
+            "arguments": [
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "relativePath" },
+                "type": {
+                  "kind": "NonNullType",
+                  "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+                }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "params" },
+                "type": {
+                  "kind": "NonNullType",
+                  "type": {
+                    "kind": "NamedType",
+                    "name": { "kind": "Name", "value": "BlogMdxMutation" }
+                  }
+                }
+              }
+            ],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdx" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "createBlogMdx" },
+            "arguments": [
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "relativePath" },
+                "type": {
+                  "kind": "NonNullType",
+                  "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+                }
+              },
+              {
+                "kind": "InputValueDefinition",
+                "name": { "kind": "Name", "value": "params" },
+                "type": {
+                  "kind": "NonNullType",
+                  "type": {
+                    "kind": "NamedType",
+                    "name": { "kind": "Name", "value": "BlogMdxMutation" }
+                  }
+                }
+              }
+            ],
+            "type": {
+              "kind": "NonNullType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdx" } }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "updateAuthors" },
             "arguments": [
               {
@@ -2077,6 +2802,11 @@
           },
           {
             "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "blogMdx" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdxMutation" } }
+          },
+          {
+            "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "authors" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AuthorsMutation" } }
           },
@@ -2098,6 +2828,11 @@
           },
           {
             "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "blogMdx" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "BlogMdxMutation" } }
+          },
+          {
+            "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "authors" },
             "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "AuthorsMutation" } }
           }
@@ -2106,6 +2841,93 @@
       {
         "kind": "InputObjectTypeDefinition",
         "name": { "kind": "Name", "value": "BlogMutation" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "title" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "date" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "lastmod" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "publishDate" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "tags" },
+            "type": {
+              "kind": "ListType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "draft" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "Boolean" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "summary" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "description" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "images" },
+            "type": {
+              "kind": "ListType",
+              "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "author" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "layout" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "bibliography" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "slug" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "canonicalUrl" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "String" } }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "body" },
+            "type": { "kind": "NamedType", "name": { "kind": "Name", "value": "JSON" } }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "BlogMdxMutation" },
         "fields": [
           {
             "kind": "InputValueDefinition",
