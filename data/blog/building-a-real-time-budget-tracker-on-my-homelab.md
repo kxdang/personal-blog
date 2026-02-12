@@ -5,6 +5,7 @@ lastmod: 2026-02-12T03:27:59.630Z
 tags:
   - productivity
 draft: true
+summary: Solving a minor problem I've had with budgeting apps...
 author: Kien
 slug: building-budget-tracker
 ---
@@ -49,22 +50,22 @@ A fully automated budget tracking system that:
 │  💻 My Browser ──┐                                                  │
 │  💻 Wife's Browser ──→ app.kien.dev                              │
 └──────────────────────────┬──────────────────────────────────────────┘
-                           │
-                ┌──────────▼──────────┐
-                │  ☁️ CLOUDFLARE       │
-                │                     │
-                │  Zero Trust         │
-                │  (Google SSO)       │
-                │  Only allowed       │
-                │  Gmail accounts     │
-                └──────────┬──────────┘
-                           │
-                ┌──────────▼──────────┐
-                │  🔀 NGINX PROXY MGR  │
-                │  Routes traffic to  │
-                │  correct service    │
-                └──────────┬──────────┘
-                           │
+│
+┌──────────▼──────────┐
+│  ☁️ CLOUDFLARE       │
+│                     │
+│  Zero Trust         │
+│  (Google SSO)       │
+│  Only allowed       │
+│  Gmail accounts     │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│  🔀 NGINX PROXY MGR  │
+│  Routes traffic to  │
+│  correct service    │
+└──────────┬──────────┘
+│
 ┌──────────────────────────▼──────────────────────────────────────────┐
 │  🏠 HOMELAB (Proxmox → Docker LXC)                                  │
 │                                                                     │
@@ -163,7 +164,7 @@ n8n hit the sweet spot:
 \- \*\*Visual debugging\*\*: when something breaks, I click the failing node and see exactly what went wrong. No digging through logs, no stack traces, no \`console.log\` debugging. Each node shows its input and output, step by step
 \- \*\*Pre-built integrations\*\*: HTTP requests, webhooks, code nodes, scheduling, IF/Switch logic — all drag and drop. I didn't write a single line of JMAP client code or Telegram bot framework. I just pointed HTTP nodes at the right URLs
 \- \*\*Low maintenance\*\*: no dependency updates, no build pipeline, no deploy scripts for the automation layer. The workflows just run
-\- \*\*Rapid iteration\*\*: I can test a single node in isolation, tweak it, and re-run without restarting anything. 
+\- \*\*Rapid iteration\*\*: I can test a single node in isolation, tweak it, and re-run without restarting anything.
 
 Building the entire email → AI → database → Telegram pipeline took hours, not days
 
@@ -187,6 +188,5 @@ Could I have built all of this in pure code? Absolutely. But n8n let me build it
 \- \*\*Telegram /add command\*\* for manually adding cash transactions
 \- \*\*Subscription tracking\*\* separating fixed costs from cancellable subscriptions
 \- \*\*Historical data import\*\* from CSV bank statements
-
 
 Now I'm on the hunt for a new server machine with better hardware so that I can run multiple LLM models for fun and continue building with LLMs to solve my very mundane problems.
