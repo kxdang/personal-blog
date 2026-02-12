@@ -101,7 +101,7 @@ export default function Blog({ post, toc, authorDetails, prev, next }) {
 
   return (
     <>
-      {frontMatter.draft !== true ? (
+      {!frontMatter.draft || process.env.NODE_ENV === 'development' ? (
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           mdxSource={post.code}
