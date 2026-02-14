@@ -103,9 +103,7 @@ But if you’re not aligned on what matters in that moment, it shows up in PR co
 
 And that’s harder to fix than messy code.
 
-\---
-
-\## AI and Ownership
+## AI and Ownership
 
 AI adds another layer.
 
