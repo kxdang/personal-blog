@@ -31,7 +31,7 @@ That wasn’t about lowering standards. It was about drawing a line between obje
 
 I didn’t see it as cutting corners. I saw it as protecting momentum.
 
-## Clean Code vs Moving Forward
+### Clean Code vs Moving Forward
 
 I still care about clean code, that hasn’t changed.
 
@@ -47,7 +47,7 @@ Because here’s the other thing.
 
 Software is churn.
 
-Developers grow, they end up leaving, they move teams and outgrow the company. They leave behind code with context that only existed in their head and to their best of their abilities, write code clean enough for the PR reviewers to understand, so that it gets in. What made perfect sense at the time and between the devs that were there slowly becomes confusing six months later for the next cohort of devs.
+Developers grow, they end up leaving, they move teams and outgrow the company. They leave behind code with context that only existed in their head and to their best of their abilities, write code clean enough for the PR reviewers to understand. What made perfect sense at the time and between the devs that were there slowly becomes confusing six months later for the next cohort of devs.
 
 In a perfect world, code would stay pristine. Clean abstractions, clear comments, no weird patterns and things are documented well.
 
@@ -57,9 +57,9 @@ Of course there’s debt.
 
 The real skill isn’t pretending it shouldn’t exist. The real skill is being able to read through it, understand it, improve it where it matters, and still continue producing value.
 
-## Recently, I Felt It Myself
+### Recently, I Felt It Myself
 
-I ***merged*** something that wasn’t my cleanest work. But behind a feature flag, this code will never run in production. This is was expected. My manager mentioned this was the point and while working with another senior developer,  we were bouncing ideas back and forth, code being landed the way it is is not without communication. The code gets cleaned up in every PR we iterate.
+I *merged* something that wasn’t my cleanest work. But behind a **feature flag,** this code will never run in production until its ready. My manager said this was the point, and while collaborating with another senior developer, we constantly bounced ideas back and forth. Every PR we iterate cleans up the code, so its current state is never without communication.
 
 Communication with the work here is key, things get refactored for clarity as the project nears completion.
 
@@ -87,7 +87,7 @@ Now, if tests are failing or it’s unstable, that’s different. That deserves 
 
 But if it works, is safe, and is temporary by design, I don’t think it needs to be beautiful before it can exist.
 
-## When It’s Not Really About the Code
+### When It’s Not Really About the Code
 
 Over time I’ve realized that sometimes the tension isn’t about code quality at all.
 
@@ -103,7 +103,7 @@ But if you’re not aligned on what matters in that moment, it shows up in PR co
 
 And that’s harder to fix than messy code.
 
-## AI and Ownership
+### AI and Ownership
 
 AI adds another layer.
 
