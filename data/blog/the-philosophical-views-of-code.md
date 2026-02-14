@@ -1,5 +1,5 @@
 ---
-title: The philosophical views of code
+title: "\U0001F310 The philosophical views of code"
 date: 2026-02-14T18:19:39.717Z
 tags:
   - code
