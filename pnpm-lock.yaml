@@ -11,12 +11,12 @@ importers:
       '@fontsource/crimson-pro':
         specifier: 5.2.8
         version: 5.2.8
-      '@fontsource/gentium-plus':
-        specifier: 5.2.7
-        version: 5.2.7
       '@fontsource/inter':
         specifier: 4.5.2
         version: 4.5.2
+      '@fontsource/lora':
+        specifier: 5.2.8
+        version: 5.2.8
       '@fontsource/playfair-display':
         specifier: 5.2.8
         version: 5.2.8
@@ -1395,11 +1395,11 @@ packages:
   '@fontsource/crimson-pro@5.2.8':
     resolution: {integrity: sha512-t+cAoAswUKEReDPqDNWWSyAp7baZkKrtF6Ry0KrDZQHJCldS9pIbRH0n2hm1u4+SbIUI7c+nUS9yfK6rEhycTw==}
 
-  '@fontsource/gentium-plus@5.2.7':
-    resolution: {integrity: sha512-qgkMjwE4t3XOv6bEAlddTqIC8OUfUWKphfZswkqi9+Qn5FcQu2bXi1uIqHg46xMhIrXQ3WJZkv9HZZfCdAxmhQ==}
-
   '@fontsource/inter@4.5.2':
     resolution: {integrity: sha512-4LLfZYr5dRsobtC9JNkATL5OwOqrxs2tF29eNljjogxWXm4tlHxRo4dgOFTlWxQOxcj5Zv7dM8IMiSoOqMGy3g==}
+
+  '@fontsource/lora@5.2.8':
+    resolution: {integrity: sha512-AQlfsHw4TP1x/eb2IZ6VjQ70ctKa39m9JN9A4zlvDOeKYLrCs+GaYIEQ86Y6YfSPGHn01bErXkRcyktOW0LOPQ==}
 
   '@fontsource/playfair-display@5.2.8':
     resolution: {integrity: sha512-fUEhib70SszNhQVsGbUMSsWJhr7Je0rdeuZdtGpDNu0GKF1xJM8QhpI/y0pckU25GcChXm9TLOmeZupkvvZo2g==}
@@ -9399,9 +9399,9 @@ snapshots:
 
   '@fontsource/crimson-pro@5.2.8': {}
 
-  '@fontsource/gentium-plus@5.2.7': {}
-
   '@fontsource/inter@4.5.2': {}
+
+  '@fontsource/lora@5.2.8': {}
 
   '@fontsource/playfair-display@5.2.8': {}
 
