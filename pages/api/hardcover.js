@@ -31,6 +31,13 @@ export default async function handler(req, res) {
               title
               slug
             }
+            user_book_reads(
+              where: {finished_at: {_is_null: true}}
+              order_by: {started_at: desc}
+              limit: 1
+            ) {
+              progress
+            }
           }
           user_books_aggregate(where: {status_id: {_eq: 3}}) {
             aggregate {
@@ -92,6 +99,7 @@ export default async function handler(req, res) {
             url: `https://hardcover.app/books/${
               book.slug || book.title.toLowerCase().replace(/ /g, '-')
             }`,
+            progress: userBook.user_book_reads?.[0]?.progress ?? null,
           }
         }) || [],
       source: 'hardcover',

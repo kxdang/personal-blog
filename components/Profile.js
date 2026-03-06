@@ -32,7 +32,7 @@ export default function Profile() {
     }
   }, [data])
 
-  const BookCard = ({ title, author, imageUrl, url }) => {
+  const BookCard = ({ title, author, imageUrl, url, progress }) => {
     return (
       <Link
         href={url}
@@ -53,17 +53,39 @@ export default function Profile() {
             {title}
           </h4>
           <p className="text-xs text-gray-600 dark:text-gray-300 truncate">by {author}</p>
-          <div className="mt-2 flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
-            <span>Reading now</span>
-            <svg
-              className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
+          {progress != null && (
+            <div className="mt-2">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-gray-600 dark:text-gray-400">
+                  {Math.round(progress)}% complete
+                </span>
+              </div>
+              <div className="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary-500 rounded-full transition-all duration-500"
+                  style={{ width: `${Math.round(progress)}%` }}
+                />
+              </div>
+            </div>
+          )}
+          {progress == null && (
+            <div className="mt-2 flex items-center gap-1 text-xs text-gray-600 dark:text-gray-400">
+              <span>Reading now</span>
+              <svg
+                className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          )}
         </div>
       </Link>
     )
@@ -161,6 +183,7 @@ export default function Profile() {
                   author={book.author}
                   imageUrl={book.imageUrl}
                   url={book.url}
+                  progress={book.progress}
                 />
               ))}
             </div>
