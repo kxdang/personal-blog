@@ -60,7 +60,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Lora', ...defaultTheme.fontFamily.serif],
+        sans: ['Gentium Plus', ...defaultTheme.fontFamily.serif],
         serif: ['Crimson Pro', ...defaultTheme.fontFamily.serif],
       },
       colors: {
