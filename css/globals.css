@@ -1,101 +1,88 @@
+/* ===== Color System ===== */
+:root {
+  --gold: #f0c050;
+  --coral: #f07068;
+  --mint: #60d0a0;
+  --sky: #60a8e8;
+  --violet: #b090e0;
+  --peach: #f0a070;
+}
+
 .light {
   background-color: #faf8f5;
 }
 
 .dark {
-  background-color: #141414;
+  background-color: #0a0a0f;
 }
 
-/* Apply Crimson Pro to all headings and heading-like elements */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.text-2xl,
-.text-3xl,
-.text-4xl,
-.text-5xl,
-.text-6xl,
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6,
-.prose-lg h1,
-.prose-lg h2,
-.prose-lg h3,
-.prose-lg h4,
-.prose-lg h5,
-.prose-lg h6,
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6,
-main h1,
-main h2,
-main h3,
-main h4,
-main h5,
-main h6,
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
-  font-family: 'Crimson Pro', Georgia, serif;
+/* ===== Noise Texture Overlay ===== */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
-/* Base font sizes */
+/* ===== Base Typography ===== */
 body {
   font-size: 1.04rem;
   letter-spacing: 0.01em;
   line-height: 1.65;
 }
 
-/* Adjust specific text sizes for better hierarchy */
+/* Headings - Fraunces */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Animated gradient text */
+.animate-gradient {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 103.5%;
+  font-weight: 800;
+}
+
+/* ===== Font Size Scale ===== */
 .text-xs {
   font-size: 0.867rem;
 }
-
 .text-sm {
   font-size: 0.916rem;
 }
-
 .text-base {
   font-size: 1.04rem;
 }
-
 .text-lg {
   font-size: 1.139rem;
 }
-
 .text-xl {
   font-size: 1.337rem;
 }
-
-/* Heading sizes */
 .text-2xl {
   font-size: 1.733rem;
 }
-
 .text-3xl {
   font-size: 2.228rem;
 }
-
 .text-4xl {
   font-size: 2.97rem;
 }
-
 .text-5xl {
   font-size: 3.465rem;
 }
-
 .text-6xl {
   font-size: 4.455rem;
 }
@@ -103,23 +90,14 @@ body {
 h1 {
   font-size: 2.475rem;
 }
-
 h2 {
   font-size: 1.98rem;
 }
-
 h3 {
   font-size: 1.733rem;
 }
 
-/* Specific adjustment for the hello gradient */
-.animate-gradient {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 103.5%;
-  font-weight: 800;
-}
-
-/* Prose content sizes */
+/* ===== Prose Content ===== */
 .prose {
   font-size: 1.089rem;
 }
@@ -129,160 +107,47 @@ h3 {
   line-height: 1.75;
 }
 
-/* Homepage specific adjustments */
 main p {
   font-size: 1.04rem;
 }
 
-/* Fix Previous/Next article links and tags */
-.text-xs {
-  font-size: 0.867rem;
+p {
+  letter-spacing: 0.01em;
 }
 
-/* Ensure Previous/Next article links and tags use proper fonts */
-a .text-xs,
-a .text-base,
-a[href*='/tags/'] {
-  letter-spacing: normal;
-}
-
-/* Previous/Next article titles should use body font */
-.prose-lg a h2,
-article a h2,
-div[class*='divide'] a {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.089rem;
+/* ===== Tags & Labels - IBM Plex Mono ===== */
+a[href*='/tags/'],
+a[href*='/tags/'] span,
+.text-xs.uppercase {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
   font-weight: 500;
-}
-
-/* Tag links should use Inter and be smaller */
-a[href*='/tags/'] {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.867rem;
-  font-weight: 400;
-}
-
-/* Tag styling on tag page */
-a[href*='/tags/'].text-sm {
-  font-size: 0.867rem;
 }
 
 /* Tag count styling */
 .text-xs.text-gray-600,
 .text-xs.text-gray-400,
 a[href*='/tags/'] .text-xs {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.743rem;
 }
 
-/* Badge/pill styling - standard sizes */
-span.rounded-full {
-  font-size: 0.743rem;
-}
-
-/* Tag page specific badge styling and blog post tags */
-a[href*='/tags/'] span,
-.text-xs.uppercase {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.644rem;
-  font-weight: 500;
-}
-
-/* Blog post tag badges - make them smaller */
-.text-primary-500,
-a.text-primary-500,
-.mr-3.text-sm,
-a.mr-3.text-sm,
-a[href*='/tags/'].mr-3 {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.792rem;
-}
-
-/* Blog post tag links */
-.text-sm.font-medium a,
-a.text-primary-500.hover\:text-primary-600 {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.792rem;
-}
-
-/* Homepage tag badges - target the colored badges specifically */
+/* Homepage tag badges */
 a[href*='/tags/'].rounded-full,
 a[href*='/tags/'].text-xs.font-medium,
 .inline-flex.items-center.px-2.py-0\.5.rounded-full {
-  font-family: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-family: 'IBM Plex Mono', monospace !important;
   font-size: 0.644rem !important;
   padding: 0.124rem 0.372rem !important;
   font-weight: 500 !important;
 }
 
-/* Fix blog post hierarchy with stronger distinction */
-/* Blog post titles should be prominent */
-article h2 a,
-.prose h2 a,
-main h2.text-2xl,
-h2.text-2xl {
-  font-size: 1.98rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: 'Crimson Pro', Georgia, serif;
-}
-
-/* Blog post excerpts should be clearly smaller and lighter */
-.prose-gray-500,
-.text-gray-500.prose,
-article .text-gray-500,
-main article .text-gray-500,
-main .text-gray-500.dark\:text-gray-400 {
-  font-size: 0.941rem;
-  line-height: 1.65;
-  color: rgb(107 114 128);
-  font-weight: 400;
-}
-
-/* Blog metadata (dates, reading time) */
-.text-gray-400,
-time {
-  font-size: 0.867rem;
-}
-
-/* Improve readability of body text */
-p {
-  letter-spacing: 0.01em;
-}
-
-/* Make sure blog titles stand out */
-h2.text-2xl a {
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 1.98rem;
-}
-
-/* Ensure proper blog post card spacing and hierarchy */
-article li,
-main article {
-  margin-bottom: 1.5rem;
-}
-
-/* Blog post link titles need to be bigger */
-a .text-2xl,
-article a h2 {
-  font-size: 1.733rem;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* Make excerpts visually distinct from titles */
-.prose.text-gray-500 {
-  font-size: 0.941rem;
-  margin-top: 0.5rem;
-}
-
-/* Target all tag links with rounded-full class */
+/* Tag badges with transitions */
 .rounded-full.transition-colors {
   font-size: 0.585rem !important;
   padding: 0.113rem 0.45rem !important;
 }
 
-/* Homepage tag badges specifically */
 .homepage-tag-badge {
   font-size: 0.619rem !important;
   padding: 0.075rem 0.372rem !important;
@@ -290,27 +155,165 @@ article a h2 {
   line-height: 1.2 !important;
 }
 
-/* Ensure ALL headers in body content use Crimson Pro */
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-#__next h1,
-#__next h2,
-#__next h3,
-#__next h4,
-#__next h5,
-#__next h6 {
-  font-family: 'Crimson Pro', Georgia, serif !important;
+/* Blog post tag links */
+.text-primary-500,
+a.text-primary-500,
+.mr-3.text-sm,
+a.mr-3.text-sm,
+a[href*='/tags/'].mr-3,
+.text-sm.font-medium a,
+a.text-primary-500.hover\:text-primary-600 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.792rem;
 }
 
-/* Sidebar navigation - override global font size overrides */
+/* ===== Blog Post Hierarchy ===== */
+article h2 a,
+.prose h2 a,
+h2.text-2xl,
+a .text-2xl,
+article a h2 {
+  font-size: 1.733rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Blog post excerpts */
+.prose-gray-500,
+.text-gray-500.prose,
+article .text-gray-500,
+main article .text-gray-500,
+main .text-gray-500.dark\:text-gray-400 {
+  font-size: 0.941rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+a .text-2xl,
+article a h2 {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.prose.text-gray-500 {
+  font-size: 0.941rem;
+  margin-top: 0.5rem;
+}
+
+/* Blog metadata - IBM Plex Mono for dates & numbers */
+time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.867rem;
+}
+
+.text-gray-400 {
+  font-size: 0.867rem;
+}
+
+/* Previous/Next article titles */
+.prose-lg a h2,
+article a h2,
+div[class*='divide'] a {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.089rem;
+  font-weight: 500;
+}
+
+/* Tag links spacing */
+a .text-xs,
+a .text-base,
+a[href*='/tags/'] {
+  letter-spacing: normal;
+}
+
+article li,
+main article {
+  margin-bottom: 1.5rem;
+}
+
+/* Sidebar navigation */
 .sidebar-nav a {
   font-size: 12.6px !important;
 }
 
 .sidebar-nav h2 {
+  font-family: 'IBM Plex Mono', monospace !important;
   font-size: 9.9px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Chapter Labels ===== */
+/* Small allcaps mono labels above headings (for MDX content) */
+.chapter-label,
+.v-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8a8698;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dark .chapter-label,
+.dark .v-title {
+  color: #8a8698;
+}
+
+/* ===== Visual Boxes ===== */
+.visual-box {
+  background-color: #f0ebe3;
+  border: 1px solid #d5d0c8;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 1.5rem 0;
+}
+
+.dark .visual-box {
+  background-color: #12121a;
+  border-color: #252535;
+}
+
+.visual-box .v-title {
+  margin-bottom: 1rem;
+}
+
+/* ===== Analogy Boxes ===== */
+.analogy-box {
+  border-left: 3px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  background-color: rgba(240, 192, 80, 0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.dark .analogy-box {
+  background-color: rgba(240, 192, 80, 0.04);
+  border-left-color: var(--gold);
+}
+
+/* ===== Dark Mode Blockquote Gold Border ===== */
+.dark blockquote {
+  border-left-color: var(--gold) !important;
+}
+
+/* ===== Hero Gold Glow (dark mode) ===== */
+.hero-glow {
+  position: relative;
+}
+
+.dark .hero-glow::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(240, 192, 80, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }

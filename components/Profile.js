@@ -97,7 +97,7 @@ export default function Profile() {
       <h1 className="text-center text-3xl font-bold sm:hidden">Kien Dang</h1>
       <div className="flex flex-col-reverse pt-8 pb-2 md:flex-row">
         <div className="mr-auto">
-          <p className=" pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <p className="hero-glow pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             👋 <TextGradient text="Hello" />
           </p>
 

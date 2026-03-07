@@ -1,5 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
 
 module.exports = {
   experimental: {
@@ -17,19 +16,10 @@ module.exports = {
     screens: {
       xs: '440px',
       sm: '640px',
-      // => @media (min-width: 640px) { ... }
-
       md: '768px',
-      // => @media (min-width: 768px) { ... }
-
       lg: '1024px',
-      // => @media (min-width: 1024px) { ... }
-
       xl: '1280px',
-      // => @media (min-width: 1280px) { ... }
-
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
     },
     extend: {
       keyframes: {
@@ -60,17 +50,46 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Lora', ...defaultTheme.fontFamily.serif],
-        serif: ['Crimson Pro', ...defaultTheme.fontFamily.serif],
+        sans: ['Work Sans', ...defaultTheme.fontFamily.sans],
+        serif: ['Fraunces', ...defaultTheme.fontFamily.serif],
+        mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        primary: colors.sky,
-        gray: colors.neutral,
+        primary: {
+          50: '#fefbf0',
+          100: '#fdf4d4',
+          200: '#fbe8a8',
+          300: '#f7d878',
+          400: '#f0c050',
+          500: '#d4a430',
+          600: '#a87e20',
+          700: '#7d5d18',
+          800: '#573f12',
+          900: '#36270b',
+        },
+        gray: {
+          50: '#faf8f5',
+          100: '#f0ebe3',
+          200: '#d5d0c8',
+          300: '#a8a4b0',
+          400: '#8a8698',
+          500: '#55516a',
+          600: '#353045',
+          700: '#252535',
+          800: '#12121a',
+          900: '#0a0a0f',
+        },
+        coral: '#f07068',
+        mint: '#60d0a0',
+        'accent-violet': '#b090e0',
+        'accent-sky': '#60a8e8',
+        peach: '#f0a070',
+        gold: '#f0c050',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.gray.600'),
             a: {
               color: theme('colors.primary.500'),
               '&:hover': {
@@ -82,34 +101,36 @@ module.exports = {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.900'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.900'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             h3: {
               fontWeight: '600',
               color: theme('colors.gray.900'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             'h4,h5,h6': {
               color: theme('colors.gray.900'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
+              color: theme('colors.primary.600'),
+              backgroundColor: theme('colors.primary.50'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
               paddingBottom: '2px',
               borderRadius: '0.25rem',
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: '0.875em',
             },
             'code::before': {
               content: 'none',
@@ -133,10 +154,10 @@ module.exports = {
             'ul li::marker': {
               backgroundColor: theme('colors.gray.500'),
             },
-            strong: { color: theme('colors.gray.600') },
+            strong: { color: theme('colors.gray.900') },
             blockquote: {
               color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.gray.200'),
+              borderLeftColor: theme('colors.primary.300'),
             },
           },
         },
@@ -144,9 +165,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.400'),
               '&:hover': {
-                color: `${theme('colors.primary.400')} !important`,
+                color: `${theme('colors.primary.300')} !important`,
               },
               code: { color: theme('colors.primary.400') },
             },
@@ -154,28 +175,29 @@ module.exports = {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.100'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             h2: {
               fontWeight: '700',
               letterSpacing: theme('letterSpacing.tight'),
               color: theme('colors.gray.100'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             h3: {
               fontWeight: '600',
               color: theme('colors.gray.100'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             'h4,h5,h6': {
               color: theme('colors.gray.100'),
-              fontFamily: theme('fontFamily.serif'),
+              fontFamily: "'Fraunces', Georgia, serif",
             },
             pre: {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.primary.400'),
+              backgroundColor: 'rgba(240, 192, 80, 0.1)',
             },
             details: {
               backgroundColor: theme('colors.gray.800'),
@@ -201,7 +223,7 @@ module.exports = {
             },
             blockquote: {
               color: theme('colors.gray.100'),
-              borderLeftColor: theme('colors.gray.700'),
+              borderLeftColor: theme('colors.primary.400'),
             },
           },
         },

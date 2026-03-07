@@ -3,13 +3,6 @@ import '@/css/prism.css'
 import 'katex/dist/katex.css'
 import '@/css/globals.css'
 
-import '@fontsource/inter/variable-full.css'
-import '@fontsource/lora/400.css'
-import '@fontsource/lora/700.css'
-import '@fontsource/crimson-pro/400.css'
-import '@fontsource/crimson-pro/600.css'
-import '@fontsource/crimson-pro/700.css'
-
 import { ThemeProvider, useTheme } from 'next-themes'
 import Head from 'next/head'
 import Snowfall from 'react-snowfall'
