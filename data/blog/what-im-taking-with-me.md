@@ -96,8 +96,6 @@ Those do not get laid off. Those come with me.
 
 ## A note to myself
 
-You will be tempted to write the bitter version of this post. Resist it. The bitter version is smaller than the truth.
-
 The truth is this. A team helped you grow. The chapter ending did not break you, it redirected you. The redirection opened a door into a domain you had never seen before. And the manager on the other side of that door is teaching you things you would not have learned anywhere else.
 
 Stay curious. Keep reading. Keep building. The next chapter is already underway.
