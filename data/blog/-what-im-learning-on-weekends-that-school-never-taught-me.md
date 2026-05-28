@@ -1,6 +1,6 @@
 ---
 title: "\U0001F4B8 What I'm learning on weekends that school never taught me"
-date: 2026-05-28T00:10:56.908Z
+date: 2026-05-22T00:10:56.908Z
 tags:
   - life
 draft: false
@@ -22,11 +22,11 @@ So I went looking.
 
 The list keeps growing:
 
-* CCPCs (Canadian-controlled private corporations) and why they exist
-* The small business deduction and what counts as active business income
-* Holding structures and how they get used in Canada
-* Dividend versus salary as forms of compensation
-* The conversations most professionals could be having with their accountants but usually aren't
+- CCPCs (Canadian-controlled private corporations) and why they exist
+- The small business deduction and what counts as active business income
+- Holding structures and how they get used in Canada
+- Dividend versus salary as forms of compensation
+- The conversations most professionals could be having with their accountants but usually aren't
 
 I talked to an accountant. I started keeping a running list of questions in my notes app, which is when I knew this had gone past idle curiosity.
 
@@ -48,11 +48,11 @@ I do not think this is a conspiracy. It is more like a curriculum gap. The schoo
 
 A short list of things that genuinely surprised me as I read:
 
-* The small business tax rate in Ontario is meaningfully lower than the top personal rate. The gap is not small.
-* An "active business" has a specific legal meaning, and the distinction between active and passive income matters a lot for how a corporation gets taxed.
-* The order in which you pay yourself (salary first, then dividends, or vice versa) interacts with CPP, RRSP contribution room, and how much tax gets collected when.
-* Holding companies are not just for the wealthy. They are a tool for separating operating risk from accumulated capital, and the mechanics are surprisingly approachable.
-* A lot of what gets called "advanced" finance is just intermediate stuff that nobody bothered to teach you.
+- The small business tax rate in Ontario is meaningfully lower than the top personal rate. The gap is not small.
+- An "active business" has a specific legal meaning, and the distinction between active and passive income matters a lot for how a corporation gets taxed.
+- The order in which you pay yourself (salary first, then dividends, or vice versa) interacts with CPP, RRSP contribution room, and how much tax gets collected when.
+- Holding companies are not just for the wealthy. They are a tool for separating operating risk from accumulated capital, and the mechanics are surprisingly approachable.
+- A lot of what gets called "advanced" finance is just intermediate stuff that nobody bothered to teach you.
 
 None of this is financial advice. I am not an accountant. But that is exactly the point. I am someone who never learned any of this in school, and I am finding out that the basics are not as far out of reach as I'd assumed.
 

@@ -359,7 +359,8 @@ export default function Timeline() {
                 </span>
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                Balancing two exciting roles simultaneously
+                Two parallel paths that converged. The Penn chapter ended in May 2026; CGMH
+                continues.
               </p>
             </div>
 
@@ -369,27 +370,32 @@ export default function Timeline() {
               <div className="relative pt-4">
                 {/* Desktop: Side by side layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 md:items-end">
-                  {/* Left branch - theScore */}
+                  {/* Left branch - theScore (ended May 2026) */}
                   <div className="relative">
-                    <div className="ml-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-5 border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="ml-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/40 dark:to-gray-800/40 rounded-lg p-5 border-l-4 border-gray-400 dark:border-gray-600 shadow-sm hover:shadow-md transition-shadow opacity-90">
                       <div className="flex items-start gap-3 mb-3">
                         <span className="text-2xl">🎯</span>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 dark:text-white">
-                            <Link
-                              href="https://thescore.bet/"
-                              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                            >
-                              Software Engineer
-                            </Link>
-                          </h4>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h4 className="font-semibold text-gray-900 dark:text-white">
+                              <Link
+                                href="https://thescore.bet/"
+                                className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                              >
+                                Software Engineer
+                              </Link>
+                            </h4>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                              Ended May 2026
+                            </span>
+                          </div>
                           <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                             theScore (under the umbrella of PENN Entertainment)
                           </p>
                         </div>
                       </div>
                       <time className="text-xs text-gray-500 dark:text-gray-400 block mb-3">
-                        January 2022 - Present
+                        January 2022 - May 2026
                       </time>
 
                       {/* Role progression */}
@@ -425,7 +431,7 @@ export default function Timeline() {
                               Sportsbook Growth Team
                             </p>
                             <p className="text-xs text-gray-500 dark:text-gray-400">
-                              Jan 2026 - Present
+                              Jan 2026 - May 2026
                             </p>
                           </div>
                         </div>
@@ -433,20 +439,25 @@ export default function Timeline() {
                     </div>
                   </div>
 
-                  {/* Right branch - Collingwood Hospital */}
+                  {/* Right branch - Collingwood Hospital (current) */}
                   <div className="relative">
                     <div className="ml-4 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-lg p-5 border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow">
                       <div className="flex items-start gap-3 mb-3">
                         <span className="text-2xl">🏥</span>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 dark:text-white">
-                            <Link
-                              href="https://www.cgmh.on.ca/"
-                              className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
-                            >
-                              Data Engineer
-                            </Link>
-                          </h4>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h4 className="font-semibold text-gray-900 dark:text-white">
+                              <Link
+                                href="https://www.cgmh.on.ca/"
+                                className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
+                              >
+                                Principal Data Solutions
+                              </Link>
+                            </h4>
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300">
+                              Current
+                            </span>
+                          </div>
                           <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                             Collingwood General & Marine Hospital
                           </p>
@@ -456,7 +467,8 @@ export default function Timeline() {
                         September 2025 - Present
                       </time>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Leveraging data to improve healthcare outcomes
+                        Bringing platform-engineering practices into hospital data workflows.
+                        Pipelines, medallion architecture, Azure DevOps.
                       </p>
                     </div>
                   </div>

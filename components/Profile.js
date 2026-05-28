@@ -119,9 +119,10 @@ export default function Profile() {
                   Currently Working On
                 </h3>
                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300 mb-4">
-                  Growing theScore application in a new growth team and developing data engineering
-                  solutions in healthcare at CGMH. Expanding my T-shaped skillset across web
-                  development and data engineering.
+                  Building data engineering solutions in healthcare as Principal Data Solutions at
+                  CGMH. Bringing platform-engineering practices (Azure DevOps, CI/CD, code review)
+                  into hospital data workflows, and learning a new domain from a team of data
+                  engineering pros.
                 </p>
               </div>
             </div>
