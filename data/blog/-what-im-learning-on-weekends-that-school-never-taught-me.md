@@ -1,6 +1,8 @@
 ---
 title: "\U0001F4B8 What I'm learning on weekends that school never taught me"
 date: 2026-05-14T00:10:56.908Z
+tags:
+  - life
 draft: false
 summary: Reading about Canadian corporate tax structures on weekends turned out to be a crash course in the wealth playbook nobody hands to employees."
 author: Kien
