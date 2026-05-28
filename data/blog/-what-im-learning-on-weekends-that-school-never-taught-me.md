@@ -17,7 +17,7 @@ School covered how to write a resume. It covered how to interview. It covered, b
 
 So I went looking.
 
-\## What I'm reading
+\##What I'm reading
 
 The list keeps growing:
 
@@ -33,7 +33,7 @@ The list keeps growing:
 
 I talked to an accountant. I started keeping a running list of questions in my notes app. I scribbled things on the back of a receipt at one point, which is when I knew this had gone past idle curiosity.
 
-\## The gap school doesn't fill
+\##The gap school doesn't fill
 
 Here's the thing that keeps surprising me.
 
@@ -47,7 +47,7 @@ And here's what struck me. Most of this is not exotic financial engineering. It 
 
 I do not think this is a conspiracy. It is more like a curriculum gap. The school system optimizes for producing good employees. The wealth-building knowledge sits in a different curriculum that you have to go find yourself.
 
-\## Things I never knew before
+\##Things I never knew before
 
 A short list of things that genuinely surprised me as I read:
 
@@ -63,7 +63,7 @@ A short list of things that genuinely surprised me as I read:
 
 None of this is financial advice. I am not an accountant. But that is exactly the point. I am someone who never learned any of this in school, and I am finding out that the basics are not as far out of reach as I'd assumed.
 
-\## Why I keep reading
+\##Why I keep reading
 
 I've spent years getting good at the production side of life. Showing up, doing the work, getting better at the skills the world rewards me for. That is the employee curriculum, and it has been good to me.
 
@@ -71,7 +71,7 @@ But the more I read on weekends, the more I realize the production side is only 
 
 Job security is an illusion. Skill security is real. Financial literacy is part of that skill surface. The more I understand about how money actually works in Canada, the more options I have.
 
-\## A note to myself
+\##A note to myself
 
 You do not have to incorporate, invest, or change anything to benefit from this kind of reading. The point is to close the curriculum gap. To know what the words mean. To understand the system you are already operating inside.
 
