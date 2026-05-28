@@ -348,18 +348,18 @@ export default function Timeline() {
 
             <div className="mb-6 ml-4 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg p-5 shadow-md border border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white">
-                  Current
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                  Pivot
                 </span>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center flex-wrap gap-2">
                 Dual Career Path
-                <span className="rounded bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-2.5 py-0.5 text-sm font-medium text-white animate-pulse">
-                  {new Date().getFullYear()}
+                <span className="rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2.5 py-0.5 text-sm font-medium border border-gray-200 dark:border-gray-700">
+                  Sep 2025 – May 2026
                 </span>
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                Two parallel paths that converged. The Penn chapter ended in May 2026; CGMH
+                Two parallel paths for eight months. The Penn chapter closed in May 2026. CGMH
                 continues.
               </p>
             </div>
@@ -436,6 +436,12 @@ export default function Timeline() {
                           </div>
                         </div>
                       </div>
+
+                      {/* End-of-chapter cap */}
+                      <div className="mt-5 pt-3 border-t border-dashed border-gray-300 dark:border-gray-600 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 italic">
+                        <span>🏁</span>
+                        <span>Chapter closed</span>
+                      </div>
                     </div>
                   </div>
 
@@ -470,6 +476,12 @@ export default function Timeline() {
                         Bringing platform-engineering practices into hospital data workflows.
                         Pipelines, medallion architecture, Azure DevOps.
                       </p>
+
+                      {/* Continues indicator */}
+                      <div className="mt-5 pt-3 border-t border-dashed border-green-300 dark:border-green-700 flex items-center gap-2 text-xs text-green-600 dark:text-green-400 italic">
+                        <span className="animate-pulse">↓</span>
+                        <span>Continues</span>
+                      </div>
                     </div>
                   </div>
                 </div>
