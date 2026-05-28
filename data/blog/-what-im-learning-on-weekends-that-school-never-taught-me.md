@@ -22,16 +22,12 @@ So I went looking.
 The list keeps growing:
 
 \- CCPCs (Canadian-controlled private corporations) and why they exist
-
 \- The small business deduction and what counts as active business income
-
 \- Holding structures and how they get used in Canada
-
 \- Dividend versus salary as forms of compensation
-
 \- The conversations most professionals could be having with their accountants but usually aren't
 
-I talked to an accountant. I started keeping a running list of questions in my notes app. I scribbled things on the back of a receipt at one point, which is when I knew this had gone past idle curiosity.
+I talked to an accountant. I started keeping a running list of questions in my notes app, which is when I knew this had gone past idle curiosity.
 
 \##The gap school doesn't fill
 
