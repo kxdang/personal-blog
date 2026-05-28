@@ -4,11 +4,6 @@ import Link from '@/components/Link'
 
 const tools = [
   {
-    name: 'ChatGPT',
-    description: 'Quick research, brainstorming, and general writing tasks',
-    url: 'https://chat.openai.com',
-  },
-  {
     name: 'Gemini',
     description: 'Research and exploring different perspectives on topics',
     url: 'https://gemini.google.com',
@@ -21,7 +16,7 @@ const tools = [
   {
     name: 'Cursor',
     description:
-      'Primary coding IDE paired with Claude CLI - scaffolding, debugging, and exploring ideas',
+      'Primary coding IDE paired with Claude CLI for scaffolding, debugging, and exploring ideas',
     url: 'https://cursor.sh',
   },
   {
@@ -30,13 +25,19 @@ const tools = [
     url: 'https://claude.com/claude-code',
   },
   {
+    name: 'Obsidian',
+    description:
+      'My notetaking and learning hub, paired with Claude Code for pedagogical explainers directly on my notes',
+    url: 'https://obsidian.md',
+  },
+  {
     name: 'SuperWhisper',
     description: 'Offline voice dictation for work (privacy-focused)',
     url: 'https://superwhisper.com',
   },
   {
     name: 'WisprFlow',
-    description: 'Voice-to-text for personal use - turning scattered thoughts into organized notes',
+    description: 'Voice-to-text for personal use, turning scattered thoughts into organized notes',
     url: 'https://wisprflow.com',
   },
   {
@@ -80,7 +81,7 @@ export default function Tools() {
               Thinking & Research
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {tools.slice(0, 3).map((tool) => (
+              {tools.slice(0, 2).map((tool) => (
                 <Link
                   key={tool.name}
                   href={tool.url}
@@ -117,7 +118,44 @@ export default function Tools() {
               Building
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {tools.slice(3, 5).map((tool) => (
+              {tools.slice(2, 4).map((tool) => (
+                <Link
+                  key={tool.name}
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all hover:shadow-md bg-white dark:bg-gray-800"
+                >
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors flex items-center gap-1.5">
+                    {tool.name}
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Learning */}
+          <div className="mb-12">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <span className="text-2xl">📚</span>
+              Learning
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.slice(4, 5).map((tool) => (
                 <Link
                   key={tool.name}
                   href={tool.url}
