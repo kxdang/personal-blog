@@ -7,6 +7,7 @@ draft: false
 summary: Reading about Canadian corporate tax structures on weekends turned out to be a crash course in the wealth playbook nobody hands to employees."
 author: Kien
 layout: PostLayout
+slug: what-im-learning-on-weekends
 ---
 
 I started reading about corporate tax structures on weekends. At some point I had to ask myself why a person does that.
