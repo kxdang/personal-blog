@@ -13,7 +13,7 @@ May 14. I got the call. It has been two weeks, and I have been sitting with it l
 
 I was laid off from Penn, part of a broader round of cuts.
 
-Honestly? After a few days, the part that stuck with me was not the call itself. It was the arc. The people I worked with, the work I got to do, and the unexpected door that opened along the way.
+After a few days, the part that stuck with me was not the call itself. It was the arc. The people I worked with, the work I got to do, and the unexpected door that opened along the way.
 
 ## The team that pushed me
 
@@ -23,9 +23,9 @@ I started on the platform side and ended up doing feature work too. That range m
 
 A few things that stuck:
 
-- Code review as a teaching tool, not a gate. I learned how to give a review that made the other person better, and how to receive one without ego.
-- How seriously the senior engineers took ownership. Not just shipping a thing, but staying close to it after it landed.
-- That the bar for "done" is higher than I had been holding myself to. Being around people with that bar quietly raised mine.
+* Code review as a teaching tool, not a gate. I learned how to give a review that made the other person better, and how to receive one without ego.
+* How seriously the senior engineers took ownership. Not just shipping a thing, but staying close to it after it landed.
+* That the bar for "done" is higher than I had been holding myself to. Being around people with that bar quietly raised mine.
 
 I am a different developer than I was when I joined. That is not something that fits in one resume line. But it is the part that travels with me.
 
@@ -53,10 +53,10 @@ Hospital data is its own world. The shape of it, the constraints, the regulatory
 
 Some of what I am working through now:
 
-- How data actually moves through a hospital. Where it originates, where it pools, where it gets stuck.
-- Pipelines and medallion architecture as a way to organize raw, refined, and reporting layers cleanly.
-- The difference between software-product instincts and data-platform instincts. They are related, but they are not the same.
-- Working with a manager who is, frankly, a data engineering beast. I have not had a manager I learned this much from in years.
+* How data actually moves through a hospital. Where it originates, where it pools, where it gets stuck.
+* Pipelines and medallion architecture as a way to organize raw, refined, and reporting layers cleanly.
+* The difference between software-product instincts and data-platform instincts. They are related, but they are not the same.
+* Working with a manager who is, frankly, a data engineering beast. I have not had a manager I learned this much from in years.
 
 The pace of learning is steep, and that is the point. I had forgotten how good it feels to be the least experienced person in the room on a topic that matters.
 
@@ -66,10 +66,10 @@ The cross-pollination has surprised me. A lot of what I picked up on the platfor
 
 What has translated cleanly:
 
-- Azure DevOps pipelines. Setting them up, tuning them, keeping the CI/CD discipline tight. The lift in dev velocity once that layer is in place is real.
-- Branching strategy and code review as a teaching tool. Automated checks before merge instead of after.
-- Treating data work like software work. Versioning, reproducibility, testability. Pipelines as code, not as ad-hoc scripts.
-- The engineering instinct of "if you did it twice, automate it the third time." That instinct is genuinely useful in a data-platform setting.
+* Azure DevOps pipelines. Setting them up, tuning them, keeping the CI/CD discipline tight. The lift in dev velocity once that layer is in place is real.
+* Branching strategy and code review as a teaching tool. Automated checks before merge instead of after.
+* Treating data work like software work. Versioning, reproducibility, testability. Pipelines as code, not as ad-hoc scripts.
+* The engineering instinct of "if you did it twice, automate it the third time." That instinct is genuinely useful in a data-platform setting.
 
 I came in expecting to be the one learning a new domain. I am, but I am also bringing something into it. Software-engineering best practices accelerate the maturity curve on the data side, and being the person who can do that has been one of the best parts of the role.
 
@@ -79,10 +79,10 @@ For a while I was doing both. The full software role at Penn and the data role a
 
 What I learned about myself:
 
-- I can take on more than I thought, if the work is interesting enough to pull me through.
-- My skillset is broader than I had given myself credit for. Software, platform, data, civic tech, all draw on the same underlying instincts.
-- Time, energy, and boundaries are skills, not personality traits. I got noticeably better at all three by being forced to.
-- Confidence is downstream of evidence. The evidence came from doing the thing.
+* I can take on more than I thought, if the work is interesting enough to pull me through.
+* My skillset is broader than I had given myself credit for. Software, platform, data, civic tech, all draw on the same underlying instincts.
+* Time, energy, and boundaries are skills, not personality traits. I got noticeably better at all three by being forced to.
+* Confidence is downstream of evidence. The evidence came from doing the thing.
 
 I would not have signed up for "manage two demanding roles in different industries" as a development plan. But it ended up being one. And the version of me on the other side of it is steadier than the version that went in.
 
