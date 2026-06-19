@@ -3,7 +3,7 @@ title: "\U0001FAB4 Trying to learn how to rest"
 date: 2026-06-19T00:00:00.000Z
 tags:
   - life
-draft: true
+draft: false
 summary: I dropped to part-time work and finally had the unstructured time I always said I wanted. Then I sat down with it and realized I have no idea how to rest when there isn't a next thing pressing in.
 author: Kien
 layout: PostLayout
