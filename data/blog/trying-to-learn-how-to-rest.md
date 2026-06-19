@@ -21,7 +21,7 @@ There's something uncomfortable about being still after years of motion. The dis
 
 I started in biochemistry, hoping the co-op would carry me to success. But the first few co-ops were pretty much minimum wage, which led me to working three part time jobs at once during my 2nd year.
 
-The economy wasn't the greatest when I finished my degree, and the path forward didn't open the way it was supposed to. The pay prospects weren't great unless I went back for further education in biochemistry. So I taught myself software engineering, which took about a year, so I could re-skill into a more lucrative field. The kind of grind people glamorize on LinkedIn. For me, the grind was silent until I wrote publicly about how long it actually took to change paths. I saw a lot of people doing the same thing between 2018 and 2020. Then COVID hit, and that's when things started looking rougher.
+The economy wasn't the greatest when I finished my degree, and the path forward didn't open the way it was supposed to. The pay prospects weren't great unless I went back for further education in biochemistry. So I taught myself software engineering, which took about a year, so I could re-skill into a more lucrative field. The kind of grind people glamorize on LinkedIn. For me, the grind was silent until I wrote [publicly](https://www.linkedin.com/posts/kien-dang_careers-activity-6709491629625008128-3vc3?utm_source=share\&utm_medium=member_desktop\&rcm=ACoAAB8VvmUBrYcNK-D7cjpKvsK7K-RiDCaH57A) about how long it actually took to change paths. I saw a lot of people doing the same thing between 2018 and 2020. Then COVID hit, and that's when things started looking rougher.
 
 But it worked out. I got into software. I built and fixed things. I shipped them and I learned from many talented developers.
 
@@ -35,7 +35,7 @@ If I look at it from the inside, it feels different. It feels like I've never ac
 
 I thought I had figured out rest.
 
-A few years ago, when I was burning out from long study cycles in my journey into programming, I forced myself to take it seriously. I tracked when I was running out of fuel with my monthly Pomodoro reports. I learned to schedule breaks: to step away from a problem, take a walk, and sleep enough. Pomodoros with the breaks honoured, not just the focus blocks. I got good at this version of resting.
+A few years ago, when I was burning out from long study cycles in my journey into programming, I forced myself to take it seriously. I tracked when I was running out of fuel with my monthly [Pomodoro reports](https://kiendang.me/?tag=pomodoro). I learned to schedule breaks: to step away from a problem, take a walk, and sleep enough. Pomodoros with the breaks honoured, not just the focus blocks. I got good at this version of resting.
 
 But that was tactical rest. Rest as a tool for being more productive over a longer term. The breaks served the work. The walks and physical workouts were so I could come back to the desk sharper.
 
@@ -51,7 +51,7 @@ But the tactical rest I built was always in service of the next thing. I never h
 
 ## What relaxing actually looks like
 
-I don't know yet. That's the honest answer. I ended up in a megachicken ad on Instagram recently with a friend, which was pretty fun. I picked up rollerskating and got back into sim racing with a new gig, but none of it felt as relaxing as I'd imagined.
+I don't know yet. That's the honest answer. I ended up in a megachicken ad on Instagram recently with a friend, which was pretty fun. I picked up rollerskating and got back into sim racing with a new rig, but none of it felt as relaxing as I'd imagined.
 
 I know what relaxing isn't. It isn't more reading. It isn't a podcast at 2x. It isn't an enrichment activity I can post a clean photo of. Those are still doing things. They're just doing things with a softer aesthetic.
 
