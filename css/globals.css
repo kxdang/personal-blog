@@ -155,14 +155,9 @@ a[href*='/tags/'].text-xs.font-medium,
   line-height: 1.2 !important;
 }
 
-/* Blog post tag links */
-.text-primary-500,
-a.text-primary-500,
-.mr-3.text-sm,
-a.mr-3.text-sm,
-a[href*='/tags/'].mr-3,
-.text-sm.font-medium a,
-a.text-primary-500.hover\:text-primary-600 {
+/* Blog post tag links — scoped to actual tag links only */
+a[href*='/tags/'],
+a[href*='/?tag='] {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.792rem;
 }
@@ -214,7 +209,7 @@ time {
 /* Previous/Next article titles */
 .prose-lg a h2,
 article a h2,
-div[class*='divide'] a {
+footer div[class*='divide'] .text-xs > a {
   font-family: 'Fraunces', Georgia, serif;
   font-size: 1.089rem;
   font-weight: 500;

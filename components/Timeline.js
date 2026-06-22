@@ -78,7 +78,7 @@ export default function Timeline() {
     <div className="xl:col-span-2 xl:col-start-2">
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent py-2">
-          My Journey
+          Biochemistry to tech (software/data eng)
         </h2>
         <div className="mt-2 h-1 w-24 mx-auto bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full" />
       </div>
