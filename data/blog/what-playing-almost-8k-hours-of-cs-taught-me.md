@@ -4,7 +4,7 @@ date: 2026-06-24T00:00:00.000Z
 tags:
   - life
 draft: false
-summary: Eight thousand hours into Counter-Strike, the real lesson wasn't about aim or game sense. It was about knowing when a system has stopped paying you back, and giving yourself permission to leave.
+summary: 'Eight thousand hours into Counter-Strike, the real lesson wasn''t about aim or game sense. It was about knowing when a system has stopped paying you back, and giving yourself permission to leave.'
 author: Kien
 layout: PostLayout
 ---
@@ -45,11 +45,11 @@ CS is still a fantastic game. I made a lot of friends on it and built a lot of g
 
 If I strip out the frustration with the state of the game, the time wasn't wasted. Some of what almost 8,000 hours actually taught me:
 
-- **Highly competitive games are a communication discipline.** CS especially. The teamwork, the coordination, the willingness to learn the craft (movement, utility, nade lineups) are real skills, and they don't come for free.
-- **You learn how to process more in real time.** Information comes at you faster than you can consciously sort it: footsteps, utility timing, economy, what your teammates just called, what the round before told you about how the other team plays. Over thousands of hours, you stop reasoning through each of those and start reading the situation at a glance. The mental load isn't just the aim mechanics.
-- **Practice pays off.** Deathmatch was one of my favourite ways to train, partly because I could see the gains. The kind of repetition that feels mindless in the moment is the kind that holds up when the pressure is on.
-- **You can do everything right and still lose.** The game has variance. The other side has skill. 1v5 aces and impossible clutches happen because that's how the math works. Learning to accept that without it eating you alive is its own kind of skill.
-- **A lot of these skills do transfer to real life.** Cliché, I know. But the muscle for staying calm in a clutch, trusting a teammate's call when you can't see what they see, resetting your headspace after a bad round; these are the same muscles you use at work, in tough conversations, in the moments when something matters and you only get one take at it.
+* **Highly competitive games are a communication discipline.** CS especially. The teamwork, the coordination, the willingness to learn the craft (movement, utility, nade lineups) are real skills, and they don't come for free.
+* **You learn how to process more in real time.** Information comes at you faster than you can consciously sort it: footsteps, utility timing, economy, what your teammates just called, what the round before told you about how the other team plays. Over thousands of hours, you stop reasoning through each of those and start reading the situation at a glance. The mental load isn't just the aim mechanics.
+* **Practice pays off.** Deathmatch was one of my favourite ways to train, partly because I could see the gains. The kind of repetition that feels mindless in the moment is the kind that holds up when the pressure is on.
+* **You can do everything right and still lose.** The game has variance. The other side has skill. 1v5 aces and impossible clutches happen because that's how the math works. Learning to accept that without it eating you alive is its own kind of skill.
+* **A lot of these skills do transfer to real life.** Cliché, I know. But the muscle for staying calm in a clutch, trusting a teammate's call when you can't see what they see, resetting your headspace after a bad round; these are the same muscles you use at work, in tough conversations, in the moments when something matters and you only get one take at it.
 
 ## The real lesson
 
@@ -67,6 +67,6 @@ Now, as I get older, that support system has run its course. I don't have fun pl
 
 So I'm closing this chapter and opening another one: sim racing. A different kind of competition, one where the only enemy is the boxing match between you and the track.
 
-One thing I'm genuinely curious about: if I sink 5,000 hours into sim racing, will it make me a better driver in real life? Are the skills completely transferable? Or did I just waste money on a new hobby...?
+One thing I'm genuinely curious about: if I sink 8,000 hours into sim racing, will it make me a better driver in real life? Are the skills completely transferable? Or did I just waste money on a new hobby...?
 
 I guess we'll find out.
