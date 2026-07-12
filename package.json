@@ -9,7 +9,16 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
-    ]
+    ],
+    "overrides": {
+      "lodash@<4.18.0": "^4.18.0",
+      "js-yaml@<3.15.0": "^3.15.0",
+      "markdown-it@<14.2.0": "^14.2.0",
+      "linkify-it@<5.0.1": "^5.0.1",
+      "postcss@<8.5.10": "^8.5.10",
+      "uuid@<9": "^11.1.1",
+      "estree-util-value-to-estree@<3.3.3": "^3.3.3"
+    }
   },
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
@@ -93,7 +102,8 @@
     "prettier-plugin-tailwindcss": "^0.1.13",
     "reading-time": "^1.5.0",
     "socket.io": "^4.8.3",
-    "socket.io-client": "^4.8.3"
+    "socket.io-client": "^4.8.3",
+    "webpack": "^5.104.0"
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
