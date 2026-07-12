@@ -5,7 +5,7 @@ import Timeline from '@/components/Timeline'
 import { useState, useEffect, useRef } from 'react'
 
 export default function AuthorLayout({ children, frontMatter }) {
-  const { name, avatar, occupation, company, email, linkedin, github } = frontMatter
+  const { name, avatar, occupation, company, email, linkedin, github, website } = frontMatter
 
   const [showTimeline, setShowTimeline] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -63,6 +63,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               <SocialIcon kind="mail" href={`mailto:${email}`} />
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
+              <SocialIcon kind="website" href={website} />
             </div>
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
