@@ -3,6 +3,7 @@ import { PageSEO } from '@/components/SEO'
 import Profile from '@/components/Profile'
 import PostCard from '@/components/PostCard'
 import SearchModal from '@/components/SearchModal'
+import CadenceModal from '@/components/CadenceModal'
 import siteMetadata from '@/data/siteMetadata'
 import { getSortedBlogPosts } from '@/lib/mdx-server'
 import { getCoreContent } from '@/lib/mdx-content'
@@ -31,7 +32,9 @@ const queryClient = new QueryClient()
 export default function Home({ posts }) {
   const router = useRouter()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isCadenceOpen, setIsCadenceOpen] = useState(false)
   const [selectedTag, setSelectedTag] = useState(null)
+  const [displayCount, setDisplayCount] = useState(MAX_DISPLAY)
 
   const selectedTitles = [
     "🍅 1031 Pomodoro's Later and a Career Change Success",
@@ -45,7 +48,7 @@ export default function Home({ posts }) {
   const allTags = [...new Set(posts.flatMap((p) => p.tags || []))].sort()
   const filteredPosts = selectedTag
     ? posts.filter((p) => (p.tags || []).includes(selectedTag))
-    : posts.slice(0, MAX_DISPLAY)
+    : posts.slice(0, displayCount)
 
   // Read tag from URL on mount
   useEffect(() => {
@@ -76,6 +79,9 @@ export default function Home({ posts }) {
       {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} posts={posts} />
 
+      {/* Writing Cadence Modal */}
+      <CadenceModal isOpen={isCadenceOpen} onClose={() => setIsCadenceOpen(false)} posts={posts} />
+
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-2">
           <h3 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
@@ -94,24 +100,43 @@ export default function Home({ posts }) {
               ✍️ Latest Blog Posts
             </h3>
 
-            {/* Search Trigger Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <span className="hidden sm:inline">Search articles...</span>
-              <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] text-gray-400 bg-gray-200 dark:bg-gray-700 rounded">
-                ⌘K
-              </kbd>
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Writing Cadence Trigger Button */}
+              <button
+                onClick={() => setIsCadenceOpen(true)}
+                aria-label="View writing cadence"
+                title="Writing cadence"
+                className="flex items-center px-3 py-2 text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+
+              {/* Search Trigger Button */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="flex items-center gap-2 px-4 py-2 text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                <span className="hidden sm:inline">Search articles...</span>
+                <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] text-gray-400 bg-gray-200 dark:bg-gray-700 rounded">
+                  ⌘K
+                </kbd>
+              </button>
+            </div>
           </div>
           <p className="sm:text-md text-gray-500 dark:text-gray-400">{siteMetadata.description}</p>
 
@@ -230,13 +255,13 @@ export default function Home({ posts }) {
         </div>
       </div>
 
-      {posts.length > MAX_DISPLAY && !selectedTag && (
+      {posts.length > displayCount && !selectedTag && (
         <div className="flex justify-center pt-6">
           <button
-            onClick={() => setIsSearchOpen(true)}
+            onClick={() => setDisplayCount((count) => count + 5)}
             className="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium hover:from-primary-600 hover:to-primary-700 transition-all shadow-md hover:shadow-lg"
           >
-            Browse All {posts.length} Posts
+            Show More Posts ({posts.length - displayCount} remaining)
           </button>
         </div>
       )}
