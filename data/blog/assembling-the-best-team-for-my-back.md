@@ -1,5 +1,5 @@
 ---
-title: 🧑‍⚕️ Assembling the best team for my back
+title: 🏥 Assembling the best team for my back
 date: 2026-08-07T11:00:45.000Z
 tags:
   - life
