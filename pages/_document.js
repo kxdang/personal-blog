@@ -22,6 +22,13 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0f" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          {/* Apply the stored reading typeface before first paint, and pull in
+              its webfont only when it is actually the chosen one. */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){try{var f=localStorage.getItem('font-pref');if(!f||f==='original')return;document.documentElement.setAttribute('data-font',f);if(f==='reader'){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap';document.head.appendChild(l);}}catch(e){}})();`,
+            }}
+          />
         </Head>
         <body className="text-gray-900 antialiased dark:text-gray-100">
           <Main />

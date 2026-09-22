@@ -6,6 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import FontSwitch from '@/components/FontSwitch'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { date, title } = frontMatter
@@ -21,8 +22,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="flex items-center justify-center text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>{formatDate(date)}</time>
+                    <FontSwitch />
                   </dd>
                 </div>
               </dl>

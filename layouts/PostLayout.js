@@ -8,6 +8,7 @@ import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import readingTimeMax from '@/lib/utils/readingTimeMaxFormatter'
 import formatDate from '@/lib/utils/formatDate'
+import FontSwitch from '@/components/FontSwitch'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 
@@ -32,9 +33,12 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, toc
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>{formatDate(date)}</time> •{' '}
-                    {readingTimeMax(readingTime.text)}
+                  <dd className="flex items-center justify-center text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    <span>
+                      <time dateTime={date}>{formatDate(date)}</time> •{' '}
+                      {readingTimeMax(readingTime.text)}
+                    </span>
+                    <FontSwitch />
                   </dd>
                 </div>
               </dl>

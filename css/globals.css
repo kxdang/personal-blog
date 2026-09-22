@@ -31,11 +31,47 @@ body::after {
   background-repeat: repeat;
 }
 
+/* ===== Reading typeface ===== */
+/* Set on <html> by the header's Aa control. Defaults below are the site's
+   own identity, so with JS off or no stored preference nothing changes. */
+:root {
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body-size: 1.04rem;
+  --font-body-leading: 1.65;
+  --font-heading-weight-1: 700;
+  --font-heading-weight-2: 700;
+  --font-heading-tracking: -0.025em;
+}
+
+/* Reader: a serif built for long text, wider leading, lighter headings. */
+html[data-font='reader'] {
+  --font-body: 'Newsreader', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-heading: 'Newsreader', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-body-size: 1.17rem;
+  --font-body-leading: 1.62;
+  --font-heading-weight-1: 500;
+  --font-heading-weight-2: 500;
+  --font-heading-tracking: -0.022em;
+}
+
+/* System: downloads nothing, follows the reader's own OS settings. */
+html[data-font='system'] {
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body-size: 1.04rem;
+  --font-body-leading: 1.6;
+  --font-heading-weight-1: 700;
+  --font-heading-weight-2: 700;
+  --font-heading-tracking: -0.02em;
+}
+
 /* ===== Base Typography ===== */
 body {
-  font-size: 1.04rem;
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
   letter-spacing: 0.01em;
-  line-height: 1.65;
+  line-height: var(--font-body-leading);
 }
 
 /* Headings - Fraunces */
@@ -45,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-heading);
 }
 
 /* Animated gradient text */
@@ -171,7 +207,7 @@ article a h2 {
   font-size: 1.733rem;
   font-weight: 600;
   line-height: 1.2;
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-heading);
 }
 
 /* Blog post excerpts */
@@ -210,7 +246,7 @@ time {
 .prose-lg a h2,
 article a h2,
 footer div[class*='divide'] .text-xs > a {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.089rem;
   font-weight: 500;
 }
