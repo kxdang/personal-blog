@@ -27,7 +27,20 @@ export async function getStaticProps() {
   }
 }
 
-const queryClient = new QueryClient()
+// Defaults refetch on every mount and every window focus, which meant a fresh
+// /api/hardcover hit each time someone tabbed back. The shelf barely moves, so
+// treat it as fresh for an hour and keep it in cache for the session.
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 60 * 1000,
+      cacheTime: 24 * 60 * 60 * 1000,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      retry: 1,
+    },
+  },
+})
 
 export default function Home({ posts }) {
   const router = useRouter()
