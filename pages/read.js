@@ -121,11 +121,10 @@ export default function Read({ shelves, stats }) {
           </h1>
           <figure className="max-w-2xl border-l-2 border-primary-400 pl-4 dark:border-primary-600">
             <blockquote className="font-serif text-lg italic leading-7 text-gray-700 dark:text-gray-200">
-              &ldquo;A reader lives a thousand lives before he dies. The man who never reads lives
-              only one.&rdquo;
+              &ldquo;Books are a uniquely portable magic.&rdquo;
             </blockquote>
             <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              George R. R. Martin, <cite className="italic">A Dance with Dragons</cite>
+              Stephen King, <cite className="italic">On Writing</cite>
             </figcaption>
           </figure>
 
