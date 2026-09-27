@@ -36,7 +36,7 @@ function BookSpine({ book }) {
       </div>
 
       {/* Detail on hover / focus, so the wall of covers stays clean at rest. */}
-      <div className="pointer-events-none absolute -top-2 left-1/2 z-20 w-44 -translate-x-1/2 -translate-y-full rounded-md bg-gray-800 p-3 opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 dark:bg-gray-900">
+      <div className="pointer-events-none absolute -top-2 left-1/2 z-20 hidden w-44 -translate-x-1/2 -translate-y-full rounded-md bg-gray-800 p-3 opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 sm:block dark:bg-gray-900">
         <p className="font-serif text-sm font-semibold leading-snug text-gray-50">{book.title}</p>
         <p className="mt-1 text-xs text-gray-300">{book.author}</p>
         {(book.year || book.pages) && (
@@ -73,7 +73,9 @@ function Shelf({ shelf }) {
         {groups.map((group, i) => (
           <div
             key={`${group.series || 'single'}-${i}`}
-            className={group.books.length > 1 ? 'flex items-end gap-1' : ''}
+            // Six-book series (Stormlight, Red Rising) are wider than a phone
+            // screen, so the cluster has to be allowed to wrap.
+            className={group.books.length > 1 ? 'flex max-w-full flex-wrap items-end gap-1' : ''}
           >
             {group.books.map((book) => (
               <BookSpine key={book.url} book={book} />
@@ -121,10 +123,10 @@ export default function Read({ shelves, stats }) {
           </h1>
           <figure className="max-w-2xl border-l-2 border-primary-400 pl-4 dark:border-primary-600">
             <blockquote className="font-serif text-lg italic leading-7 text-gray-700 dark:text-gray-200">
-              &ldquo;Books are a uniquely portable magic.&rdquo;
+              &ldquo;A book is a dream that you hold in your hands.&rdquo;
             </blockquote>
             <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              Stephen King, <cite className="italic">On Writing</cite>
+              Neil Gaiman
             </figcaption>
           </figure>
 
