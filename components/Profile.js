@@ -189,6 +189,20 @@ export default function Profile() {
               ))}
             </div>
           )}
+
+          {!isFetching && (
+            <div className="flex justify-center pt-6">
+              <Link
+                href="/read"
+                className="group text-sm text-gray-600 transition-colors hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-400"
+              >
+                See all {bookData.numOfReadBooks} books I&apos;ve read
+                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
