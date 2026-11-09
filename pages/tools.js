@@ -41,9 +41,9 @@ const sections = [
           'My own take on Obsidian meets Notion: AI note-taking with visual explainers, backed by a custom MCP server that saves and retrieves notes RAG-style with pgvector. Like the paper agenda we all had in school, just supercharged.',
       },
       {
-        name: 'AI Context Bridge',
+        name: "🧠 Kien's Brain",
         description:
-          'My own Chrome extension that captures context from my Gemini and Claude chats. I bounce ideas between both, and each one is a walled garden that forgets what the other knows. The extension sends those conversations into the same pgvector store, so it works as one central brain for every AI I use.',
+          'My own unpublished Chrome extension that captures context from my Gemini and Claude chats. I bounce ideas between both, and each one is a walled garden that forgets what the other knows. The extension sends those conversations into the same pgvector store, so it works as one central brain for every AI I use.',
       },
       {
         name: 'Tempo',
