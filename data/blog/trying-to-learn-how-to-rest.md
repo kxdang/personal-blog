@@ -11,11 +11,9 @@ layout: PostLayout
 
 I have a hard time relaxing.
 
-I noticed it last month, when my schedule opened up. I dropped from full time to part time work, which on paper means more space, more time for myself, time I haven't had since university. I told everyone I was going to use it to rest. I meant it. I planned for it.
+I noticed it last month when my schedule opened up. I dropped from full time to part time work, which on paper means more time for myself than I've had since university. I told everyone I was going to use it to rest, and I really meant it, but when I finally sat down with all this free time I couldn't figure out what to do with it.
 
-And then I sat down with all this new free time and could not figure out what to do with it.
-
-There's something uncomfortable about being still after years of motion. The discomfort isn't boredom. It's something closer to suspicion. Like I'm getting away with something. Like the moment I stop running, the thing I've been running from will catch up.
+It's uncomfortable being still after years of always moving. It's not boredom, it's more like I feel like I'm getting away with something, and if I stop, everything I've been running from is going to catch up to me.
 
 ## A short tour of my reinventions
 
@@ -23,13 +21,11 @@ I started in biochemistry, hoping the co-op would carry me to success. But the f
 
 The economy wasn't the greatest when I finished my degree, and the path forward didn't open the way it was supposed to. The pay prospects weren't great unless I went back for further education in biochemistry. So I taught myself software engineering, which took about a year, so I could re-skill into a more lucrative field. The kind of grind people glamorize on LinkedIn. For me, the grind was silent until I wrote [publicly](https://www.linkedin.com/posts/kien-dang_careers-activity-6709491629625008128-3vc3?utm_source=share\&utm_medium=member_desktop\&rcm=ACoAAB8VvmUBrYcNK-D7cjpKvsK7K-RiDCaH57A) about how long it actually took to change paths. I saw a lot of people doing the same thing between 2018 and 2020. Then COVID hit, and that's when things started looking rougher.
 
-But it worked out. I got into software. I built and fixed things. I shipped them and I learned from many talented developers.
+But it worked out. I got into software, built and shipped things, and learned a lot from many talented developers.
 
-Now software engineering itself is in flux. AI keeps changing what the work even looks like. The shelf life of any particular skill feels shorter than it used to. So I'm moving into data engineering where I'm placing my bet on the fact that big data with AI will be a skill that will be in demand in the next few years. Different patterns. Different tools. A new vocabulary.
+Now software engineering itself is in flux. AI keeps changing what the work even looks like. The shelf life of any particular skill feels shorter than it used to. So I'm moving into data engineering, betting that big data with AI will be a skill in demand over the next few years. New patterns, new tools and a whole new vocabulary to learn.
 
-If I look at it from the outside, it's a story of resilience. Three careers in a decade. Adaptable. Resourceful. The kind of personal development that sounds great in a podcast interview.
-
-If I look at it from the inside, it feels different. It feels like I've never actually stopped to be anywhere. I've been a thing in transit since I was twenty.
+From the outside it probably looks like a story of resilience, three careers in a decade and always adapting. From the inside it feels like I've never actually stopped anywhere. I've been in transit since I was twenty.
 
 ## The rest I had built, and the rest I'm trying to build
 
@@ -37,42 +33,45 @@ I thought I had figured out rest.
 
 A few years ago, when I was burning out from long study cycles in my journey into programming, I forced myself to take it seriously. I tracked when I was running out of fuel with my monthly [Pomodoro reports](https://kiendang.me/?tag=pomodoro). I learned to schedule breaks: to step away from a problem, take a walk, and sleep enough. Pomodoros with the breaks honoured, not just the focus blocks. I got good at this version of resting.
 
-But that was tactical rest. Rest as a tool for being more productive over a longer term. The breaks served the work. The walks and physical workouts were so I could come back to the desk sharper.
+But that was tactical rest, rest as a way to stay productive longer. The breaks were for the work, and the walks and workouts were so I could come back to the desk sharper.
 
-What I'm trying to figure out now is something different. Sustained unstructured time. Days where the calendar is mostly empty. Weeks where there isn't a deliverable waiting on the other side of the break.
+What I'm trying to figure out now is different: long stretches of unstructured time, days where the calendar is mostly empty and weeks without a deliverable waiting after the break.
 
-I'm not in pure free fall either. I'm still working part time at CGMH, which means there are still problems to solve. The volume of unscheduled time I now have is bigger than anything I've had since high school, but it isn't infinite. There's still a job in the middle of it. The challenge isn't an empty life. It's an unfamiliar amount of time that isn't accounted for.
+I'm not in pure free fall either. I'm still working part time at CGMH, which means there are still problems to solve. The volume of unscheduled time I now have is bigger than anything I've had since high school, but it isn't infinite. There's still a job in the middle of it. It's not that my life is empty, I just have more unaccounted time than I'm used to.
 
-I had three part time jobs during a single co-op term at one point. I have not had a summer to myself since I started university, because every summer or winter break was a co-op term. Every time I've had a window of time that looked like it could be free, I filled it. Another course. Another project. Another book or certification. Another thing to put on the resume in case the floor disappears underneath me again, which it has, periodically.
+I had three part time jobs during a single co-op term at one point. I have not had a summer to myself since I started university, because every summer or winter break was a co-op term. Every time I had some free time, I filled it with another course, project, book or certification. Another thing to put on the resume in case the floor disappears underneath me again, which it has a few times.
 
-The hustle is not a virtue. It's a response to the conditions I came up in. Bad economy, shifting industries, the constant low background hum that says you better keep up or you'll get left behind. The hustle worked. I'm not going to pretend it didn't. I learned a lot and I built a real career out of it.
+I don't think hustling is a virtue, it was just how I reacted to the conditions I grew up in. A bad economy, shifting industries and always feeling like I had to keep up or get left behind. That said, it did work. I learned a lot and built a real career out of it.
 
 But the tactical rest I built was always in service of the next thing. I never had to learn what to do when there was no next thing pressing in. And now that I do, I'm finding out it's a different skill that I have no idea how to develop.
 
 ## What relaxing actually looks like
 
-I don't know yet. That's the honest answer. I ended up in a megachicken ad on Instagram recently with a friend, which was pretty fun. I picked up rollerskating and got back into sim racing with a new rig, but none of it felt as relaxing as I'd imagined.
+To be honest, I don't know yet. I ended up in a megachicken ad on Instagram recently with a friend, which was pretty fun. I picked up rollerskating and got back into sim racing with a new rig, but none of it felt as relaxing as I'd imagined.
 
-I know what relaxing isn't. It isn't more reading. It isn't a podcast at 2x. It isn't an enrichment activity I can post a clean photo of. Those are still doing things. They're just doing things with a softer aesthetic.
+I do know what it isn't though. It isn't more reading, a podcast at 2x speed, or some activity I can post a nice photo of. Those are all still doing things.
 
-Real rest, the kind that recovers something instead of just looking like recovery, seems to require me to be okay with **not producing anything**. Not earning. Not building. Not even learning. Just existing for a few hours without justifying the existence with output.
+Real rest seems to mean being okay with **not producing anything**. Not earning, building or even learning, just existing for a few hours without needing something to show for it.
 
-I am not good at this. I notice myself getting fidgety in the middle of a long walk. I notice myself reaching for my phone to find an audiobook to fill the silence. I notice myself feeling guilty for not really doing anything. The guilt is the tell. If rest requires guilt management, it isn't actually rest.
+I'm not good at this. I get fidgety in the middle of long walks, I reach for my phone to put on an audiobook so it isn't quiet, and I feel guilty for not doing anything. If I have to manage guilt while resting, it probably isn't actually rest.
 
 ## The looming shelf life
 
-The other piece of this is harder to name. Every field I've been in has had a looming shelf life. Biochem became saturated, or there weren't any promising positions here in Canada. Either way, I knew lab work wasn't for me. Software engineering is now in the middle of an AI-driven reshuffle. Data engineering, the place I'm landing now, will have its own version of this. Probably sooner than I'd like.
+The other part of this is harder to explain. Every field I've been in has had a looming shelf life. Biochem became saturated, or there weren't any promising positions here in Canada. Either way, I knew lab work wasn't for me. Software engineering is now in the middle of an AI-driven reshuffle. Data engineering, the place I'm landing now, will have its own version of this. Probably sooner than I'd like.
 
-I don't think the answer is to pick the right next career. I think the answer might be to develop something that doesn't depend on a specific career. Not a side hustle. Not a backup plan. Something more like a self that isn't only made of the work I happen to be doing this year.
+I don't think the answer is picking the right next career. It might be building an identity that doesn't depend on a specific career, not a side hustle or backup plan, but a version of me that isn't only about whatever work I'm doing that year.
 
-I don't have that yet. I have built versions of myself that are very good at adapting and very bad at staying still. Those are the same skill, just expressed in different conditions.
+I'm not there yet. I'm really good at adapting and really bad at staying still, and I think those come from the same place.
 
 ## What I'm trying
 
-I don't have a system here. I have a few experiments.
+I don't have a system for this yet, just a few things I'm trying:
 
-I am trying to take afternoons off and not fill them. I am trying to notice when the urge to be productive shows up and ask what it's protecting me from. I am trying to be in conversations without my phone. I am trying to write things like this post, which is itself a kind of producing, but maybe a more honest one and a therapeutic exercise.
+- Taking afternoons off and not filling them
+- Noticing when the urge to be productive shows up and asking myself why
+- Having conversations without my phone
+- Writing posts like this one, which is technically still producing something, but it's been therapeutic
 
-I think if there's a thing to take from this, it might be that the muscle of rest is itself a muscle. It atrophies if you don't use it. And if you've spent a decade hustling because the world told you to, you don't get to install rest as a habit overnight just because the conditions changed.
+If there's anything to take from this, it's that resting is a muscle too, and it gets weak if you don't use it. After a decade of hustling, I can't expect to pick it up overnight just because my schedule changed.
 
 I'll keep practicing. For those who've read this far, comment below and I'll let you know how it goes.

@@ -41,6 +41,11 @@ const sections = [
           'My own take on Obsidian meets Notion: AI note-taking with visual explainers, backed by a custom MCP server that saves and retrieves notes RAG-style with pgvector. Like the paper agenda we all had in school, just supercharged.',
       },
       {
+        name: 'AI Context Bridge',
+        description:
+          'My own Chrome extension that captures context from my Gemini and Claude chats. I bounce ideas between both, and each one is a walled garden that forgets what the other knows. The extension sends those conversations into the same pgvector store, so it works as one central brain for every AI I use.',
+      },
+      {
         name: 'Tempo',
         description:
           'My own time and habit tracking app. Built for exactly how I want to track my days, no subscription, no feature bloat.',
@@ -56,12 +61,24 @@ const sections = [
   {
     emoji: '⚡',
     title: 'Building',
+    intro:
+      'I build strictly with Claude Code on Opus 5.5 now. No IDE, just several agents working in parallel terminals, each on its own task, so I am reviewing and steering instead of typing every line.',
     tools: [
       {
-        name: 'Cursor',
+        name: 'Claude Code + cmux',
         description:
-          'Primary coding IDE paired with Claude CLI for scaffolding, debugging, and exploring ideas',
-        url: 'https://cursor.sh',
+          'My whole dev setup. cmux lets me run multiple Claude Code agents side by side, one building a feature, one fixing a bug, one writing docs, for as much output as possible.',
+        url: 'https://claude.com/claude-code',
+      },
+      {
+        name: 'Claude Code Remote',
+        description:
+          'My live projects are maintained from a Mac mini running 24/7 with a cmux session in the background. With Claude Code remote I can adjust code on the fly and fix client issues from my phone when I am away from my desk.',
+      },
+      {
+        name: 'Static Personal Apps',
+        description:
+          'I like having Claude Code generate small static apps just for me, plain HTML I open on my phone. My favourite is my travel companion app that helps me plan each day of a trip. Blog post coming soon.',
       },
     ],
   },

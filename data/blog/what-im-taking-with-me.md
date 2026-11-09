@@ -9,95 +9,85 @@ author: Kien
 layout: PostLayout
 ---
 
-May 14. I got the call. It has been two weeks, and I have been sitting with it long enough to know what I actually want to say.
+On May 14 I got the call that I was being laid off from Penn as part of a broader round of cuts. It's been two weeks now and I've had enough time to think about what I actually want to say about it.
 
-I was laid off from Penn, part of a broader round of cuts.
-
-After a few days, the part that stuck with me was not the call itself. It was the arc. The people I worked with, the work I got to do, and the unexpected door that opened along the way.
+After a few days, what stuck with me wasn't the call itself. It was looking back at the whole journey: the people I worked with, the work I got to do and a door that opened along the way that I didn't see coming.
 
 ## The team that pushed me
 
-Penn is full of genuinely talented developers. I learned more there than I had in any single stretch of my career. Not from any one person, but from being surrounded by people who took the craft seriously.
+Penn is full of genuinely talented developers. I learned more there than in any other stretch of my career, not from any one person but from being surrounded by people who took the craft seriously.
 
-I started on the platform side and ended up doing feature work too. That range matters more than I appreciated at the time. Platform work teaches you to think about leverage and stability. Feature work teaches you to think about users and shipping. Doing both in the same org pulled my thinking wider than either would have on its own.
+I started on the platform side and ended up doing feature work too, and that range mattered more than I realized at the time. Platform work teaches you to think about leverage and stability, feature work teaches you to think about users and shipping. Doing both in the same org made me a more well-rounded developer.
 
-A few things that stuck:
+A few things that stuck with me:
 
-* Code review as a teaching tool, not a gate. I learned how to give a review that made the other person better, and how to receive one without ego.
-* How seriously the senior engineers took ownership. Not just shipping a thing, but staying close to it after it landed.
-* That the bar for "done" is higher than I had been holding myself to. Being around people with that bar quietly raised mine.
+* Code review as a teaching tool, not a gate. I learned how to give a review that helps the other person get better, and how to take one without ego.
+* How seriously the senior engineers took ownership. Not just shipping something, but staying close to it after it landed.
+* The bar for "done" was higher than what I'd been holding myself to. Being around people with that bar raised mine.
 
-I am a different developer than I was when I joined. That is not something that fits in one resume line. But it is the part that travels with me.
+I'm a different developer than when I joined. That doesn't fit on a resume, but it's the part I get to keep.
 
 ## What I learned about titles
 
-One thing I am carrying out of those years is a clearer view of how titles work. Titles are downstream of structure. They depend on org charts, headcount, and who is in the room when the decision gets made. The work is yours. The skills are yours. The title is not always in your hands.
+One thing I learned over those years is how titles actually work. They depend on org charts, headcount and who's in the room when the decision gets made. The work and the skills are yours, but the title isn't always in your hands.
 
-That reframe came in handy more than once, and it is the lesson I would rewind and hand to a younger version of myself if I could.
+That came in handy more than once, and it's something I wish I could tell a younger version of myself.
 
-## Where the diverted energy went
+## Where the extra energy went
 
-Here is the part I did not expect.
+Somewhere along the way I started putting more of my energy into things outside of work. Side projects, reading, learning tools and domains nobody asked me to learn.
 
-Somewhere in those years I started putting more of my energy into things outside of work. Side projects. Reading. Tools and domains nobody had assigned me. Reps that were not on anyone's roadmap.
+Looking back, that ended up being the most important career move I made in those years, and I made it by accident. Those side projects led to a role I wouldn't have been a candidate for otherwise. I'm now Principal Data Solutions at Collingwood General and Marine Hospital, which is a completely different world from the software products I came from.
 
-That redirection turned out to be the most important career move I made in those years, and I made it by accident.
-
-Side projects opened a door I did not know was there. They led to a role I would not have been a candidate for otherwise. I am now Principal Data Solutions at Collingwood General and Marine Hospital, a domain entirely outside the software-product world I came from.
-
-Curiosity-led learning compounds. I have written that line before, and the last year is the most literal proof of it I have had.
+I've written before that curiosity-led learning compounds, and this past year is the most literal proof of that I've had.
 
 ## A new domain entirely
 
-Hospital data is its own world. The shape of it, the constraints, the regulatory layer, the way information moves from clinical systems into something a human can reason about. I am learning the ins and outs of it from scratch.
+Hospital data is its own world. The constraints, the regulations, the way information moves from clinical systems into something a person can actually make sense of. I'm learning all of it from scratch.
 
-Some of what I am working through now:
+Some of what I'm working through right now:
 
-* How data actually moves through a hospital. Where it originates, where it pools, where it gets stuck.
-* Pipelines and medallion architecture as a way to organize raw, refined, and reporting layers cleanly.
-* The difference between software-product instincts and data-platform instincts. They are related, but they are not the same.
-* Working with a manager who is, frankly, a data engineering beast. I have not had a manager I learned this much from in years.
+* How data actually moves through a hospital. Where it comes from, where it pools and where it gets stuck.
+* Pipelines and medallion architecture to keep the raw, refined and reporting layers organized.
+* The difference between thinking like a software developer and thinking like a data engineer. They're related, but not the same.
+* Working with a manager who is honestly a data engineering beast. I haven't learned this much from a manager in years.
 
-The pace of learning is steep, and that is the point. I had forgotten how good it feels to be the least experienced person in the room on a topic that matters.
+The learning curve is steep, and I'm enjoying it. I forgot how good it feels to be the least experienced person in the room on something that matters.
 
-## What I am bringing the other way
+## What I'm bringing with me
 
-The cross-pollination has surprised me. A lot of what I picked up on the platform side at Penn carries directly into the hospital-data world.
+I didn't expect how much of what I picked up on the platform side at Penn would carry over to hospital data.
 
-What has translated cleanly:
+What's translated well:
 
-* Azure DevOps pipelines. Setting them up, tuning them, keeping the CI/CD discipline tight. The lift in dev velocity once that layer is in place is real.
-* Branching strategy and code review as a teaching tool. Automated checks before merge instead of after.
-* Treating data work like software work. Versioning, reproducibility, testability. Pipelines as code, not as ad-hoc scripts.
-* The engineering instinct of "if you did it twice, automate it the third time." That instinct is genuinely useful in a data-platform setting.
+* Azure DevOps pipelines. Setting them up, tuning them and keeping CI/CD tight. Once that's in place, the boost in dev velocity is real.
+* Branching strategy, code reviews and automated checks before merging instead of after.
+* Treating data work like software work: versioning, reproducibility, testing, and pipelines as code instead of one-off scripts.
+* "If you did it twice, automate it the third time." Turns out that's really useful on a data platform too.
 
-I came in expecting to be the one learning a new domain. I am, but I am also bringing something into it. Software-engineering best practices accelerate the maturity curve on the data side, and being the person who can do that has been one of the best parts of the role.
+I came in expecting to just be learning a new domain, and I am, but I'm also bringing something to it. Software engineering best practices help the data side mature faster, and being the person who can bring that has been one of the best parts of the role.
 
-## What carrying both roles taught me
+## Doing both roles at once
 
-For a while I was doing both. The full software role at Penn and the data role at CGMH, in two completely different industries. I do not recommend it as a default, but it gave me a sneak peek of how I actually work under pressure.
+For a while I was doing both, the full software role at Penn and the data role at CGMH, in two completely different industries. I wouldn't recommend it, but it showed me how I actually work under pressure.
 
 What I learned about myself:
 
-* I can take on more than I thought, if the work is interesting enough to pull me through.
-* My skillset is broader than I had given myself credit for. Software, platform, data, civic tech, all draw on the same underlying instincts.
-* Time, energy, and boundaries are skills, not personality traits. I got noticeably better at all three by being forced to.
-* Confidence is downstream of evidence. The evidence came from doing the thing.
+* I can take on more than I thought if the work is interesting enough.
+* My skillset is broader than I gave myself credit for. Software, platform, data and civic tech all use a lot of the same instincts.
+* Managing time, energy and boundaries are skills, not personality traits. I got a lot better at all three because I had to.
+* Confidence comes from actually doing the thing.
 
-I would not have signed up for "manage two demanding roles in different industries" as a development plan. But it ended up being one. And the version of me on the other side of it is steadier than the version that went in.
+I wouldn't have picked "manage two demanding jobs in different industries" as a development plan, but that's kind of what it turned into, and I came out of it more confident than I went in.
 
-## What I am taking forward
+## What I'm taking forward
 
-Skill security is real. Job security is an illusion. I have written that before. The last two weeks made it more literal than I would have liked.
+I've said it before, job security is an illusion and skill security is what's real. These last two weeks made that a lot more literal than I would've liked.
 
-When the call came, the thing that kept me steady was not certainty about what was next. It was knowing what I had built up inside of me. The reps. The breadth. The proof that I can pick up a new domain and contribute in it.
-
-Those do not get laid off. Those come with me.
+When I got the call, what kept me steady wasn't knowing what was next. It was knowing what I'd built up: the experience, the range, and proof that I can pick up a new domain and contribute to it. Nobody can lay those off.
 
 ## A note to myself
 
-The truth is this. A team helped you grow. The chapter ending did not break you, it redirected you. The redirection opened a door into a domain you had never seen before. And the manager on the other side of that door is teaching you things you would not have learned anywhere else.
+A great team helped you grow. The layoff didn't break you, it pushed you somewhere new, and the manager you have there is teaching you things you wouldn't have learned anywhere else.
 
-Stay curious. Keep reading. Keep building. The next chapter is already underway.
-
-Titles are downstream of structure. Skills are yours. Onto the next.
+Stay curious, keep reading and keep building. Onto the next chapter.
