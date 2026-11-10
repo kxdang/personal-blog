@@ -4,7 +4,7 @@ date: 2026-05-22T00:10:56.908Z
 tags:
   - life
 draft: false
-summary: Reading about Canadian corporate tax structures on weekends turned out to be a crash course in the wealth playbook nobody hands to employees."
+summary: Reading about Canadian corporate tax structures on weekends turned out to be a crash course in the wealth playbook nobody hands to employees.
 author: Kien
 layout: PostLayout
 slug: what-im-learning-on-weekends
